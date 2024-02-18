@@ -18,7 +18,7 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
   darkToggle.checked = false;
 }
 
-// sidebar
+// sidebar menu dropdown
 document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.querySelectorAll(".sidebar");
 
@@ -49,3 +49,19 @@ drawerToggle.addEventListener('click', () => {
     sidebar.classList.add('hidden')
   }
 });
+
+// click di luar "x"
+window.addEventListener("click", function (e) {
+  if (e.target != sidebar && e.target != sidebarToggle && e.target != drawerToggle) {
+    sidebar.classList.remove('hidden')
+  }
+});
+
+
+// export button
+const exportButton = document.querySelector('#menu-button')
+const menu = document.querySelector('#menu-drop');
+
+exportButton.addEventListener('click', () => {
+  menu.classList.toggle('hidden')
+})
