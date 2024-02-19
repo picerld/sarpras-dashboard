@@ -1,3 +1,4 @@
+// dark theme
 const darkToggle = document.querySelector('#dark-toggle');
 const html = document.querySelector('html')
 
@@ -11,7 +12,7 @@ darkToggle.addEventListener('click', function() {
   }
 })
 
-// condition toggle if dark mode
+// condition toggle jika dark mode
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   darkToggle.checked = true;
 } else {
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// responsive sidebar
+// close click sidebar menu 
 const sidebarToggle = document.querySelector('#sidebar-toggle')
 const drawerToggle = document.querySelector('.drawer-toggle')
 const sidebar = document.querySelector('#sidebar');
@@ -65,3 +66,4 @@ const menu = document.querySelector('#menu-drop');
 exportButton.addEventListener('click', () => {
   menu.classList.toggle('hidden')
 })
+
