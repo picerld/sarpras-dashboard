@@ -48,7 +48,11 @@
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                   ></path></svg
               ></label>
-              <h1 class="text-2xl font-semibold ml-2 text-dark dark:text-gray-300">Dashboard</h1>
+              <h1
+                class="text-2xl font-semibold ml-2 text-dark dark:text-gray-300"
+              >
+                Dashboard
+              </h1>
             </div>
             <div class="flex-none">
               <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"
@@ -67,12 +71,13 @@
                   data-act-class="ACTIVECLASS"
                   class="fill-current w-6 h-6 swap-on"
                 >
-                <path
+                  <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-                  ></path></svg>
-                  
+                  ></path>
+                </svg>
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -84,12 +89,11 @@
                   data-act-class="ACTIVECLASS"
                   class="fill-current w-6 h-6 swap-off ACTIVECLASS"
                 >
-                <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-              ></path></svg
-            ></label
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                  ></path></svg></label
               ><button class="btn btn-ghost btn-circle">
                 <div class="indicator">
                   <svg
@@ -1125,7 +1129,7 @@
 
             <!-- content start -->
 
-            <section class="py-4">
+            <section class="pt-6">
               <div class="container">
                 <div
                   class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded dark:bg-dark bg-white"
@@ -1177,8 +1181,64 @@
               </div>
             </section>
 
-            <section class="py-4">
-              <div class="container"></div>
+            <section class="grid lg:grid-cols-2 grid-cols-1 gap-6 pb-6">
+              <div class="card w-full p-6 bg-base-100 shadow-xl mt-6">
+                <div class="text-xl font-semibold">Pengajuan Barang</div>
+                <div class="divider mt-2"></div>
+                <div class="h-full w-full pb-6 bg-base-100">
+                  <div class="overflow-x-auto">
+                    <table class="table w-full">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th class="normal-case">Source</th>
+                          <th class="normal-case">No of Users</th>
+                          <th class="normal-case">Conversion</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>1</th>
+                          <td>Facebook Ads</td>
+                          <td>26,345</td>
+                          <td>10.2%</td>
+                        </tr>
+                        <tr>
+                          <th>2</th>
+                          <td>Google Ads</td>
+                          <td>21,341</td>
+                          <td>11.7%</td>
+                        </tr>
+                        <tr>
+                          <th>3</th>
+                          <td>Instagram Ads</td>
+                          <td>34,379</td>
+                          <td>12.4%</td>
+                        </tr>
+                        <tr>
+                          <th>4</th>
+                          <td>Affiliates</td>
+                          <td>12,359</td>
+                          <td>20.9%</td>
+                        </tr>
+                        <tr>
+                          <th>5</th>
+                          <td>Organic</td>
+                          <td>10,345</td>
+                          <td>10.3%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="card w-full p-6 bg-base-100 shadow-xl mt-6">
+                <div class="text-xl font-semibold">Preview by Unit</div>
+                <div class="divider mt-2"></div>
+                <div class="h-full w-full pb-6 bg-base-100">
+                  <canvas id="donut-chart"></canvas>
+                </div>
+              </div>
             </section>
           </main>
         </div>
@@ -1215,7 +1275,8 @@
                   class="mask mask-squircle w-10 font-semibold"
                   src="../src/dist/images/logo.png"
                   alt="logo"
-              />Sarana Prasarana</a>
+                />Sarana Prasarana</a
+              >
             </li>
 
             <li class="">
@@ -1664,6 +1725,51 @@
       charset="utf-8"
     ></script>
 
+    <!-- chart two -->
+    <script>
+      var canvas = document.getElementById("donut-chart");
+
+      var data = {
+        labels: ["Kesiswaan", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+              "#EF4444",
+              "#3B82F6",
+              "#FBBF24",
+              "#10B981",
+              "#A78BFA",
+              "#F59E0B",
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      };
+
+      // Set the chart options
+      var options = {
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+        aspectRatio: 1,
+        cutout: "50%",
+        animation: {
+          animateRotate: true,
+        },
+      };
+
+      // Create the chart
+      var chart = new Chart(canvas, {
+        type: "doughnut",
+        data: data,
+        options: options,
+      });
+    </script>
+
     <!-- chart -->
     <script type="text/javascript">
       (function () {
@@ -1684,7 +1790,7 @@
               "September",
               "Oktober",
               "November",
-              "Desember"
+              "Desember",
             ],
             datasets: [
               {
