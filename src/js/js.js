@@ -71,3 +71,33 @@ const menu = document.querySelector("#menu-drop");
 exportButton.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
+
+// function seartable
+function searchTable() {
+  var input = document.getElementById("searchInput");
+  var filter = input.value.toUpperCase();
+
+  var table = document.getElementById("myTable");
+  var rows = table.getElementsByTagName("tr");
+
+  for (var i = 0; i < rows.length; i++) {
+    var cells = rows[i].getElementsByTagName("td");
+    var found = false;
+
+    for (var j = 0; j < cells.length; j++) {
+      var cell = cells[j];
+      if (cell) {
+        if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          found = true;
+          break;
+        }
+      }
+    }
+
+    if (found || i === 0) {
+      rows[i].style.display = "";
+    } else {
+      rows[i].style.display = "none";
+    }
+  }
+}
