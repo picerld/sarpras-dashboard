@@ -6,10 +6,10 @@
     <title>Sarpras - Dashboard</title>
     <link
       rel="shortcut icon"
-      href="../src/dist/images/logo.png"
+      href="../../src/dist/images/logo.png"
       type="image/x-icon"
     />
-    <link href="../src/css/output.css" rel="stylesheet" />
+    <link href="../../src/css/output.css" rel="stylesheet" />
 
     <script>
       if (
@@ -48,7 +48,7 @@
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                   ></path></svg
               ></label>
-              <h1 class="text-2xl font-semibold ml-2 text-dark dark:text-gray-300">Tambah Ruangan</h1>
+              <h1 class="text-2xl font-semibold ml-2 text-dark dark:text-gray-300">Data Ruangan</h1>
             </div>
             <div class="flex-none">
               <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"
@@ -166,14 +166,18 @@
                   class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   <li class="justify-between">
-                    <a href="/app/settings-profile"
+                    <a href="../user/setting.html"
                       >Profile Settings<span class="badge">New</span></a
                     >
                   </li>
                   <li class="">
-                    <a href="/app/settings-billing">Bill History</a>
+                    <a href="../auth/login.html">Login</a>
+                  </li>
+                  <li class="">
+                    <a href="../auth/register.html">Register</a>
                   </li>
                   <div class="divider mt-0 mb-0"></div>
+                  <li><a href="../user/index.html">User View</a></li>
                   <li><a>Logout</a></li>
                 </ul>
               </div>
@@ -1009,7 +1013,93 @@
             </div>
 
             <!-- content start -->
-            
+
+
+            <section class="py-4">
+              <div class="container">
+                <div class="flex flex-wrap">
+                  <div class="w-full lg:w-1/4 mb-10 px-2">
+                    <div class="card bg-base-100 shadow-xl">
+                      <figure>
+                        <img
+                          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                          alt="Shoes"
+                        />
+                      </figure>
+                      <div class="card-body">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                          <button class="btn btn-primary hover:opacity-80">
+                            Pinjam Sekarang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="lg:w-1/4 mb-10 px-2 w-full">
+                    <div class="card bg-base-100 shadow-xl">
+                      <figure>
+                        <img
+                          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                          alt="Shoes"
+                        />
+                      </figure>
+                      <div class="card-body">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                          <button class="btn btn-primary hover:opacity-80">
+                            Pinjam Sekarang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="lg:w-1/4 mb-10 px-2 w-full">
+                    <div class="card bg-base-100 shadow-xl">
+                      <figure>
+                        <img
+                          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                          alt="Shoes"
+                        />
+                      </figure>
+                      <div class="card-body">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                          <button class="btn btn-primary hover:opacity-80">
+                            Pinjam Sekarang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="lg:w-1/4 mb-10 px-2 w-full">
+                    <div class="card bg-base-100 shadow-xl hover:shadow-2xl cursor-pointer">
+                      <figure>
+                        <img
+                          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                          alt="Shoes"
+                        />
+                      </figure>
+                      <div class="card-body">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                          <button class="btn btn-primary hover:opacity-80">
+                            Pinjam Sekarang
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
           </main>
         </div>
@@ -1044,13 +1134,14 @@
               <a href="#"
                 ><img
                   class="mask mask-squircle w-10 font-semibold"
-                  src="../src/dist/images/logo.png"
+                  src="../../src/dist/images/logo.png"
                   alt="logo"
               />Sarana Prasarana</a>
             </li>
 
             <li class="">
               <a
+                
                 href="index.html"
                 aria-current="page"
                 ><svg
@@ -1211,26 +1302,6 @@
                   <ul class="menu menu-compact">
                     <li>
                       <a href="list-ruangan.html"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          aria-hidden="true"
-                          class="h-5 w-5"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
-                          ></path>
-                        </svg>
-                        List Ruangan</a
-                      >
-                    </li>
-                    <li>
-                      <a href="tambah-ruangan.html"
                       class="font-semibold bg-base-200"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -1247,10 +1318,30 @@
                             d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
                           ></path>
                         </svg>
-                        Tambah Ruangan<span
+                        List Ruangan<span
                         class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
                         aria-hidden="true"
                       ></a
+                      >
+                    </li>
+                    <li>
+                      <a href="tambah-ruangan.html"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                          class="h-5 w-5"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                          ></path>
+                        </svg>
+                        Tambah Ruangan</a
                       >
                     </li>
                   </ul>
@@ -1465,6 +1556,6 @@
       </div>
     </div>
 
-    <script src="../src/js/js.js"></script>
+    <script src="../../src/js/js.js"></script>
   </body>
 </html>

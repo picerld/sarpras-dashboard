@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarpras - Dashboard</title>
-  <link rel="shortcut icon" href="../src/dist/images/logo.png" type="image/x-icon" />
-  <link href="../src/css/output.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="../../src/dist/images/logo.png" type="image/x-icon" />
+  <link href="../../src/css/output.css" rel="stylesheet" />
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -98,16 +98,25 @@
                   <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="profile" />
                 </div>
               </label>
-              <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                <li class="justify-between">
-                  <a href="/app/settings-profile">Profile Settings<span class="badge">New</span></a>
-                </li>
-                <li class="">
-                  <a href="/app/settings-billing">Bill History</a>
-                </li>
-                <div class="divider mt-0 mb-0"></div>
-                <li><a>Logout</a></li>
-              </ul>
+              <ul
+                  tabindex="0"
+                  class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li class="justify-between">
+                    <a href="../user/setting.html"
+                      >Profile Settings<span class="badge">New</span></a
+                    >
+                  </li>
+                  <li class="">
+                    <a href="../auth/login.html">Login</a>
+                  </li>
+                  <li class="">
+                    <a href="../auth/register.html">Register</a>
+                  </li>
+                  <div class="divider mt-0 mb-0"></div>
+                  <li><a href="../user/index.html">User View</a></li>
+                  <li><a>Logout</a></li>
+                </ul>
             </div>
           </div>
         </div>
@@ -782,7 +791,7 @@
             </svg>
           </button>
           <li class="mb-2 font-semibold text-xl flex flex-row justify-start items-center">
-            <a href="#"><img class="mask mask-squircle w-10 font-semibold" src="../src/dist/images/logo.png"
+            <a href="#"><img class="mask mask-squircle w-10 font-semibold" src="../../src/dist/images/logo.png"
                 alt="logo" />Sarana Prasarana</a>
           </li>
 
@@ -1028,7 +1037,7 @@
     </div>
   </dialog>
 
-  <script src="../src/js/js.js"></script>
+  <script src="../../src/js/js.js"></script>
   
 </body>
 
