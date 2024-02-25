@@ -1028,7 +1028,6 @@
                           </tr>
                         </thead>
                         <tbody>
-
                           <tr>
                             <td>
                               <div class="flex items-center space-x-3">
@@ -1042,7 +1041,7 @@
                                 </div>
                               </div>
                             </td>
-                            <td class="text-center">
+                            <td class="text-center lg:flex-none flex">
                               <button class="btn btn-square btn-ghost hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -1078,7 +1077,7 @@
                                 </div>
                               </div>
                             </td>
-                            <td class="text-center">
+                            <td class="text-center lg:flex-none flex">
                               <button class="btn btn-square btn-ghost hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -1114,7 +1113,7 @@
                                 </div>
                               </div>
                             </td>
-                            <td class="text-center">
+                            <td class="text-center lg:flex-none flex">
                               <button class="btn btn-square btn-ghost hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -1148,24 +1147,23 @@
                       <div class="divider mt-2"></div>
                       <form action="#" class="w-full">
                         <div class="flex flex-wrap">
-                          <div class="w-full md:w-1/2 lg:w-1/2 px-4 py-2">
-                            <label class="form-control w-full max-w-xs">
+                          <div class="w-full px-4 py-2">
+                            <label class="form-control w-full max-w-lg">
                               <div class="label">
-                                <span class="label-text font-semibold">Nama Barang</span>
+                                <span class="label-text font-semibold">Kategori</span>
                               </div>
-                              <input type="text" placeholder="Type here ..." class="input input-bordered input-primary w-full max-w-xs" />
+                              <input type="text" required placeholder="Type here ..." class="input input-bordered input-primary w-full max-w-lg" />
                             </label>
                           </div>
           
-                          <div class="w-full md:w-1/2 lg:w-1/2 px-4 py-2">
-                            <label class="form-control w-full max-w-xs">
+                          <div class="w-full px-4 py-2">
+                            <label class="form-control">
                               <div class="label">
-                                <span class="label-text font-semibold">Nomor Seri</span>
+                                <span class="label-text">Deskripsi</span>
                               </div>
-                              <input type="text" placeholder="Type here ..." class="input input-bordered input-primary w-full max-w-xs" />
+                              <textarea class="textarea textarea-primary textarea-bordered h-24" placeholder="deskripsi kategori..."></textarea>
                             </label>
-                          </div>
-          
+                            <input type="submit" class="btn btn-primary mt-3">
                         </div>
                       </form>
                     </div>
