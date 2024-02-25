@@ -1,36 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="light" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sarpras - Dashboard</title>
-        <link
-          rel="shortcut icon"
-          href="../../src/dist/images/logo.png"
-          type="image/x-icon"
-        />
-        <link href="../../src/css/output.css" rel="stylesheet" />
-    
-        <script>
-          if (
-            localStorage.theme === "dark" ||
-            (!("theme" in localStorage) &&
-              window.matchMedia("(prefers-color-scheme: dark)").matches)
-          ) {
-            document.documentElement.classList.add("dark");
-          } else {
-            document.documentElement.classList.remove("dark");
-          }
-        </script>
-      </head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarpas - Dashboar</title>
+
+    <link
+      rel="shortcut icon"
+      href="../../src/dist/images/logo.png"
+      type="image/x-icon"
+    />
+    <link href="../../src/css/output.css" rel="stylesheet" />
+
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root" class="bg-white">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a>Home</a></li>
+              <li>
+                <a>Liat Barang</a>
+              </li>
+              <li><a>Pengajuan</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost text-xl">Sarpras</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li>
+              <a href="">Liat Barang</a>
+            </li>
+            <li><a>Pengajuan</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end gap-3">
+          <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"
+            ><input
+              type="checkbox"
+              id="dark-toggle"
+              class="theme-controller"
+              value="dark" /><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              data-set-theme="light"
+              data-act-class="ACTIVECLASS"
+              class="fill-current w-6 h-6 swap-on"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+              ></path>
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              data-set-theme="dark"
+              data-act-class="ACTIVECLASS"
+              class="fill-current w-6 h-6 swap-off ACTIVECLASS"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+              ></path></svg></label
+          >
+
+          <div class="dropdown dropdown-end mr-4">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar online">
+              <div class="w-10 rounded-full">
+                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a href="../admin/index.html">Admin View</a></li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
 
 
 
-    <script src="../../src/js/user.js"></script>
-</body>
+
+
+    <script src="../../src/js/js.js"></script>
+  </body>
 </html>
