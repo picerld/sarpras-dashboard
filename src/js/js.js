@@ -72,6 +72,7 @@ exportButton.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
 
+
 // function seartable
 function searchTable() {
   var input = document.getElementById("searchInput");
