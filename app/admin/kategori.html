@@ -27,8 +27,8 @@
     <div id="root" class="bg-white">
       <div class="drawer lg:drawer-open">
         <input id="left-sidebar-drawer" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col">
-          <div class="navbar sticky top-0 bg-base-100 z-10 shadow-md">
+        <div class="flex flex-col drawer-content">
+          <div class="sticky top-0 z-10 shadow-md navbar bg-base-100">
             <div class="flex-1">
               <label
                 for="left-sidebar-drawer"
@@ -40,7 +40,7 @@
                   stroke-width="1.5"
                   stroke="currentColor"
                   aria-hidden="true"
-                  class="h-5 inline-block w-5"
+                  class="inline-block w-5 h-5"
                 >
                   <path
                     stroke-linecap="round"
@@ -48,7 +48,7 @@
                     d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                   ></path></svg
               ></label>
-              <h1 class="text-2xl font-semibold ml-2 text-dark dark:text-gray-300">Kategori</h1>
+              <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Kategori</h1>
             </div>
             <div class="flex-none">
               <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"
@@ -65,7 +65,7 @@
                   aria-hidden="true"
                   data-set-theme="light"
                   data-act-class="ACTIVECLASS"
-                  class="fill-current w-6 h-6 swap-on"
+                  class="w-6 h-6 fill-current swap-on"
                 >
                 <path
                     stroke-linecap="round"
@@ -82,7 +82,7 @@
                   aria-hidden="true"
                   data-set-theme="dark"
                   data-act-class="ACTIVECLASS"
-                  class="fill-current w-6 h-6 swap-off ACTIVECLASS"
+                  class="w-6 h-6 fill-current swap-off ACTIVECLASS"
                 >
                 <path
                 stroke-linecap="round"
@@ -99,7 +99,7 @@
                     stroke-width="1.5"
                     stroke="currentColor"
                     aria-hidden="true"
-                    class="h-6 w-6"
+                    class="w-6 h-6"
                   >
                     <path
                       stroke-linecap="round"
@@ -143,7 +143,7 @@
                   class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
                 >
                   <div class="card-body">
-                    <span class="font-bold text-lg">8 Items</span>
+                    <span class="text-lg font-bold">8 Items</span>
                     <span class="text-info">Subtotal: $999</span>
                     <div class="card-actions">
                       <button class="btn btn-primary btn-block">
@@ -153,7 +153,7 @@
                   </div>
                 </div>
               </div>
-              <div class="dropdown dropdown-end ml-2 avatar online">
+              <div class="ml-2 dropdown dropdown-end avatar online">
                 <label tabindex="0" class="btn btn-ghost btn-circle avatar"
                   ><div class="w-10 rounded-full">
                     <img
@@ -163,7 +163,7 @@
                 ></label>
                 <ul
                   tabindex="0"
-                  class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                  class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
                 >
                   <li class="justify-between">
                     <a href="../user/setting.html"
@@ -176,18 +176,18 @@
                   <li class="">
                     <a href="../auth/register.html">Register</a>
                   </li>
-                  <div class="divider mt-0 mb-0"></div>
+                  <div class="mt-0 mb-0 divider"></div>
                   <li><a href="../user/index.html">User View</a></li>
                   <li><a>Logout</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <main class="flex-1 overflow-y-auto md:pt-4 pt-4 px-6 bg-base-200">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <main class="flex-1 px-6 pt-4 overflow-y-auto md:pt-4 bg-base-200">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div class="">
                 <div class="w-72">
-                  <select class="select select-primary w-full max-w-xs">
+                  <select class="w-full max-w-xs select select-primary">
                     <option disabled selected hidden>2023-2024 (Aktif)</option>
                     <option>2023-2024 (Aktif)</option>
                     <option>2022-2023</option>
@@ -196,7 +196,7 @@
                   </select>
                   <button type="button" class="invisible">
                     <svg
-                      class="h-5 w-5"
+                      class="w-5 h-5"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -219,40 +219,40 @@
                     <div
                       class="mt-2.5 shadow-sm border border-gray-300 px-1 py-0.5 bg-white dark:bg-slate-800 dark:text-white dark:border-slate-600 rounded-lg"
                     >
-                      <div class="flex flex-col lg:flex-row py-2">
+                      <div class="flex flex-col py-2 lg:flex-row">
                         <div
-                          class="md:border-b mb-3 lg:mb-0 lg:border-r lg:border-b-0 border-gray-300 dark:border-gray-700 pr-1"
+                          class="pr-1 mb-3 border-gray-300 md:border-b lg:mb-0 lg:border-r lg:border-b-0 dark:border-gray-700"
                         >
                           <ul
-                            class="w-full tracking-wide flex flex-wrap lg:flex-col pb-1 lg:pb-0"
+                            class="flex flex-wrap w-full pb-1 tracking-wide lg:flex-col lg:pb-0"
                           >
                             <li
-                              class="whitespace-nowrap w-1/2 md:w-1/3 lg:w-auto transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded cursor-pointer text-blue-600 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
+                              class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
                             >
                               Today
                             </li>
                             <li
-                              class="whitespace-nowrap w-1/2 md:w-1/3 lg:w-auto transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded cursor-pointer text-blue-600 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
+                              class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
                             >
                               Yesterday
                             </li>
                             <li
-                              class="whitespace-nowrap w-1/2 md:w-1/3 lg:w-auto transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded cursor-pointer text-blue-600 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
+                              class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
                             >
                               Last 7 days
                             </li>
                             <li
-                              class="whitespace-nowrap w-1/2 md:w-1/3 lg:w-auto transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded cursor-pointer text-blue-600 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
+                              class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
                             >
                               Last 30 days
                             </li>
                             <li
-                              class="whitespace-nowrap w-1/2 md:w-1/3 lg:w-auto transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded cursor-pointer text-blue-600 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
+                              class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
                             >
                               This month
                             </li>
                             <li
-                              class="whitespace-nowrap w-1/2 md:w-1/3 lg:w-auto transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded cursor-pointer text-blue-600 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
+                              class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700"
                             >
                               Last month
                             </li>
@@ -271,7 +271,7 @@
                                   class="dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 hover:bg-gray-100 rounded-full p-[0.45rem] focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50"
                                 >
                                   <svg
-                                    class="h-5 w-5"
+                                    class="w-5 h-5"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -310,7 +310,7 @@
                                   class="dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 hover:bg-gray-100 rounded-full p-[0.45rem] focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50"
                                 >
                                   <svg
-                                    class="h-5 w-5"
+                                    class="w-5 h-5"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -328,40 +328,40 @@
                             </div>
                             <div class="px-0.5 sm:px-2 mt-0.5 min-h-[285px]">
                               <div
-                                class="grid grid-cols-7 border-b border-gray-300 dark:border-gray-700 py-2"
+                                class="grid grid-cols-7 py-2 border-b border-gray-300 dark:border-gray-700"
                               >
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Sun
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Mon
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Tue
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Wed
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Thu
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Fri
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Sat
                                 </div>
@@ -369,22 +369,22 @@
                               <div class="grid grid-cols-7 gap-y-0.5 my-1">
                                 <button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   28</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   29</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   30</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   31</button
                                 ><button
@@ -449,7 +449,7 @@
                                   12</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10 bg-blue-500 text-white font-medium rounded-full"
+                                  class="flex items-center justify-center w-12 h-12 font-medium text-white bg-blue-500 rounded-full lg:w-10 lg:h-10"
                                 >
                                   13</button
                                 ><button
@@ -534,47 +534,47 @@
                                   29</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   1</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   2</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   3</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   4</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   5</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   6</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   7</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   8</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   9
                                 </button>
@@ -583,7 +583,7 @@
                           </div>
                           <div class="flex items-center">
                             <div
-                              class="h-7 w-1 rounded-full hidden md:block bg-blue-500"
+                              class="hidden w-1 bg-blue-500 rounded-full h-7 md:block"
                             ></div>
                           </div>
                           <div class="w-full md:w-[297px] md:min-w-[297px]">
@@ -596,7 +596,7 @@
                                   class="dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 hover:bg-gray-100 rounded-full p-[0.45rem] focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50"
                                 >
                                   <svg
-                                    class="h-5 w-5"
+                                    class="w-5 h-5"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -635,7 +635,7 @@
                                   class="dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 hover:bg-gray-100 rounded-full p-[0.45rem] focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50"
                                 >
                                   <svg
-                                    class="h-5 w-5"
+                                    class="w-5 h-5"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -653,40 +653,40 @@
                             </div>
                             <div class="px-0.5 sm:px-2 mt-0.5 min-h-[285px]">
                               <div
-                                class="grid grid-cols-7 border-b border-gray-300 dark:border-gray-700 py-2"
+                                class="grid grid-cols-7 py-2 border-b border-gray-300 dark:border-gray-700"
                               >
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Sun
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Mon
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Tue
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Wed
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Thu
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Fri
                                 </div>
                                 <div
-                                  class="tracking-wide text-gray-500 text-center"
+                                  class="tracking-wide text-center text-gray-500"
                                 >
                                   Sat
                                 </div>
@@ -694,27 +694,27 @@
                               <div class="grid grid-cols-7 gap-y-0.5 my-1">
                                 <button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   25</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   26</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   27</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   28</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   29</button
                                 ><button
@@ -874,32 +874,32 @@
                                   31</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   1</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   2</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   3</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   4</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   5</button
                                 ><button
                                   type="button"
-                                  class="flex items-center justify-center text-gray-400 h-12 w-12 lg:w-10 lg:h-10"
+                                  class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10"
                                 >
                                   6
                                 </button>
@@ -913,7 +913,7 @@
                 </div>
               </div>
               <div class="text-right">
-                <button class="btn btn-ghost btn-sm normal-case">
+                <button class="normal-case btn btn-ghost btn-sm">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -929,7 +929,7 @@
                       d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
                     ></path></svg
                   >Refresh Data</button
-                ><button class="btn btn-ghost btn-sm normal-case ml-2">
+                ><button class="ml-2 normal-case btn btn-ghost btn-sm">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -946,10 +946,10 @@
                     ></path></svg
                   >Share
                 </button>
-                <div class="dropdown dropdown-bottom dropdown-end ml-2">
+                <div class="ml-2 dropdown dropdown-bottom dropdown-end">
                   <label
                     tabindex="0"
-                    class="btn btn-ghost btn-sm normal-case btn-square"
+                    class="normal-case btn btn-ghost btn-sm btn-square"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -967,7 +967,7 @@
                   ></label>
                   <ul
                     tabindex="0"
-                    class="dropdown-content menu menu-compact p-2 shadow bg-base-100 rounded-box w-52"
+                    class="p-2 shadow dropdown-content menu menu-compact bg-base-100 rounded-box w-52"
                   >
                     <li>
                       <a
@@ -1016,10 +1016,10 @@
             <section class="py-4">
               <div class="container">
                 <div class="flex flex-wrap">
-                  <div class="w-full lg:w-1/2 mb-10 px-2">
-                    <div class="card w-full bg-base-100 dark:bg-dark shadow-lg h-full p-5">
+                  <div class="w-full px-2 mb-10 lg:w-1/2">
+                    <div class="w-full h-full p-5 shadow-lg card bg-base-100 dark:bg-dark">
                       <div class="text-xl font-semibold">Kategori Barang</div>
-                      <div class="divider mt-2"></div>
+                      <div class="mt-2 divider"></div>
                       <table class="table w-full lg:text-base">
                         <thead >
                           <tr class="text-base">
@@ -1032,7 +1032,7 @@
                             <td>
                               <div class="flex items-center space-x-3">
                                 <div class="avatar">
-                                  <div class="mask mask-squircle w-12 h-12"><img src="https://reqres.in/img/faces/2-image.jpg"
+                                  <div class="w-12 h-12 mask mask-squircle"><img src="https://reqres.in/img/faces/2-image.jpg"
                                       alt="Avatar"></div>
                                 </div>
                                 <div>
@@ -1041,7 +1041,7 @@
                                 </div>
                               </div>
                             </td>
-                            <td class="text-center lg:flex-none flex justify-center items-center">
+                            <td class="flex items-center justify-center text-center lg:flex-none">
 
                               <button class="btn btn-square btn-ghost hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
@@ -1062,7 +1062,7 @@
                             <td>
                               <div class="flex items-center space-x-3">
                                 <div class="avatar">
-                                  <div class="mask mask-squircle w-12 h-12"><img src="https://reqres.in/img/faces/2-image.jpg"
+                                  <div class="w-12 h-12 mask mask-squircle"><img src="https://reqres.in/img/faces/2-image.jpg"
                                       alt="Avatar"></div>
                                 </div>
                                 <div>
@@ -1071,7 +1071,7 @@
                                 </div>
                               </div>
                             </td>
-                            <td class="text-center lg:flex-none flex justify-center items-center">
+                            <td class="flex items-center justify-center text-center lg:flex-none">
       
                               <button class="btn btn-square btn-ghost hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
@@ -1092,7 +1092,7 @@
                             <td>
                               <div class="flex items-center space-x-3">
                                 <div class="avatar">
-                                  <div class="mask mask-squircle w-12 h-12"><img src="https://reqres.in/img/faces/2-image.jpg"
+                                  <div class="w-12 h-12 mask mask-squircle"><img src="https://reqres.in/img/faces/2-image.jpg"
                                       alt="Avatar"></div>
                                 </div>
                                 <div>
@@ -1101,7 +1101,7 @@
                                 </div>
                               </div>
                             </td>
-                            <td class="text-center lg:flex-none flex justify-center items-center">
+                            <td class="flex items-center justify-center text-center lg:flex-none">
       
                               <button class="btn btn-square btn-ghost hover:bg-primary hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
@@ -1123,18 +1123,18 @@
                     </div>
                   </div>
           
-                  <div class="lg:w-1/2 mb-10 px-2 w-full">
-                    <div class="card bg-base-100 shadow-xl h-full p-5">
+                  <div class="w-full px-2 mb-10 lg:w-1/2">
+                    <div class="h-full p-5 shadow-xl card bg-base-100">
                       <div class="text-xl font-semibold">Input Kategori</div>
-                      <div class="divider mt-2"></div>
+                      <div class="mt-2 divider"></div>
                       <form action="#" class="w-full">
                         <div class="flex flex-wrap">
                           <div class="w-full px-4 py-2">
-                            <label class="form-control w-full max-w-lg">
+                            <label class="w-full max-w-lg form-control">
                               <div class="label">
-                                <span class="label-text font-semibold">Kategori</span>
+                                <span class="font-semibold label-text">Kategori</span>
                               </div>
-                              <input type="text" required placeholder="Type here ..." class="input input-bordered input-primary w-full max-w-lg" />
+                              <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered input-primary" />
                             </label>
                           </div>
           
@@ -1143,9 +1143,9 @@
                               <div class="label">
                                 <span class="label-text">Deskripsi</span>
                               </div>
-                              <textarea class="textarea textarea-primary textarea-bordered h-24" placeholder="deskripsi kategori..."></textarea>
+                              <textarea class="h-24 textarea textarea-primary textarea-bordered" placeholder="deskripsi kategori..."></textarea>
                             </label>
-                            <input type="submit" class="btn btn-primary mt-3">
+                            <input type="submit" class="mt-3 btn btn-primary">
                         </div>
                       </form>
                     </div>
@@ -1158,11 +1158,11 @@
         </div>
 
         <!-- sidebar -->
-        <div class="drawer-side z-30" id="sidebar">
+        <div class="z-30 drawer-side" id="sidebar">
           <label for="left-sidebar-drawer" class="drawer-overlay"></label>
-          <ul class="menu pt-2 w-80 bg-base-100 min-h-full text-base-content">
+          <ul class="min-h-full pt-2 menu w-80 bg-base-100 text-base-content">
             <button
-              class="btn btn-ghost bg-base-300 btn-circle z-50 top-0 right-0 mt-4 mr-2 absolute lg:hidden"
+              class="absolute top-0 right-0 z-50 mt-4 mr-2 btn btn-ghost bg-base-300 btn-circle lg:hidden"
               id="sidebar-toggle"
             >
               <svg
@@ -1172,7 +1172,7 @@
                 stroke-width="1.5"
                 stroke="currentColor"
                 aria-hidden="true"
-                class="h-5 inline-block w-5"
+                class="inline-block w-5 h-5"
               >
                 <path
                   stroke-linecap="round"
@@ -1182,11 +1182,11 @@
               </svg>
             </button>
             <li
-              class="mb-2 font-semibold dark:text-white text-xl flex flex-row justify-start items-center"
+              class="flex flex-row items-center justify-start mb-2 text-xl font-semibold dark:text-white"
             >
               <a href="#"
                 ><img
-                  class="mask mask-squircle w-10 font-semibold"
+                  class="w-10 font-semibold mask mask-squircle"
                   src="../../src/dist/images/logo.png"
                   alt="logo"
                 />Sarpas</a
@@ -1205,7 +1205,7 @@
                   stroke-width="1.5"
                   stroke="currentColor"
                   aria-hidden="true"
-                  class="h-6 w-6"
+                  class="w-6 h-6"
                 >
                   <path
                     stroke-linecap="round"
@@ -1216,23 +1216,35 @@
                 Dashboard</span
               ></a>
             </li>
-            <div class="divider font-semibold divider-primary">Menu</div>
+            <div class="font-semibold divider divider-primary">Menu</div>
 
             <li class="sidebar">
               <div class="flex flex-col">
-                <div class="w-full block">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                <div class="block w-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="inline w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                    />
                   </svg>
 
-                  Kelola Barang<svg
+                  Barang
+                  <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
                     aria-hidden="true"
-                    class="w-5 h-5 mt-1 float-right delay-400 duration-500 transition-all"
+                    class="float-right w-5 h-5 mt-1 transition-all duration-500 delay-400"
                   >
                     <path
                       stroke-linecap="round"
@@ -1245,10 +1257,59 @@
                   <ul class="menu menu-compact">
                     <li>
                       <a href="list-barang.html"
-                        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
-                        </svg>  
-                        List Barang</a
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+                          />
+                        </svg>
+                        Data Barang</a
+                      >
+                    </li>
+                    <li>
+                      <a href="barang-masuk.html"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+                          />
+                        </svg>
+                        Barang Masuk</a
+                      >
+                    </li>
+                    <li>
+                      <a href="barang-keluar.html"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="w-5 h-5"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+                          />
+                        </svg>
+                        Barang Keluar</a
                       >
                     </li>
                     <li>
@@ -1260,7 +1321,7 @@
                           stroke-width="1.5"
                           stroke="currentColor"
                           aria-hidden="true"
-                          class="h-5 w-5"
+                          class="w-5 h-5"
                         >
                           <path
                             stroke-linecap="round"
@@ -1268,10 +1329,9 @@
                             d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
                           ></path>
                         </svg>
-                        Kategori Barang<span
-                        class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
-                        aria-hidden="true"
-                      ></a>
+                        Kategori Barang<span class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
+                        aria-hidden="true"></a
+                      >
                     </li>
                   </ul>
                 </div>
@@ -1281,8 +1341,8 @@
             <li class="sidebar">
               <a href="pengajuan.html">
                 <div class="flex flex-col">
-                  <div class="w-full block">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                  <div class="block w-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
                     </svg>   
                     Pengajuan
@@ -1294,8 +1354,8 @@
             <li class="sidebar">
               <a href="permintaan.html">
                 <div class="flex flex-col">
-                  <div class="w-full block">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                  <div class="block w-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
                     </svg>
                     Permintaan
@@ -1307,8 +1367,8 @@
             <li class="sidebar">
               <a href="akun.html">
                 <div class="flex flex-col">
-                  <div class="w-full block">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                  <div class="block w-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                     </svg>                  
                     Kelola Akun
@@ -1321,20 +1381,20 @@
         </div>
       </div>
       <div
-        class="fixed overflow-hidden z-20 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out transition-all delay-500 opacity-0 translate-x-full"
+        class="fixed inset-0 z-20 overflow-hidden transition-all ease-in-out delay-500 transform translate-x-full bg-gray-900 bg-opacity-25 opacity-0"
       >
         <section
-          class="w-80 md:w-96 right-0 absolute bg-base-100 h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform translate-x-full"
+          class="absolute right-0 h-full transition-all duration-500 ease-in-out transform translate-x-full shadow-xl w-80 md:w-96 bg-base-100 delay-400"
         >
-          <div class="relative pb-5 flex flex-col h-full">
-            <div class="navbar flex pl-4 pr-4 shadow-md">
+          <div class="relative flex flex-col h-full pb-5">
+            <div class="flex pl-4 pr-4 shadow-md navbar">
               <button class="float-left btn btn-circle btn-outline btn-sm">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   aria-hidden="true"
-                  class="h-5 w-5"
+                  class="w-5 h-5"
                 >
                   <path
                     fill-rule="evenodd"
@@ -1342,9 +1402,9 @@
                     clip-rule="evenodd"
                   ></path>
                 </svg></button
-              ><span class="ml-2 font-bold text-xl"></span>
+              ><span class="ml-2 text-xl font-bold"></span>
             </div>
-            <div class="overflow-y-scroll pl-4 pr-4">
+            <div class="pl-4 pr-4 overflow-y-scroll">
               <div class="flex flex-col w-full"></div>
             </div>
           </div>
@@ -1356,10 +1416,10 @@
       </div>
       <div class="modal">
         <div class="modal-box">
-          <button class="btn btn-sm btn-circle absolute right-2 top-2">
+          <button class="absolute btn btn-sm btn-circle right-2 top-2">
             ✕
           </button>
-          <h3 class="font-semibold text-2xl pb-6 text-center"></h3>
+          <h3 class="pb-6 text-2xl font-semibold text-center"></h3>
           <div></div>
         </div>
       </div>
@@ -1369,11 +1429,11 @@
   <dialog id="my_modal_1" class="modal">
     <div class="modal-box">
       <form method="dialog">
-        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
       </form>
-      <h3 class="font-semibold text-2xl pb-6 text-center">Konfirmasi</h3>
-      <p class=" text-xl mt-8 text-center">Anda yakin ingin menghapus kategori ini?</p>
-      <div class="modal-action mt-12">
+      <h3 class="pb-6 text-2xl font-semibold text-center">Konfirmasi</h3>
+      <p class="mt-8 text-xl text-center ">Anda yakin ingin menghapus kategori ini?</p>
+      <div class="mt-12 modal-action">
         <form method="dialog">
           <button class="btn btn-ghost btn-outline">Cancel</button>
           <button class="btn btn-primary w-36">Yes</button>
