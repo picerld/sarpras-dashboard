@@ -103,6 +103,7 @@ function searchTable() {
   }
 }
 
+
 // user navbar
 window.onscroll = function () {
   const header = document.querySelector("header")
