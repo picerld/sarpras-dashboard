@@ -10,10 +10,6 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- DataTables CDN -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-
   <script>
     if (
       localStorage.theme === "dark" ||
@@ -95,28 +91,23 @@
             <div class="ml-2 dropdown dropdown-end avatar online">
               <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                 <div class="w-10 rounded-full">
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="profile" />
+                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="profile" />
                 </div>
               </label>
-              <ul
-                  tabindex="0"
-                  class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-                >
-                  <li class="justify-between">
-                    <a href="../user/setting.html"
-                      >Profile Settings<span class="badge">New</span></a
-                    >
-                  </li>
-                  <li class="">
-                    <a href="../auth/login.html">Login</a>
-                  </li>
-                  <li class="">
-                    <a href="../auth/register.html">Register</a>
-                  </li>
-                  <div class="mt-0 mb-0 divider"></div>
-                  <li><a href="../user/index.html">User View</a></li>
-                  <li><a>Logout</a></li>
-                </ul>
+              <ul tabindex="0" class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                <li class="justify-between">
+                  <a href="../user/setting.html">Profile Settings<span class="badge">New</span></a>
+                </li>
+                <li class="">
+                  <a href="../auth/login.html">Login</a>
+                </li>
+                <li class="">
+                  <a href="../auth/register.html">Register</a>
+                </li>
+                <div class="mt-0 mb-0 divider"></div>
+                <li><a href="../user/index.html">User View</a></li>
+                <li><a>Logout</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -131,362 +122,6 @@
                   <option>2021-2022</option>
                   <option>2012-2021</option>
                 </select>
-                <button type="button" class="invisible">
-                  <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                </button>
-                <div
-                  class="transition-all ease-out duration-300 absolute z-10 mt-[1px] text-sm lg:text-xs 2xl:text-sm translate-y-4 opacity-0 hidden" id="date">
-                  <div
-                    class="absolute z-20 h-4 w-4 rotate-45 mt-0.5 ml-[1.2rem] border-l border-t border-gray-300 bg-white dark:bg-slate-800 dark:border-slate-600">
-                  </div>
-                  <div
-                    class="mt-2.5 shadow-sm border border-gray-300 px-1 py-0.5 bg-white dark:bg-slate-800 dark:text-white dark:border-slate-600 rounded-lg">
-                    <div class="flex flex-col py-2 lg:flex-row">
-                      <div
-                        class="pr-1 mb-3 border-gray-300 md:border-b lg:mb-0 lg:border-r lg:border-b-0 dark:border-gray-700">
-                        <ul class="flex flex-wrap w-full pb-1 tracking-wide lg:flex-col lg:pb-0">
-                          <li
-                            class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700">
-                            Today
-                          </li>
-                          <li
-                            class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700">
-                            Yesterday
-                          </li>
-                          <li
-                            class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700">
-                            Last 7 days
-                          </li>
-                          <li
-                            class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700">
-                            Last 30 days
-                          </li>
-                          <li
-                            class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700">
-                            This month
-                          </li>
-                          <li
-                            class="w-1/2 p-2 text-blue-600 transition-all duration-300 rounded cursor-pointer whitespace-nowrap md:w-1/3 lg:w-auto hover:bg-gray-100 dark:hover:bg-white/10 dark:text-blue-400 dark:hover:text-blue-400 hover:text-blue-700">
-                            Last month
-                          </li>
-                        </ul>
-                      </div>
-                      <div
-                        class="flex items-stretch flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-1.5 md:pl-2 pr-2 lg:pr-1">
-                        <div class="w-full md:w-[297px] md:min-w-[297px]">
-                          <div
-                            class="flex items-center space-x-1.5 border border-gray-300 dark:border-gray-700 rounded-md px-2 py-1.5">
-                            <div class="flex-none">
-                              <button type="button"
-                                class="dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 hover:bg-gray-100 rounded-full p-[0.45rem] focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50">
-                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                  stroke-width="1.5" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5">
-                                  </path>
-                                </svg>
-                              </button>
-                            </div>
-                            <div class="flex flex-1 items-center space-x-1.5">
-                              <div class="w-1/2">
-                                <button type="button"
-                                  class="w-full tracking-wide dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 px-3 py-[0.55rem] uppercase hover:bg-gray-100 rounded-md focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50">
-                                  Feb
-                                </button>
-                              </div>
-                              <div class="w-1/2">
-                                <button type="button"
-                                  class="w-full tracking-wide dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 px-3 py-[0.55rem] uppercase hover:bg-gray-100 rounded-md focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50">
-                                  2024
-                                </button>
-                              </div>
-                            </div>
-                            <div class="flex-none">
-                              <button type="button"
-                                class="dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 hover:bg-gray-100 rounded-full p-[0.45rem] focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50">
-                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                  stroke-width="1.5" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5">
-                                  </path>
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                          <div class="px-0.5 sm:px-2 mt-0.5 min-h-[285px]">
-                            <div class="grid grid-cols-7 py-2 border-b border-gray-300 dark:border-gray-700">
-                              <div class="tracking-wide text-center text-gray-500">
-                                Sun
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Mon
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Tue
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Wed
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Thu
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Fri
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Sat
-                              </div>
-                            </div>
-                            <div class="grid grid-cols-7 gap-y-0.5 my-1">
-                              <button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                28</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                29</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                30</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                31</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                1</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                2</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                3</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                4</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                5</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                6</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                7</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                8</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                9</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                10</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                11</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                12</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 font-medium text-white bg-blue-500 rounded-full lg:w-10 lg:h-10">
-                                13</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                14</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                15</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                16</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                17</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                18</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                19</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                20</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                21</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                22</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                23</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                24</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                25</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                26</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                27</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                28</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                29</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                1</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                2</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                3</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                4</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                5</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                6</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                7</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                8</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                9
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="flex items-center">
-                          <div class="hidden w-1 bg-blue-500 rounded-full h-7 md:block"></div>
-                        </div>
-                        <div class="w-full md:w-[297px] md:min-w-[297px]">
-                          <div
-                            class="flex items-center space-x-1.5 border border-gray-300 dark:border-gray-700 rounded-md px-2 py-1.5">
-                            <div class="flex-none">
-                              <button type="button"
-                                class="dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 hover:bg-gray-100 rounded-full p-[0.45rem] focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50">
-                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                  stroke-width="1.5" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5">
-                                  </path>
-                                </svg>
-                              </button>
-                            </div>
-                            <div class="flex flex-1 items-center space-x-1.5">
-                              <div class="w-1/2">
-                                <button type="button"
-                                  class="w-full tracking-wide dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 px-3 py-[0.55rem] uppercase hover:bg-gray-100 rounded-md focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50">
-                                  Mar
-                                </button>
-                              </div>
-                              <div class="w-1/2">
-                                <button type="button"
-                                  class="w-full tracking-wide dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 px-3 py-[0.55rem] uppercase hover:bg-gray-100 rounded-md focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50">
-                                  2024
-                                </button>
-                              </div>
-                            </div>
-                            <div class="flex-none">
-                              <button type="button"
-                                class="dark:text-white/70 dark:hover:bg-white/10 dark:focus:bg-white/10 transition-all duration-300 hover:bg-gray-100 rounded-full p-[0.45rem] focus:ring-1 focus:ring-blue-500/50 focus:bg-blue-100/50">
-                                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                  stroke-width="1.5" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5">
-                                  </path>
-                                </svg>
-                              </button>
-                            </div>
-                          </div>
-                          <div class="px-0.5 sm:px-2 mt-0.5 min-h-[285px]">
-                            <div class="grid grid-cols-7 py-2 border-b border-gray-300 dark:border-gray-700">
-                              <div class="tracking-wide text-center text-gray-500">
-                                Sun
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Mon
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Tue
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Wed
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Thu
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Fri
-                              </div>
-                              <div class="tracking-wide text-center text-gray-500">
-                                Sat
-                              </div>
-                            </div>
-                            <div class="grid grid-cols-7 gap-y-0.5 my-1">
-                              <button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                25</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                26</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                27</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                28</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                29</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                1</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                2</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                3</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                4</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                5</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                6</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                7</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                8</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                9</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                10</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                11</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                12</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                13</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                14</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                15</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                16</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                17</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                18</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                19</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                20</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                21</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                22</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                23</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                24</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                25</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                26</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                27</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                28</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                29</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                30</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 lg:w-10 lg:h-10">
-                                31</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                1</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                2</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                3</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                4</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                5</button><button type="button"
-                                class="flex items-center justify-center w-12 h-12 text-gray-400 lg:w-10 lg:h-10">
-                                6
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             <div class="text-right">
@@ -504,219 +139,474 @@
                   </path>
                 </svg>Share
               </button>
-              <div class="ml-2 dropdown dropdown-bottom dropdown-end">
-                <label tabindex="0" class="normal-case btn btn-ghost btn-sm btn-square"><svg
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" aria-hidden="true" class="w-5">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z">
-                    </path>
-                  </svg></label>
-                <ul tabindex="0" class="p-2 shadow dropdown-content menu menu-compact bg-base-100 rounded-box w-52">
-                  <li>
-                    <a><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" aria-hidden="true" class="w-4">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
-                        </path>
-                      </svg>Email Digests</a>
-                  </li>
-                  <li>
-                    <a><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" aria-hidden="true" class="w-4">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
-                        </path>
-                      </svg>Download</a>
-                  </li>
-                </ul>
-              </div>
+
             </div>
           </div>
 
           <!-- content start -->
-          
-          <div class="w-full p-6 mt-2 mb-10 shadow-xl card bg-base-100">
-            <div class="inline-block text-xl font-semibold">
-              <div class="flex items-center justify-center mb-5 lg:inline-block lg:float-left">
-                <label class="flex items-center gap-2 input input-md input-bordered">
-                  <input id="searchInput" onkeyup="searchTable()" type="text" class="grow bg-base-100 dark:bg-dark" placeholder="Cari item..." />
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
-                </label>
+
+          <div class="w-full p-6 mt-10 mb-10 shadow-xl card bg-base-100">
+            <div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-medium">Barang</h3>
+                <div aria-label="Breadcrumbs" class="hidden p-0 text-sm breadcrumbs sm:inline">
+                  <ul>
+                    <li class="text-base-content/60"><a href="/app/admin">Home</a></li>
+                    <li>Items</li>
+                  </ul>
+                </div>
               </div>
-              <div class="flex items-center justify-center mr-5 lg:inline-block lg:float-right lg:mr-0">
-                <div class="flex float-right gap-2 lg:inline-block">
-                  <button type="button" class="px-6 normal-case btn btn-sm btn-base dark:hover:text-white" 
-                  id="menu-button" aria-expanded="true" aria-haspopup="true">
-                  Export
-                  <svg class="w-5 h-5 -mr-1 text-gray-600 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                  </svg>
-                </button>
-                <a href="tambah-barang.html"  class="px-6 normal-case btn btn-sm btn-base dark:hover:text-white">
-                  Tambah
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                  </svg>                  
-                </a>
-                  
-                  <div id="menu-drop" class="absolute right-0 z-10 hidden w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-neutral-900 ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                    <div class="py-1" role="none">
-                      <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white" role="menuitem" tabindex="-1" id="menu-item-0">Copy</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white" role="menuitem" tabindex="-1" id="menu-item-0">PDF</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white" role="menuitem" tabindex="-1" id="menu-item-1">Excel</a>
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white" role="menuitem" tabindex="-1" id="menu-item-2">CSV</a>
+              <div class="mt-5">
+                <div aria-label="Card" class="mt-5 card bg-base-100 card-bordered">
+                  <div class="p-0 card-body">
+                    <div class="relative flex items-center justify-between px-5 pt-5">
+                      <div class="inline-flex items-center gap-3">
+                        <div
+                          class="flex flex-row items-center px-2 border form-control rounded-box border-base-content/20">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" class="text-base-content/60" font-size="15" width="1em"
+                            height="1em" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2">
+                              <circle cx="11" cy="11" r="8"></circle>
+                              <path d="m21 21l-4.3-4.3"></path>
+                            </g>
+                          </svg><input placeholder="Cari data barang ..." id="searchInput" onkeyup="searchTable()"
+                            class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0">
+                        </div>
+                        <div class="hidden sm:block"><select aria-label="Select category"
+                            class="select select-sm select-bordered focus:outline-offset-0">
+                            <option value="default" disabled="">Category</option>
+                            <option value="videos">ATK</option>
+                            <option value="documents">Alat Kebersihan</option>
+                            <option value="archives">Alat Bangunan</option>
+                            <option value="other">Other</option>
+                          </select></div>
+                      </div>
+                      <div class="inline-flex items-center gap-3">
+                        <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost"><svg
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M15 4V2m0 14v-2M8 9h2m10 0h2m-4.2 2.8L19 13m-4-4h0m2.8-2.8L19 5M3 21l9-9m.2-5.8L11 5">
+                            </path>
+                          </svg><span>Bulk Actions</span>
+                        </button>
+                        <a href="tambah-barang.html" class="dropdown dropdown-left dropdown-bottom"><label tabindex="0"
+                            class="h-8 border btn btn-ghost btn-xs border-base-content/20"><svg
+                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+                              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M5 12h14m-7-7v14"></path>
+                            </svg></label>
+                        </a>
+                        <button type="button"
+                          class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost"
+                          id="menu-button" aria-expanded="true" aria-haspopup="true">
+                          Export
+                          <svg class="w-5 h-5 -mr-1 text-gray-600 dark:text-gray-400" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                              clip-rule="evenodd" />
+                          </svg>
+                        </button>
+
+                      </div>
+
                     </div>
 
+                    <div id="menu-drop"
+                      class="absolute right-0 hidden w-56 mt-2 origin-top-right rounded-md shadow-lg bg-slate-50 bottom-12 dark:bg-neutral-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                      <div class="py-1" role="none">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <a href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                          role="menuitem" tabindex="-1" id="menu-item-0">Copy</a>
+                        <a href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                          role="menuitem" tabindex="-1" id="menu-item-0">PDF</a>
+                        <a href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                          role="menuitem" tabindex="-1" id="menu-item-1">Excel</a>
+                        <a href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                          role="menuitem" tabindex="-1" id="menu-item-2">CSV</a>
+                      </div>
+
+                    </div>
+                    <div class="overflow-auto">
+                      <table class="table mt-2 rounded-box" id="myTable">
+                        <thead>
+                          <tr>
+                            <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <th><span class="text-sm font-medium text-base-content/80">ID</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Nama</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Kategori</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Kode</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Merek</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Satuan</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Tanggal</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Aksi</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">#0001</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Pulpen Kantor</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm font-medium">ATK011</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div class="flex items-center space-x-3 truncate">
+                                  <div class="font-medium">Faster C600</div>
+                                </div>
+                            </td>
+                            <td>
+                              <div class="text-sm capitalize">Pcs</div>
+                            </td>
+                            <td>
+                              <div class="text-sm">17 Apr 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit"><a aria-label="Show order link"
+                                  href="detailItem.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content/70" font-size="16" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button></a>
+                                    <a aria-label="Show order link" href="">
+                                      <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
+                                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
+                                          width="1em" height="1em" viewBox="0 0 24 24">
+                                          <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2"
+                                            d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
+                                        </svg>
+                                      </button>
+                                    </a><button aria-label="Delete order"
+                                  class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
+                                    viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
+                                    </path>
+                                  </svg></button></div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">#0002</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Sapu</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Kebersihan
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm font-medium">ALK011</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Sapu T</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm capitalize">Pcs</div>
+                            </td>
+                            <td>
+                              <div class="text-sm">21 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit"><a aria-label="Show order link"
+                                  href="detailItem.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content/70" font-size="16" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button>
+                                  </a>
+                                  <a aria-label="Show order link" href="">
+                                    <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
+                                        width="1em" height="1em" viewBox="0 0 24 24">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="2"
+                                          d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
+                                      </svg>
+                                    </button>
+                                  </a>
+                                  <button aria-label="Delete order"
+                                  class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
+                                    viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
+                                    </path>
+                                  </svg></button></div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">#0003</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Palu</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Bangunan
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm font-medium">ALB011</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Palu Trex</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm capitalize">Pcs</div>
+                            </td>
+                            <td>
+                              <div class="text-sm">05 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit"><a aria-label="Show order link"
+                                  href="detailItem.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content/70" font-size="16" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button>
+                                  </a>
+                                  <a aria-label="Show order link" href="">
+                                    <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
+                                        width="1em" height="1em" viewBox="0 0 24 24">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="2"
+                                          d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
+                                      </svg>
+                                    </button>
+                                  </a>
+                                  
+                                  <button aria-label="Delete order"
+                                  class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
+                                    viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
+                                    </path>
+                                  </svg></button></div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">#0004</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Palu</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm font-medium">ATK022</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Faber Casteel</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm capitalize">Pcs</div>
+                            </td>
+                            <td>
+                              <div class="text-sm">05 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit">
+                                <a aria-label="Show order link"
+                                  href="detailItem.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content/70" font-size="16" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button>
+                                  </a>
+                                  <a aria-label="Show order link" href="">
+                                    <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
+                                        width="1em" height="1em" viewBox="0 0 24 24">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                          stroke-linejoin="round" stroke-width="2"
+                                          d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
+                                      </svg>
+                                    </button>
+                                  </a>
+                                  <button aria-label="Delete order"
+                                  class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
+                                    viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
+                                    </path>
+                                  </svg></button></div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">#0005</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Cat Air</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Bangunan
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm font-medium">ALB022</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Air Water</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm capitalize">Pcs</div>
+                            </td>
+                            <td>
+                              <div class="text-sm">27 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit">
+                                <a aria-label="Show order link" href="detailItem.html">
+                                  <button aria-label="Show order" class="btn btn-sm btn-square btn-ghost"><svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-base-content/70" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg>
+                                  </button>
+                                </a>
+                                <a aria-label="Show order link" href="">
+                                  <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
+                                      width="1em" height="1em" viewBox="0 0 24 24">
+                                      <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
+                                    </svg>
+                                  </button>
+                                </a>
+                                <button aria-label="Delete order"
+                                  class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
+                                    viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                      stroke-linejoin="round" stroke-width="2"
+                                      d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
+                                    </path>
+                                  </svg></button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="flex items-center justify-end px-5 pt-3 pb-5">
+                      <div class="join"><button aria-label="pagination-prev" class="gap-2 btn join-item btn-sm"><svg
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="m15 18l-6-6l6-6"></path>
+                          </svg></button><button aria-label="pagination-1"
+                          class="btn join-item btn-sm btn-primary btn-active">1</button><button
+                          aria-label="pagination-2" class="btn join-item btn-sm">2</button><button
+                          aria-label="pagination-next" class="gap-2 btn join-item btn-sm"><svg
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2" d="m9 18l6-6l-6-6"></path>
+                          </svg></button></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="w-full h-full pb-6 bg-base-100">
-              <div class="w-full overflow-x-auto">
-                <table class="table w-full lg:text-base" id="myTable">
-                  <thead class="text-dark dark:text-slate-300">
-                    <tr class="text-base bg-base-200">
-                      <th class="text-center">Kode</th>
-                      <th class="text-center">Nama</th>
-                      <th class="text-center">Merk</th>
-                      <th class="text-center">Supplier</th>
-                      <th class="text-center">Dana</th>
-                      <th class="text-center">Kategori</th>
-                      <th class="text-center"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    <tr>
-                      <td class="text-center">ATK011</td>
-                      <td class="text-center">
-                        Pulpen
-                      </td>
-                      <td class="text-center">Faster C600</td>
-                      <td class="text-center">Toko ATK</td>
-                      <td class="text-center">BOS</td>
-                      <td class="text-center">
-                        Alat Tulis
-                      </td>
-                      <td class="text-center">
-                        <a href="detailItem.html" class="px-10 btn btn-square bg-slate-50 btn-sm dark:bg-neutral-900 hover:bg-slate-100 dark:hover:text-white">
-                          detail                    
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td class="text-center">ATK098</td>
-                      <td class="text-center">
-                        Pensil
-                      </td>
-                      <td class="text-center">Faber-Castell</td>
-                      <td class="text-center">Toko Serba Ada</td>
-                      <td class="text-center">BOS</td>
-                      <td class="text-center">
-                        Alat Tulis
-                      </td>
-                      <td class="text-center">
-                        <a class="px-10 btn btn-square bg-slate-50 btn-sm dark:bg-neutral-900 hover:bg-slate-100 dark:hover:text-white">
-                          detail                    
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td class="text-center">BN899</td>
-                      <td class="text-center">
-                        Kertas Film
-                      </td>
-                      <td class="text-center">PaperOne Premium</td>
-                      <td class="text-center">Toko Film</td>
-                      <td class="text-center">BOS</td>
-                      <td class="text-center">
-                        Bahan
-                      </td>
-                      <td class="text-center">
-                        <a class="px-10 btn btn-square bg-slate-50 btn-sm dark:bg-neutral-900 hover:bg-slate-100 dark:hover:text-white">
-                          detail                    
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td class="text-center">BR021</td>
-                      <td class="text-center">
-                        Printer
-                      </td>
-                      <td class="text-center">Epson L3110</td>
-                      <td class="text-center">Elektronika</td>
-                      <td class="text-center">APB</td>
-                      <td class="text-center">
-                        Elektronik
-                      </td>
-                      <td class="text-center">
-                        <a class="px-10 btn btn-square bg-slate-50 btn-sm dark:bg-neutral-900 hover:bg-slate-100 dark:hover:text-white">
-                          detail                    
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td class="text-center">BR099</td>
-                      <td class="text-center">
-                        Monitor
-                      </td>
-                      <td class="text-center">PhilipsMonitor LCD</td>
-                      <td class="text-center">Toko Elektronik</td>
-                      <td class="text-center">APB</td>
-                      <td class="text-center">
-                        Elektronik
-                      </td>
-                      <td class="text-center">
-                        <a class="px-10 btn btn-square bg-slate-50 btn-sm dark:bg-neutral-900 hover:bg-slate-100 dark:hover:text-white">
-                          detail                    
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td class="text-center">BN077</td>
-                      <td class="text-center">
-                        Kertas HVS
-                      </td>
-                      <td class="text-center">Sidu</td>
-                      <td class="text-center">Toko Budi Jaya</td>
-                      <td class="text-center">BOS</td>
-                      <td class="text-center">
-                        Bahan
-                      </td>
-                      <td class="text-center">
-                        <a class="px-10 btn btn-square bg-slate-50 btn-sm dark:bg-neutral-900 hover:bg-slate-100 dark:hover:text-white">
-                          detail                    
-                        </a>
-                      </td>
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-
-                <div class="py-6 lg:float-left">
-                  <span class="flex items-center justify-center col-span-3">
-                    <p class="text-sm">Showing 1-4 items of 35</p>
-                  </span>
-                </div>
-                <div class="flex items-center justify-center py-6 join lg:float-end">
-                  <button class="join-item btn btn-sm">«</button>
-                    <button class="join-item btn btn-sm">1</button>
-                    <button class="join-item btn btn-sm">2</button>
-                    <button class="join-item btn btn-disabled btn-sm">...</button>
-                    <button class="join-item btn btn-sm">99</button>
-                    <button class="join-item btn btn-sm">100</button>
-                    <button class="join-item btn btn-sm">»</button>
-                </div>
-
-            </div>
-          </div>
 
         </main>
       </div>
@@ -732,22 +622,15 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
-          <li
-              class="flex flex-row items-center justify-start mb-2 text-xl font-semibold dark:text-white"
-            >
-              <a href="#"
-                ><img
-                  class="w-10 font-semibold mask mask-squircle"
-                  src="../../src/dist/images/logo.png"
-                  alt="logo"
-                />Sarpas</a
-              >
-            </li>
+          <li class="flex flex-row items-center justify-start mb-2 text-xl font-semibold dark:text-white">
+            <a href="#"><img class="w-10 font-semibold mask mask-squircle" src="../../src/dist/images/logo.png"
+                alt="logo" />Sarpas</a>
+          </li>
 
           <li class="">
-            <a class="font-semibold" href="index.html" aria-current="page"><svg
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" aria-hidden="true" class="w-6 h-6">
+            <a class="font-semibold" href="index.html" aria-current="page"><svg xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
                   d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z">
                 </path>
@@ -759,117 +642,54 @@
           <li class="sidebar">
             <div class="flex flex-col">
               <div class="block w-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="inline w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
-                  />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="inline w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
                 </svg>
 
                 Barang
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="float-right w-5 h-5 mt-1 transition-all duration-500 delay-400"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                  ></path>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" aria-hidden="true"
+                  class="float-right w-5 h-5 mt-1 transition-all duration-500 delay-400">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
                 </svg>
               </div>
               <div class="w-full sidebarOpen">
                 <ul class="menu menu-compact">
                   <li>
-                    <a href="list-barang.html" class="font-semibold bg-base-200"
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-5 h-5"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
-                        />
+                    <a href="list-barang.html" class="font-semibold bg-base-200"><svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
                       </svg>
                       Data Barang<span class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
-                      aria-hidden="true"></a
-                    >
+                        aria-hidden="true"></a>
                   </li>
                   <li>
-                    <a href="barang-masuk.html"
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-5 h-5"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
-                        />
+                    <a href="barang-masuk.html"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
                       </svg>
-                      Barang Masuk</a
-                    >
+                      Barang Masuk</a>
                   </li>
                   <li>
-                    <a href="barang-keluar.html"
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-5 h-5"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
-                        />
+                    <a href="barang-keluar.html"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
                       </svg>
-                      Barang Keluar</a
-                    >
+                      Barang Keluar</a>
                   </li>
                   <li>
-                    <a href="kategori.html"
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                        class="w-5 h-5"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
-                        ></path>
+                    <a href="kategori.html"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z">
+                        </path>
                       </svg>
-                      Kategori Barang</a
-                    >
+                      Kategori Barang</a>
                   </li>
                 </ul>
               </div>
@@ -880,9 +700,11 @@
             <a href="pengajuan.html">
               <div class="flex flex-col">
                 <div class="block w-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
-                  </svg>   
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="inline w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
+                  </svg>
                   Pengajuan
                 </div>
               </div>
@@ -893,8 +715,10 @@
             <a href="permintaan.html">
               <div class="flex flex-col">
                 <div class="block w-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="inline w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
                   </svg>
                   Permintaan
                 </div>
@@ -906,15 +730,17 @@
             <a href="akun.html">
               <div class="flex flex-col">
                 <div class="block w-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-                  </svg>                  
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="inline w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                  </svg>
                   Kelola Akun
                 </div>
               </div>
             </a>
           </li>
-          
+
         </ul>
       </div>
     </div>
@@ -953,7 +779,7 @@
     </div>
   </div>
 
-      <!-- modal delete -->
+  <!-- modal delete -->
   <dialog id="my_modal_1" class="modal">
     <div class="modal-box">
       <form method="dialog">
@@ -971,7 +797,7 @@
   </dialog>
 
   <script src="../../src/js/js.js"></script>
-  
+
 </body>
 
 </html>
