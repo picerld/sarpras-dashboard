@@ -64,30 +64,6 @@
                 </svg><span class="indicator-item badge badge-secondary badge-sm">15</span>
               </div>
             </button>
-            <div class="dropdown dropdown-end">
-              <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                <div class="indicator">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-                  </svg>
-
-                  <span class="badge badge-sm badge-secondary indicator-item">8</span>
-                </div>
-              </div>
-              <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-                <div class="card-body">
-                  <span class="text-lg font-bold">8 Items</span>
-                  <span class="text-info">Subtotal: $999</span>
-                  <div class="card-actions">
-                    <button class="btn btn-primary btn-block">
-                      View cartt
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="ml-2 dropdown dropdown-end avatar online">
               <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                 <div class="w-10 rounded-full">
@@ -131,13 +107,23 @@
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99">
                   </path>
-                </svg>Refresh Data</button><button class="ml-2 normal-case btn btn-ghost btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" aria-hidden="true" class="w-4 mr-2">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z">
-                  </path>
-                </svg>Share
+                </svg>Refresh Data</button>
+                <button class="ml-2 normal-case btn btn-ghost btn-sm">
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  class="w-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  ></path></svg
+                >Email Digests
               </button>
 
             </div>
@@ -218,7 +204,7 @@
                     </div>
 
                     <div id="menu-drop"
-                      class="absolute right-0 hidden w-56 mt-2 origin-top-right rounded-md shadow-lg bg-slate-50 bottom-12 dark:bg-neutral-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      class="absolute right-0 hidden w-56 mt-2 origin-top-right rounded-md shadow-lg top-10 bg-slate-50 dark:bg-neutral-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
                       role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                       <div class="py-1" role="none">
                         <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
@@ -242,21 +228,20 @@
                         <thead>
                           <tr>
                             <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <th><span class="text-sm font-medium text-base-content/80">ID</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Kode</span></th>
                             <th><span class="text-sm font-medium text-base-content/80">Nama</span></th>
                             <th><span class="text-sm font-medium text-base-content/80">Kategori</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Kode</span></th>
                             <th><span class="text-sm font-medium text-base-content/80">Merek</span></th>
                             <th><span class="text-sm font-medium text-base-content/80">Satuan</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Tanggal</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Aksi</span></th>
+                            <th class="text-center"><span class="text-sm font-medium text-base-content/80">Stok</span></th>
+                            <th class="text-center"><span class="text-sm font-medium text-base-content/80">Aksi</span></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="font-medium">#0001</div>
+                              <div class="text-sm font-medium">ATK011</div>
                             </td>
                             <td>
                               <div class="font-medium">Pulpen Kantor</div>
@@ -268,9 +253,6 @@
                               </div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">ATK011</div>
-                            </td>
-                            <td>
                               <div class="flex items-center gap-2">
                                 <div class="flex items-center space-x-3 truncate">
                                   <div class="font-medium">Faster C600</div>
@@ -279,8 +261,8 @@
                             <td>
                               <div class="text-sm capitalize">Pcs</div>
                             </td>
-                            <td>
-                              <div class="text-sm">17 Apr 2024</div>
+                            <td class="text-center">
+                              <div class="text-sm">50</div>
                             </td>
                             <td>
                               <div class="inline-flex w-fit"><a aria-label="Show order link"
@@ -320,7 +302,7 @@
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="font-medium">#0002</div>
+                              <div class="text-sm font-medium">ALK011</div>
                             </td>
                             <td>
                               <div class="font-medium">Sapu</div>
@@ -333,9 +315,6 @@
                               </div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">ALK011</div>
-                            </td>
-                            <td>
                               <div class="flex items-center space-x-3 truncate">
                                 <div class="font-medium">Sapu T</div>
                               </div>
@@ -343,8 +322,8 @@
                             <td>
                               <div class="text-sm capitalize">Pcs</div>
                             </td>
-                            <td>
-                              <div class="text-sm">21 Mei 2024</div>
+                            <td class="text-center">
+                              <div class="text-sm">13</div>
                             </td>
                             <td>
                               <div class="inline-flex w-fit"><a aria-label="Show order link"
@@ -386,7 +365,7 @@
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="font-medium">#0003</div>
+                              <div class="text-sm font-medium">ALB011</div>
                             </td>
                             <td>
                               <div class="font-medium">Palu</div>
@@ -399,9 +378,6 @@
                               </div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">ALB011</div>
-                            </td>
-                            <td>
                               <div class="flex items-center space-x-3 truncate">
                                 <div class="font-medium">Palu Trex</div>
                               </div>
@@ -409,8 +385,8 @@
                             <td>
                               <div class="text-sm capitalize">Pcs</div>
                             </td>
-                            <td>
-                              <div class="text-sm">05 Mei 2024</div>
+                            <td class="text-center">
+                              <div class="text-sm">16</div>
                             </td>
                             <td>
                               <div class="inline-flex w-fit"><a aria-label="Show order link"
@@ -453,7 +429,7 @@
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="font-medium">#0004</div>
+                              <div class="text-sm font-medium">ATK022</div>
                             </td>
                             <td>
                               <div class="font-medium">Palu</div>
@@ -465,9 +441,6 @@
                               </div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">ATK022</div>
-                            </td>
-                            <td>
                               <div class="flex items-center space-x-3 truncate">
                                 <div class="font-medium">Faber Casteel</div>
                               </div>
@@ -475,8 +448,8 @@
                             <td>
                               <div class="text-sm capitalize">Pcs</div>
                             </td>
-                            <td>
-                              <div class="text-sm">05 Mei 2024</div>
+                            <td class="text-center">
+                              <div class="text-sm">60</div>
                             </td>
                             <td>
                               <div class="inline-flex w-fit">
@@ -519,7 +492,7 @@
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="font-medium">#0005</div>
+                              <div class="text-sm font-medium">ALB022</div>
                             </td>
                             <td>
                               <div class="font-medium">Cat Air</div>
@@ -532,9 +505,6 @@
                               </div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">ALB022</div>
-                            </td>
-                            <td>
                               <div class="flex items-center space-x-3 truncate">
                                 <div class="font-medium">Air Water</div>
                               </div>
@@ -542,8 +512,8 @@
                             <td>
                               <div class="text-sm capitalize">Pcs</div>
                             </td>
-                            <td>
-                              <div class="text-sm">27 Mei 2024</div>
+                            <td class="text-center">
+                              <div class="text-sm">5</div>
                             </td>
                             <td>
                               <div class="inline-flex w-fit">
@@ -690,6 +660,24 @@
                         </path>
                       </svg>
                       Kategori Barang</a>
+                  </li>
+                  <li>
+                    <a href="laporan.html"><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-5 h-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+                      />
+                    </svg>
+                      Laporan
+                    </a>
                   </li>
                 </ul>
               </div>

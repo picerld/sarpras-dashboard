@@ -15,6 +15,6 @@ module.exports = {
     "prettier-plugin-tailwindcss",
   ],
   daisyui: {
-    themes: ["light", "dark"],
+    themes: ["light", "dark", "cupcake"],
   },
 };
