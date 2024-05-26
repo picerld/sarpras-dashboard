@@ -166,9 +166,9 @@
     <section id="main" class="py-6 lg:px-10">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="grid w-full place-items-center bg-base-200">
+          <div class="grid w-full place-items-center bg-base-200 dark:bg-base-300">
             <div class="content-center justify-center w-full max-w-6xl px-4 py-10">
-              <h2 class="text-5xl font-bold text-center transition duration-150 cursor-pointer hover:scale-105 group">Sarana Prasarana <span class="group-hover:text-primary">Sebelas</span> 🚀</h2>
+              <h2 class="text-5xl font-bold text-center cursor-pointer">Sa<span id="tagline"></span></h2>
               <div class="grid grid-cols-1 gap-8 mt-24 md:grid-cols-3">
                 <div class="w-full shadow-xl card bg-base-100 hover:shadow-2xl">
                   <div class="grid -mt-4 place-items-center">
@@ -271,6 +271,16 @@
 
 
   <script src="../../src/js/js.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    let tagline = new Typed('#tagline', {
+      strings: ['rana <span class="text-primary">Prasarana🚀</span>', 'rpras <span class="text-primary">Sebelas⭐</span>'],
+      typeSpeed: 70,
+      backSpeed: 70,
+      backDelay: 2000,
+      loop: true
+    });
+  </script>
+  
 </body>
-
 </html>
