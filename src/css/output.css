@@ -2243,6 +2243,10 @@ html {
   .btn-primary {
     --btn-color: var(--fallback-p);
   }
+
+  .btn-success {
+    --btn-color: var(--fallback-su);
+  }
 }
 
 @supports (color: color-mix(in oklab, black, black)) {
@@ -2311,6 +2315,16 @@ html {
   .btn-primary {
     --btn-color: var(--p);
   }
+
+  .btn-success {
+    --btn-color: var(--su);
+  }
+}
+
+.btn-success {
+  --tw-text-opacity: 1;
+  color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
+  outline-color: var(--fallback-su,oklch(var(--su)/1));
 }
 
 .btn.glass {
@@ -3504,6 +3518,10 @@ html:has(.drawer-toggle:checked) {
   position: absolute;
 }
 
+.modal-bottom {
+  place-items: end;
+}
+
 .select-sm {
   height: 2rem;
   min-height: 2rem;
@@ -3749,6 +3767,11 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: 2rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .-mr-1 {
   margin-right: -0.25rem;
 }
@@ -3879,6 +3902,26 @@ html:has(.drawer-toggle:checked) {
 
 .mt-9 {
   margin-top: 2.25rem;
+}
+
+.ml-48 {
+  margin-left: 12rem;
+}
+
+.ml-52 {
+  margin-left: 13rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.ml-px {
+  margin-left: 1px;
+}
+
+.ml-96 {
+  margin-left: 24rem;
 }
 
 .block {
@@ -4268,6 +4311,10 @@ html:has(.drawer-toggle:checked) {
   border-width: 0px;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-base-content\/20 {
   border-color: var(--fallback-bc,oklch(var(--bc)/0.2));
 }
@@ -4356,6 +4403,16 @@ html:has(.drawer-toggle:checked) {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-success {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-su,oklch(var(--su)/var(--tw-bg-opacity)));
+}
+
+.bg-error {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-er,oklch(var(--er)/var(--tw-bg-opacity)));
 }
 
 .bg-opacity-25 {
@@ -4479,6 +4536,11 @@ html:has(.drawer-toggle:checked) {
   padding-bottom: 1.5rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -4577,6 +4639,11 @@ html:has(.drawer-toggle:checked) {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-black {
@@ -4845,7 +4912,6 @@ html:has(.drawer-toggle:checked) {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
 .nav-fixed {
@@ -4915,6 +4981,25 @@ html:has(.drawer-toggle:checked) {
   --tw-border-opacity: 1;
   border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity)));
   outline-color: var(--fallback-p,oklch(var(--p)/1));
+}
+
+@media (min-width: 640px) {
+  .sm\:modal-middle {
+    place-items: center;
+  }
+
+  .sm\:modal-middle :where(.modal-box) {
+    width: 91.666667%;
+    max-width: 32rem;
+    --tw-translate-y: 0px;
+    --tw-scale-x: .9;
+    --tw-scale-y: .9;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    border-top-left-radius: var(--rounded-box, 1rem);
+    border-top-right-radius: var(--rounded-box, 1rem);
+    border-bottom-right-radius: var(--rounded-box, 1rem);
+    border-bottom-left-radius: var(--rounded-box, 1rem);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -4998,6 +5083,31 @@ html:has(.drawer-toggle:checked) {
   background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-success-content:hover {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-suc,oklch(var(--suc)/var(--tw-bg-opacity)));
+}
+
+.hover\:bg-dark:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 35 42 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-error:hover {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-er,oklch(var(--er)/var(--tw-bg-opacity)));
+}
+
+.hover\:bg-success:hover {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-su,oklch(var(--su)/var(--tw-bg-opacity)));
+}
+
 .hover\:text-gray-300:hover {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -5019,6 +5129,10 @@ html:has(.drawer-toggle:checked) {
 
 .hover\:opacity-80:hover {
   opacity: 0.8;
+}
+
+.hover\:opacity-60:hover {
+  opacity: 0.6;
 }
 
 .hover\:shadow-2xl:hover {
@@ -5158,6 +5272,46 @@ html:has(.drawer-toggle:checked) {
 @media (min-width: 768px) {
   .md\:ml-48 {
     margin-left: 12rem;
+  }
+
+  .md\:ml-52 {
+    margin-left: 13rem;
+  }
+
+  .md\:ml-\[10rem\] {
+    margin-left: 10rem;
+  }
+
+  .md\:ml-\[50rem\] {
+    margin-left: 50rem;
+  }
+
+  .md\:ml-\[30rem\] {
+    margin-left: 30rem;
+  }
+
+  .md\:ml-\[20rem\] {
+    margin-left: 20rem;
+  }
+
+  .md\:ml-\[25rem\] {
+    margin-left: 25rem;
+  }
+
+  .md\:ml-\[26rem\] {
+    margin-left: 26rem;
+  }
+
+  .md\:ml-\[27rem\] {
+    margin-left: 27rem;
+  }
+
+  .md\:ml-\[28rem\] {
+    margin-left: 28rem;
+  }
+
+  .md\:ml-\[27\.5rem\] {
+    margin-left: 27.5rem;
   }
 
   .md\:block {

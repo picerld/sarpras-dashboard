@@ -136,40 +136,42 @@
     </div>
 
     <!-- content start -->
-    <div class="w-full min-h-screen px-20 pt-20 mt-2 shadow-xl card bg-base-200">
-      <form action="/app/user/index.html" class="w-full">
-        <div class="flex flex-wrap">
-          <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
-            <label class="w-full max-w-lg form-control">
-              <div class="label">
-                <span class="font-semibold label-text">Unit/Nama</span>
-              </div>
-              <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered" />
-            </label>
+    <div class="flex flex-col items-center justify-center min-h-screen pt-20 bg-base-200">
+      <h1 class="text-3xl font-bold">Form <span class="font-bold text-primary">Permintaan</span></h1>
+      <div class="py-10">
+        <form action="/app/user/index.html" class="w-full">
+          <div class="flex flex-wrap">
+            <div class="flex items-center justify-center w-full px-4 py-2">
+              <label class="w-full max-w-sm form-control">
+                <div class="label">
+                  <span class="font-semibold label-text">Unit/Nama</span>
+                </div>
+                <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered" />
+              </label>
+            </div>
+  
+            <div class="flex items-center justify-center w-full px-4 py-2">
+              <label class="w-full max-w-sm form-control">
+                <div class="label">
+                  <span class="font-semibold label-text">Barang</span>
+                </div>
+                <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered" />
+              </label>
+            </div>
+
+            <div class="flex items-center justify-center w-full px-4 py-2">
+              <label class="w-full max-w-sm form-control">
+                <div class="label">
+                  <span class="font-semibold label-text">Barang</span>
+                </div>
+                <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered" />
+              </label>
+            </div>
+  
+            <input type="submit" class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-[27.5rem] btn btn-primary hover:opacity-80 text-base-200">
           </div>
-
-          <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
-            <label class="w-full max-w-lg form-control">
-              <div class="label">
-                <span class="font-semibold label-text">Barang</span>
-              </div>
-              <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered" />
-            </label>
-          </div>
-
-          <div class="w-full px-4 py-2">
-            <label class="w-full max-w-screen-xl form-control">
-              <div class="label">
-                <span class="font-semibold label-text">Quantity</span>
-              </div>
-              <input type="number" min="1" required placeholder="Type here ..." class="w-full max-w-screen-xl input input-bordered" />
-            </label>
-          </div>
-
-
-          <input type="submit" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
     
     <footer class="p-10 text-white footer bg-dark">
