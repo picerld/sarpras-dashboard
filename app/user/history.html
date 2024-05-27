@@ -143,12 +143,11 @@
               class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a class="justify-between">
+                <a class="justify-between" href="/app/user/setting.html">
                   Profile
                   <span class="badge">New</span>
                 </a>
               </li>
-              <li><a href="../admin/index.html">Admin View</a></li>
               <li><a>Logout</a></li>
             </ul>
           </div>
@@ -176,62 +175,45 @@
                       <circle cx="11" cy="11" r="8"></circle>
                       <path d="m21 21l-4.3-4.3"></path>
                     </g>
-                  </svg><input placeholder="Cari data barang ..." id="searchInput" onkeyup="searchTable()"
+                  </svg><input placeholder="Cari data ..." id="searchInput" onkeyup="searchTable()"
                     class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0">
                 </div>
                 <div class="hidden sm:block"><select aria-label="Select category"
                     class="select select-sm select-bordered focus:outline-offset-0">
-                    <option value="default" disabled selected="">Category</option>
-                    <option value="videos">ATK</option>
-                    <option value="documents">Alat Kebersihan</option>
-                    <option value="archives">Alat Bangunan</option>
-                    <option value="other">Other</option>
-                  </select></div>
+                    <option value="default" disabled selected="">Status</option>
+                      <option value="videos">Disetujui</option>
+                      <option value="documents">Diprogress</option>
+                      <option value="documents">Ditolak</option>
+                    </select>
+                  </div>
+                  <div class="hidden sm:block"><select aria-label="Select category"
+                    class="select select-sm select-bordered focus:outline-offset-0">
+                    <option value="default" disabled selected="">Jenis</option>
+                      <option value="videos">Pengajuan</option>
+                      <option value="documents">Permintaan</option>
+                    </select>
+                  </div>
               </div>
               <div class="inline-flex items-center gap-3">
-                <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 4V2m0 14v-2M8 9h2m10 0h2m-4.2 2.8L19 13m-4-4h0m2.8-2.8L19 5M3 21l9-9m.2-5.8L11 5">
-                    </path>
-                  </svg><span>Bulk Actions</span>
+                <button type="button" class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost" 
+                id="menu-button" aria-expanded="true" aria-haspopup="true">
+                Export
+                  <svg class="w-5 h-5 -mr-1 text-gray-600 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                  </svg>
                 </button>
-                <button type="button"
-                          class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost"
-                          id="menu-button" aria-expanded="true" aria-haspopup="true">
-                          Export
-                          <svg class="w-5 h-5 -mr-1 text-gray-600 dark:text-gray-400" viewBox="0 0 20 20"
-                            fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                              clip-rule="evenodd" />
-                          </svg>
-                  </button>
-
               </div>
 
             </div>
-
-            <div id="menu-drop"
-                      class="absolute right-0 hidden w-56 mt-2 origin-top-right rounded-md shadow-lg top-10 bg-slate-50 dark:bg-neutral-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
-                      role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                      <div class="py-1" role="none">
-                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                        <a href="#"
-                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
-                          role="menuitem" tabindex="-1" id="menu-item-0">Copy</a>
-                        <a href="#"
-                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
-                          role="menuitem" tabindex="-1" id="menu-item-0">PDF</a>
-                        <a href="#"
-                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
-                          role="menuitem" tabindex="-1" id="menu-item-1">Excel</a>
-                        <a href="#"
-                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
-                          role="menuitem" tabindex="-1" id="menu-item-2">CSV</a>
-                      </div>
+            
+              <div id="menu-drop" class="absolute right-0 hidden w-56 mt-2 origin-top-right rounded-md shadow-lg bg-slate-50 top-10 dark:bg-neutral-900 ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                <div class="py-1" role="none">
+                  <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white" role="menuitem" tabindex="-1" id="menu-item-0">Copy</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white" role="menuitem" tabindex="-1" id="menu-item-0">PDF</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white" role="menuitem" tabindex="-1" id="menu-item-1">Excel</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white" role="menuitem" tabindex="-1" id="menu-item-2">CSV</a>
+                </div>
 
             </div>
             <div class="overflow-auto">
@@ -239,48 +221,39 @@
                 <thead>
                   <tr>
                     <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
-                    <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
-                    <th><span class="text-sm font-bold text-base-content/80">Nama</span></th>
-                    <th><span class="text-sm font-bold text-base-content/80">Kategori</span></th>
-                    <th><span class="text-sm font-bold text-base-content/80">Merek</span></th>
-                    <th><span class="text-sm font-bold text-base-content/80">Satuan</span></th>
-                    <th class="text-center"><span class="text-sm font-bold text-base-content/80">Stok</span></th>
-                    <th class="text-center"><span class="text-sm font-bold text-base-content/80">Aksi</span></th>
+                    <th><span class="text-sm font-medium text-base-content/80">Name</span></th>
+                    <th><span class="text-sm font-medium text-base-content/80">Jenis</span></th>
+                    <th><span class="text-sm font-medium text-base-content/80">Status</span></th>
+                    <th><span class="text-sm font-medium text-base-content/80">Tanggal</span></th>
+                    <th><span class="text-sm font-medium text-base-content/80">Action</span></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="cursor-pointer hover:bg-base-200/40">
                     <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                     <td>
-                      <div class="font-medium text-md">ATK011</div>
+                      <div class="font-medium">PN001</div>
                     </td>
                     <td>
-                      <div class="font-medium">Pulpen Kantor</div>
-                    </td>
-                    <td>
-                      <div class="flex items-center gap-2">
-                        <div aria-label="Badge"
-                          class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
+                      <div class="flex items-center space-x-3 truncate">
+                        <div class="font-medium">Pengajuan</div>
                       </div>
                     </td>
                     <td>
                       <div class="flex items-center gap-2">
-                        <div class="flex items-center space-x-3 truncate">
-                          <div class="font-medium">Faster C600</div>
-                        </div>
+                        <div aria-label="Badge"
+                          class="font-medium capitalize border-0 badge bg-success/10 text-success">Disetujui</div>
+                      </div>
                     </td>
                     <td>
-                      <div class="text-sm capitalize">Pcs</div>
+                      <div class="text-sm font-medium">21 Mei 2024</div>
                     </td>
-                    <td class="text-center">
-                      <div class="text-md">50</div>
-                    </td>
-                    <td class="text-center">
+                    <td>
                       <div class="inline-flex w-fit"><a aria-label="Show order link"
-                          href="detailItem.html"><button aria-label="Show order"
+                          href="detailPengajuan.html"><button aria-label="Show order"
                             class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
                               xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
-                              class="text-base-content/70" font-size="16" width="1em" height="1em"
+                              class="text-base-content/70" font-size="24" width="1em" height="1em"
                               viewBox="0 0 24 24">
                               <g fill="none" stroke="currentColor" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2">
@@ -288,281 +261,7 @@
                                 <circle cx="12" cy="12" r="3"></circle>
                               </g>
                             </svg></button></a>
-                            <a aria-label="Show order link" href="">
-                              <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
-                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
-                                  width="1em" height="1em" viewBox="0 0 24 24">
-                                  <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2"
-                                    d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
-                                </svg>
-                              </button>
-                            </a><button aria-label="Delete order"
-                          class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
-                            viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round" stroke-width="2"
-                              d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
-                            </path>
-                          </svg></button></div>
-                    </td>
-                  </tr>
-                  <tr class="cursor-pointer hover:bg-base-200/40">
-                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                    <td>
-                      <div class="text-sm font-medium">ALK011</div>
-                    </td>
-                    <td>
-                      <div class="font-medium">Sapu</div>
-                    </td>
-                    <td>
-                      <div class="flex items-center gap-2">
-                        <div aria-label="Badge"
-                          class="font-medium capitalize border-0 badge bg-success/10 text-success">Kebersihan
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="flex items-center space-x-3 truncate">
-                        <div class="font-medium">Sapu T</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-sm capitalize">Pcs</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="text-sm">13</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="inline-flex w-fit"><a aria-label="Show order link"
-                          href="detailItem.html"><button aria-label="Show order"
-                            class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
-                              xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
-                              class="text-base-content/70" font-size="16" width="1em" height="1em"
-                              viewBox="0 0 24 24">
-                              <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2">
-                                <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                              </g>
-                            </svg></button>
-                          </a>
-                          <a aria-label="Show order link" href="">
-                            <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
-                                width="1em" height="1em" viewBox="0 0 24 24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="2"
-                                  d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
-                              </svg>
-                            </button>
-                          </a>
-                          <button aria-label="Delete order"
-                          class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
-                            viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round" stroke-width="2"
-                              d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
-                            </path>
-                          </svg></button></div>
-                    </td>
-                  </tr>
-                  <tr class="cursor-pointer hover:bg-base-200/40">
-                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                    <td>
-                      <div class="text-sm font-medium">ALB011</div>
-                    </td>
-                    <td>
-                      <div class="font-medium">Palu</div>
-                    </td>
-                    <td>
-                      <div class="flex items-center gap-2">
-                        <div aria-label="Badge"
-                          class="font-medium capitalize border-0 badge bg-success/10 text-success">Bangunan
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="flex items-center space-x-3 truncate">
-                        <div class="font-medium">Palu Trex</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-sm capitalize">Pcs</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="text-sm">16</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="inline-flex w-fit"><a aria-label="Show order link"
-                          href="detailItem.html"><button aria-label="Show order"
-                            class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
-                              xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
-                              class="text-base-content/70" font-size="16" width="1em" height="1em"
-                              viewBox="0 0 24 24">
-                              <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2">
-                                <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                              </g>
-                            </svg></button>
-                          </a>
-                          <a aria-label="Show order link" href="">
-                            <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
-                                width="1em" height="1em" viewBox="0 0 24 24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="2"
-                                  d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
-                              </svg>
-                            </button>
-                          </a>
-                          
-                          <button aria-label="Delete order"
-                          class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
-                            viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round" stroke-width="2"
-                              d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
-                            </path>
-                          </svg></button></div>
-                    </td>
-                  </tr>
-                  <tr class="cursor-pointer hover:bg-base-200/40">
-                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                    <td>
-                      <div class="text-sm font-medium">ATK022</div>
-                    </td>
-                    <td>
-                      <div class="font-medium">Palu</div>
-                    </td>
-                    <td>
-                      <div class="flex items-center gap-2">
-                        <div aria-label="Badge"
-                          class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="flex items-center space-x-3 truncate">
-                        <div class="font-medium">Faber Casteel</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-sm capitalize">Pcs</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="text-sm">60</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="inline-flex w-fit">
-                        <a aria-label="Show order link"
-                          href="detailItem.html"><button aria-label="Show order"
-                            class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
-                              xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
-                              class="text-base-content/70" font-size="16" width="1em" height="1em"
-                              viewBox="0 0 24 24">
-                              <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2">
-                                <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                              </g>
-                            </svg></button>
-                          </a>
-                          <a aria-label="Show order link" href="">
-                            <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
-                                width="1em" height="1em" viewBox="0 0 24 24">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="2"
-                                  d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
-                              </svg>
-                            </button>
-                          </a>
-                          <button aria-label="Delete order"
-                          class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
-                            viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round" stroke-width="2"
-                              d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
-                            </path>
-                          </svg></button></div>
-                    </td>
-                  </tr>
-                  <tr class="cursor-pointer hover:bg-base-200/40">
-                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                    <td>
-                      <div class="text-sm font-medium">ALB022</div>
-                    </td>
-                    <td>
-                      <div class="font-medium">Cat Air</div>
-                    </td>
-                    <td>
-                      <div class="flex items-center gap-2">
-                        <div aria-label="Badge"
-                          class="font-medium capitalize border-0 badge bg-success/10 text-success">Bangunan
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="flex items-center space-x-3 truncate">
-                        <div class="font-medium">Air Water</div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-sm capitalize">Pcs</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="text-sm">5</div>
-                    </td>
-                    <td class="text-center">
-                      <div class="inline-flex w-fit">
-                        <a aria-label="Show order link" href="detailItem.html">
-                          <button aria-label="Show order" class="btn btn-sm btn-square btn-ghost"><svg
-                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                              aria-hidden="true" role="img" class="text-base-content/70" font-size="16"
-                              width="1em" height="1em" viewBox="0 0 24 24">
-                              <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2">
-                                <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                              </g>
-                            </svg>
-                          </button>
-                        </a>
-                        <a aria-label="Show order link" href="">
-                          <button aria-label="Dummy edit product" class="btn btn-sm btn-square btn-ghost"><svg
-                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                              aria-hidden="true" role="img" class="text-base-content/70" font-size="15"
-                              width="1em" height="1em" viewBox="0 0 24 24">
-                              <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2"
-                                d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5L2 22l1.5-5.5Zm-2 2l4 4"></path>
-                            </svg>
-                          </button>
-                        </a>
-                        <button aria-label="Delete order"
-                          class="btn text-error/70 hover:bg-error/20 btn-sm btn-square btn-ghost"><svg
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            aria-hidden="true" role="img" class="" font-size="16" width="1em" height="1em"
-                            viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round"
-                              stroke-linejoin="round" stroke-width="2"
-                              d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2">
-                            </path>
-                          </svg></button>
-                      </div>
+                          </div>
                     </td>
                   </tr>
                 </tbody>
