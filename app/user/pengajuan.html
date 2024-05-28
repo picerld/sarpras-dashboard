@@ -10,6 +10,14 @@
       href="../../src/dist/images/logo.png"
       type="image/x-icon"
     />
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
     <link href="../../src/css/output.css" rel="stylesheet" />
 
     <script>
@@ -158,32 +166,45 @@
     </div>
 
     <!-- content start -->
-    <div class="flex flex-col items-center justify-center min-h-screen bg-base-200">
-      <h1 class="text-3xl font-bold">Form <span class="font-bold text-primary">Pengajuan</span></h1>
-      <div class="py-10">
-        <form action="/app/user/index.html" class="w-full">
-          <div class="flex flex-wrap">
-            <div class="flex items-center justify-center w-full px-4 py-2">
-              <label class="w-full max-w-sm form-control">
-                <div class="label">
-                  <span class="font-semibold label-text">Unit/Nama</span>
-                </div>
-                <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered" />
-              </label>
+    <div class="flex flex-col items-center justify-center min-h-screen pt-20 bg-base-200">
+      <div class="flex flex-col items-center justify-center shadow-md py-7 bg-base-100 card">
+        <h1 class="text-3xl font-bold">Form <span class="font-bold text-primary">Pengajuan</span></h1>
+        <ul class="pt-8 steps">
+          <li class="font-semibold step step-primary">Login</li>
+          <li class="font-semibold step step-primary">Mengisi form</li>
+          <li class="step">Proses</li>
+          <li class="step">Penerimaan</li>
+        </ul>
+        <div class="py-10">
+          <form action="/app/user/transaksi.html" class="w-full">
+            <div class="flex flex-wrap">
+              <div class="flex items-center justify-center w-full px-4 py-2">
+                <label class="w-full max-w-sm form-control">
+                  <div class="label">
+                    <span class="font-semibold label-text">Unit/Nama</span>
+                  </div>
+                  <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered input-sm" />
+                </label>
+              </div>
+    
+              <div class="flex items-center justify-center w-full px-4 py-2">
+                <label class="w-full max-w-sm form-control">
+                  <div class="label">
+                    <span class="font-semibold label-text">Barang</span>
+                  </div>
+                  <select class="w-full select select-bordered" id="select-js" required name="states[]" multiple="multiple">
+                    <option>Pulpen Kantor</option>
+                    <option>Sapu</option>
+                    <option>Palu</option>
+                    <option>Cat Air</option>
+                  </select>
+                </label>
+              </div>
+    
+              <button type="submit" class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-[21rem] btn btn-primary hover:opacity-80 text-base-200">Next</button>
             </div>
-  
-            <div class="flex items-center justify-center w-full px-4 py-2">
-              <label class="w-full max-w-sm form-control">
-                <div class="label">
-                  <span class="font-semibold label-text">Barang</span>
-                </div>
-                <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered" />
-              </label>
-            </div>
-  
-            <input type="submit" class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-48 btn btn-primary hover:opacity-80 text-base-200">
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -225,7 +246,15 @@
         <a class="link link-hover">Cookie policy</a>
       </nav>
     </footer>
-
+  
     <script src="../../src/js/js.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#select-js').select2({
+          placeholder: 'Pilih daftar barang',
+          theme: 'classic',
+        });
+      });
+    </script>
   </body>
 </html>
