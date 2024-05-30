@@ -115,3 +115,24 @@ window.onscroll = function () {
     header.classList.remove("nav-fixed")
   }
 };
+
+// modal
+document.querySelector('#next-button').addEventListener('click', function() {
+  document.querySelector('#tambah_permintaan').close();
+  document.querySelector('#qty_modal').showModal();
+});
+
+document.querySelector('#next-button-qty').addEventListener('click', function() {
+  document.querySelector('#qty_modal').close();
+  document.querySelector('#confirm_modal').showModal();
+});
+
+document.querySelector('#back-button-qty').addEventListener('click', function() {
+  document.querySelector('#qty_modal').close();
+  document.querySelector('#tambah_permintaan').showModal();
+});
+
+document.querySelector('#back-button-confirm').addEventListener('click', function() {
+  document.querySelector('#confirm_modal').close();
+  document.querySelector('#qty_modal').showModal();
+});
