@@ -60,7 +60,7 @@ window.addEventListener("click", function (e) {
     e.target != sidebarToggle &&
     e.target != drawerToggle
   ) {
-    sidebar.classList.remove("hidden");
+    sidebar?.classList.remove("hidden");
   }
 });
 

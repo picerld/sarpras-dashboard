@@ -1,0 +1,32 @@
+      <div class="flex flex-col items-center justify-center w-full shadow-md md:w-1/2 lg:w-1/2 py-7 bg-base-100 card">
+        <h1 class="text-3xl font-bold">Form <span class="font-bold text-primary">Permintaan</span></h1>
+        <ul class="pt-8 steps">
+          <li class="font-semibold step step-primary">Login</li>
+          <li class="font-semibold step step-primary">Mengisi form</li>
+          <li class="step">Proses</li>
+          <li class="step">Penerimaan</li>
+        </ul>
+        <div class="py-10">
+          <form action="/app/user/transaksi.html" class="w-full">
+            <div class="flex flex-wrap">
+    
+              <div class="flex items-center justify-center w-full px-4 py-2">
+                <label class="w-full max-w-sm form-control">
+                  <div class="flex flex-col items-start label">
+                    <span class="text-lg font-semibold label-text">Barang</span>
+                    <span class="text-xs font-bold label-text text-primary">(data dari barang yang diajukan)</span>
+                  </div>
+                  <select class="w-full select select-bordered" id="select-js" required name="states[]" multiple="multiple">
+                    <option>Pulpen Kantor</option>
+                    <option>Sapu</option>
+                    <option>Palu</option>
+                    <option>Cat Air</option>
+                  </select>
+                </label>
+              </div>
+    
+              <button type="submit" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">Next</button>
+            </div>
+          </form>
+        </div>
+      </div>
