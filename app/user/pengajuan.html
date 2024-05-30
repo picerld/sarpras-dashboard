@@ -170,8 +170,8 @@
     </div>
 
     <!-- content start -->
-    <div class="flex flex-col items-center justify-center min-h-screen pt-20 bg-base-200">
-      <div class="flex flex-col items-center justify-center w-1/2 shadow-md py-7 bg-base-100 card">
+    <div class="flex flex-col items-center justify-center min-h-screen px-4 pt-20 pb-10 bg-base-200">
+      <div class="flex flex-col items-center justify-center w-full shadow-md md:w-1/2 lg:w-1/2 py-7 bg-base-100 card">
         <h1 class="text-3xl font-bold">Form <span class="font-bold text-primary">Pengajuan</span></h1>
         <ul class="pt-8 steps">
           <li class="font-semibold step step-primary">Login</li>
@@ -196,12 +196,14 @@
                   <div class="label">
                     <span class="font-semibold label-text">Barang</span>
                   </div>
-                  <select class="w-full select select-bordered" id="select-js" required name="states[]" multiple="multiple">
+                  <!-- TASK START: fix background on dark mode! -->
+                  <select class="w-full select select-bordered " id="select-js" required name="states[]" multiple="multiple">
                     <option>Pulpen Kantor</option>
                     <option>Sapu</option>
                     <option>Palu</option>
                     <option>Cat Air</option>
                   </select>
+                  <!-- TASK END -->
                 </label>
               </div>
     

@@ -41,7 +41,7 @@ const sidebarToggle = document.querySelector("#sidebar-toggle");
 const drawerToggle = document.querySelector(".drawer-toggle");
 const sidebar = document.querySelector("#sidebar");
 
-drawerToggle.addEventListener("click", () => {
+drawerToggle?.addEventListener("click", () => {
   if (drawerToggle.checked) {
     sidebar.classList.remove("hidden");
 
@@ -68,7 +68,7 @@ window.addEventListener("click", function (e) {
 const exportButton = document.querySelector("#menu-button");
 const menu = document.querySelector("#menu-drop");
 
-exportButton.addEventListener("click", () => {
+exportButton?.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
 

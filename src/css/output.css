@@ -3973,10 +3973,6 @@ html:has(.drawer-toggle:checked) {
   margin: 0.25rem;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -3985,26 +3981,6 @@ html:has(.drawer-toggle:checked) {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-7 {
-  margin-left: 1.75rem;
-  margin-right: 1.75rem;
-}
-
-.mx-9 {
-  margin-left: 2.25rem;
-  margin-right: 2.25rem;
-}
-
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
-.mx-40 {
-  margin-left: 10rem;
-  margin-right: 10rem;
 }
 
 .-mr-1 {
@@ -4137,38 +4113,6 @@ html:has(.drawer-toggle:checked) {
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.ml-6 {
-  margin-left: 1.5rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
-}
-
-.ml-7 {
-  margin-left: 1.75rem;
-}
-
-.ml-9 {
-  margin-left: 2.25rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
-.ml-11 {
-  margin-left: 2.75rem;
-}
-
-.ml-16 {
-  margin-left: 4rem;
-}
-
-.ml-14 {
-  margin-left: 3.5rem;
 }
 
 .block {
@@ -4326,10 +4270,6 @@ html:has(.drawer-toggle:checked) {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .min-w-full {
@@ -4798,9 +4738,8 @@ html:has(.drawer-toggle:checked) {
   padding-bottom: 1.75rem;
 }
 
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .pb-3 {
@@ -5483,70 +5422,6 @@ html:has(.drawer-toggle:checked) {
 }
 
 @media (min-width: 768px) {
-  .md\:ml-\[21rem\] {
-    margin-left: 21rem;
-  }
-
-  .md\:ml-\[27\.5rem\] {
-    margin-left: 27.5rem;
-  }
-
-  .md\:ml-\[10rem\] {
-    margin-left: 10rem;
-  }
-
-  .md\:ml-\[2rem\] {
-    margin-left: 2rem;
-  }
-
-  .md\:ml-\[1rem\] {
-    margin-left: 1rem;
-  }
-
-  .md\:ml-9 {
-    margin-left: 2.25rem;
-  }
-
-  .md\:ml-10 {
-    margin-left: 2.5rem;
-  }
-
-  .md\:ml-24 {
-    margin-left: 6rem;
-  }
-
-  .md\:ml-32 {
-    margin-left: 8rem;
-  }
-
-  .md\:ml-28 {
-    margin-left: 7rem;
-  }
-
-  .md\:ml-\[15rem\] {
-    margin-left: 15rem;
-  }
-
-  .md\:ml-\[9rem\] {
-    margin-left: 9rem;
-  }
-
-  .md\:ml-\[8rem\] {
-    margin-left: 8rem;
-  }
-
-  .md\:ml-\[7rem\] {
-    margin-left: 7rem;
-  }
-
-  .md\:ml-\[7\.5rem\] {
-    margin-left: 7.5rem;
-  }
-
-  .md\:ml-\[7\.7rem\] {
-    margin-left: 7.7rem;
-  }
-
   .md\:ml-\[7\.6rem\] {
     margin-left: 7.6rem;
   }
