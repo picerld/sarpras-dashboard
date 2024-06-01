@@ -39,7 +39,7 @@
   <body>
     <div id="root" class="px-10 bg-base-200 dark:bg-base-300">
       <header
-        class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent bg-white nav-fixed navbar"
+        class="absolute top-0 left-0 z-10 flex items-center w-full bg-white dark:bg-dark nav-fixed navbar"
       >
         <div class="navbar-start">
           <div class="dropdown">
@@ -167,18 +167,273 @@
       </header>
     </div>
 
-    <!-- content start -->
-    <div class="flex flex-col items-center justify-center min-h-screen px-4 pt-20 pb-10 bg-base-200">
-      <div class="flex flex-col items-center justify-center w-full shadow-md md:w-1/2 lg:w-1/2 py-7 bg-base-100 card">
-        <h1 class="text-3xl font-bold">Form <span class="font-bold text-primary">Pengajuan</span></h1>
+<!-- content start -->
+<div class="w-full min-h-screen px-10 pt-20 pb-10 bg-base-200">
+  <div aria-label="Card" class="mt-5 card bg-base-100 card-bordered">
+    <div class="p-0 card-body">
+      <div class="relative flex flex-col items-center justify-between gap-3 px-5 pt-5 md:flex-row">
+        <div class="inline-flex items-center gap-3">
+          <div class="flex flex-row items-center px-2 border form-control rounded-box border-base-content/20">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+              role="img" class="text-base-content/60" font-size="15" width="1em" height="1em" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21l-4.3-4.3"></path>
+              </g>
+            </svg><input placeholder="Cari data ..." id="searchInput" onkeyup="searchTable()"
+              class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0" />
+          </div>
+          <div class="hidden sm:block">
+            <select aria-label="Select category" class="select select-sm select-bordered focus:outline-offset-0">
+              <option value="default" disabled selected="">Status</option>
+              <option value="videos">Disetujui</option>
+              <option value="documents">Diprogress</option>
+              <option value="documents">Ditolak</option>
+            </select>
+          </div>
+        </div>
+        <div class="inline-flex flex-col items-center gap-3 md:flex-row">
+          <button aria-label="Show order link" onclick="tambah_permintaan.showModal()">
+            <button aria-label="Show order" class="h-8 border btn btn-ghost btn-xs border-base-content/20"
+              onclick="tambah_permintaan.showModal()">Buat Pengajuan
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                role="img" class="text-base-content/70" font-size="14" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M5 12h14m-7-7v14"></path>
+              </svg>
+            </button>
+          </button>
+          <button type="button" class="px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost"
+            id="menu-button" aria-expanded="true" aria-haspopup="true">
+            Export
+            <svg class="w-5 h-5 -mr-1 text-gray-600 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor"
+              aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="menu-drop"
+        class="absolute right-0 hidden w-56 mt-2 origin-top-right rounded-md shadow-lg bg-slate-50 top-10 dark:bg-neutral-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
+        role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+        <div class="py-1" role="none">
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+            role="menuitem" tabindex="-1" id="menu-item-0">Copy</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+            role="menuitem" tabindex="-1" id="menu-item-0">PDF</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+            role="menuitem" tabindex="-1" id="menu-item-1">Excel</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+            role="menuitem" tabindex="-1" id="menu-item-2">CSV</a>
+        </div>
+      </div>
+      <div class="overflow-auto">
+        <table class="table mt-2 rounded-box" id="myTable">
+          <thead>
+            <tr>
+              <th>
+                <input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox" />
+              </th>
+              <th>
+                <span class="text-sm font-medium text-base-content/80">ID</span>
+              </th>
+              <th>
+                <span class="text-sm font-medium text-base-content/80">Status</span>
+              </th>
+              <th>
+                <span class="text-sm font-medium text-base-content/80">Tanggal</span>
+              </th>
+              <th>
+                <span class="text-sm font-medium text-base-content/80">Aksi</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr class="cursor-pointer hover:bg-base-200/40">
+              <th>
+                <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
+              </th>
+              <td>
+                <div class="font-medium">PR001</div>
+              </td>
+              <td>
+                <div class="flex items-center gap-2">
+                  <div aria-label="Badge" class="font-medium capitalize border-0 badge bg-success/10 text-success">
+                    Disetujui
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="text-sm font-medium">21 Mei 2024</div>
+              </td>
+              <td>
+                <div class="inline-flex w-fit">
+                  <a aria-label="Show order link" href="/app/user/detailPermintaan.html"><button aria-label="Show order"
+                    class="btn btn-sm btn-square btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true" role="img" class="text-base-content/70" font-size="24" width="1em"
+                      height="1em" viewBox="0 0 24 24">
+                      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2">
+                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </g>
+                    </svg>
+                  </button>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="cursor-pointer hover:bg-base-200/40">
+              <th>
+                <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
+              </th>
+              <td>
+                <div class="font-medium">PR002</div>
+              </td>
+              <td>
+                <div class="flex items-center gap-2">
+                  <div aria-label="Badge"
+                    class="font-medium text-gray-500 capitalize border-0 badge bg-neutral-content/20 dark:bg-neutral-content/20 dark:text-neutral-content">
+                    Diprogres
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="text-sm font-medium">22 Mei 2024</div>
+              </td>
+              <td>
+                <div class="inline-flex w-fit">
+                  <a aria-label="Show order link" href="detailPengajuan.html"><button aria-label="Show order"
+                      class="btn btn-sm btn-square btn-ghost">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true" role="img" class="text-base-content/70" font-size="24" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2">
+                          <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </g>
+                      </svg></button>
+                    </a>
+                </div>
+              </td>
+            </tr>
+            <tr class="cursor-pointer hover:bg-base-200/40">
+              <th>
+                <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
+              </th>
+              <td>
+                <div class="font-medium">PR003</div>
+              </td>
+              <td>
+                <div class="flex items-center gap-2">
+                  <div aria-label="Badge" class="font-medium capitalize border-0 badge bg-error/10 text-error">
+                    Ditolak
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="text-sm font-medium">23 Mei 2024</div>
+              </td>
+              <td>
+                <div class="inline-flex w-fit">
+                  <a aria-label="Show order link" href="detailPengajuan.html"><button aria-label="Show order"
+                      class="btn btn-sm btn-square btn-ghost">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true" role="img" class="text-base-content/70" font-size="24" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2">
+                          <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                          <circle cx="12" cy="12" r="3"></circle>
+                        </g>
+                      </svg></button></a>
+                </div>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="flex items-center justify-end px-5 pt-3 pb-5">
+        <div class="join">
+          <button aria-label="pagination-prev" class="gap-2 btn join-item btn-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+              role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m15 18l-6-6l6-6"></path>
+            </svg></button><button aria-label="pagination-1" class="btn join-item btn-sm btn-primary btn-active">
+            1</button><button aria-label="pagination-2" class="btn join-item btn-sm">
+            2</button><button aria-label="pagination-next" class="gap-2 btn join-item btn-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+              role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m9 18l6-6l-6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="p-10 text-white footer bg-dark">
+  <aside>
+    <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+      clip-rule="evenodd" class="fill-current">
+      <path
+        d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z">
+      </path>
+    </svg>
+    <p>Sarpras.<br />Providing reliable items since 2024</p>
+  </aside>
+  <nav>
+    <h6 class="footer-title">Services</h6>
+    <a class="link link-hover">Pendataan</a>
+    <a class="link link-hover">Pengajuan</a>
+    <a class="link link-hover">Permintaan</a>
+    <a class="link link-hover">Pengadaan</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Fitur</h6>
+    <a class="link link-hover" href="index.html">Home</a>
+    <a class="link link-hover" href="list-barang.html">Barang</a>
+    <a class="link link-hover" href="pengajuan.html">Pengajuan</a>
+    <a class="link link-hover" href="permintaan.html">Permintaan</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Legal</h6>
+    <a class="link link-hover">Terms of use</a>
+    <a class="link link-hover">Privacy policy</a>
+    <a class="link link-hover">Cookie policy</a>
+  </nav>
+</footer>
+
+<!-- popup modal tambah permintaan  -->
+<dialog id="tambah_permintaan" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
+        ✕
+      </button>
+    </form>
+    <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
+      <div class="flex flex-col items-center justify-center w-full bg-base-100">
+        <h1 class="text-3xl font-bold">
+          Form <span class="font-bold text-primary">Pengajuan</span>
+        </h1>
         <ul class="pt-8 steps">
-          <li class="font-semibold step step-primary">Login</li>
           <li class="font-semibold step step-primary">Mengisi form</li>
-          <li class="step">Proses</li>
-          <li class="step">Penerimaan</li>
+          <li class="step">Jumlah</li>
+          <li class="step">Konfirmasi</li>
         </ul>
-        <div class="py-10">
-          <form action="/app/user/transaksi.html" class="w-full">
+        <div class="py-2">
+          <form id="form-permintaan" class="w-full">
             <div class="flex flex-wrap">
               <div class="flex items-center justify-center w-full px-4 py-2">
                 <label class="w-full max-w-sm form-control">
@@ -188,77 +443,202 @@
                   <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered input-sm" />
                 </label>
               </div>
-    
               <div class="flex items-center justify-center w-full px-4 py-2">
+                <label class="w-full max-w-sm form-control">
+                  <div class="label">
+                    <span class="font-semibold label-text">Pesan</span>
+                  </div>
+                  <textarea required class="w-full max-w-lg textarea textarea-bordered"></textarea>
+                </label>
+              </div>
+              <div class="relative flex items-center justify-center w-full px-4 py-2">
                 <label class="w-full max-w-sm form-control">
                   <div class="label">
                     <span class="font-semibold label-text">Barang</span>
                   </div>
-                  <!-- TASK START: fix background on dark mode! -->
-                  <select class="w-full select select-bordered " id="select-js" required name="states[]" multiple="multiple">
+                  <select class="w-full select select-bordered dark:bg-gray-700 dark:text-gray-300" id="select-js" required name="states[]" multiple="multiple">
                     <option>Pulpen Kantor</option>
                     <option>Sapu</option>
                     <option>Palu</option>
                     <option>Cat Air</option>
                   </select>
-                  <!-- TASK END -->
                 </label>
               </div>
-    
-              <button type="submit" class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-[7.6rem] btn btn-primary hover:opacity-80 text-base-200">Next</button>
+              <button type="button" id="next-button" class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-7 btn btn-primary hover:opacity-80 text-base-200">
+                Next
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
+  </div>
+</dialog>
 
-    <footer class="p-10 text-white footer bg-dark">
-      <aside>
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          class="fill-current"
-        >
-          <path
-            d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"
-          ></path>
-        </svg>
-        <p>Sarpras.<br />Providing reliable items since 2024</p>
-      </aside>
-      <nav>
-        <h6 class="footer-title">Services</h6>
-        <a class="link link-hover">Pendataan</a>
-        <a class="link link-hover">Pengajuan</a>
-        <a class="link link-hover">Permintaan</a>
-        <a class="link link-hover">Pengadaan</a>
-      </nav>
-      <nav>
-        <h6 class="footer-title">Fitur</h6>
-        <a class="link link-hover" href="index.html">Home</a>
-        <a class="link link-hover" href="list-barang.html">Barang</a>
-        <a class="link link-hover" href="pengajuan.html">Pengajuan</a>
-        <a class="link link-hover" href="permintaan.html">Permintaan</a>
-      </nav>
-      <nav>
-        <h6 class="footer-title">Legal</h6>
-        <a class="link link-hover">Terms of use</a>
-        <a class="link link-hover">Privacy policy</a>
-        <a class="link link-hover">Cookie policy</a>
-      </nav>
-    </footer>
-  
-    <script src="../../src/js/js.js"></script>
+<!-- modal qty -->
+<dialog id="qty_modal" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
+        ✕
+      </button>
+    </form>
+    <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
+      <div class="flex flex-col items-center justify-center w-full pt-5 bg-base-100">
+        <h1 class="text-3xl font-bold">
+          Form <span class="font-bold text-primary">Proses</span>
+        </h1>
+        <ul class="pt-8 steps">
+          <li class="step step-primary">Mengisi form</li>
+          <li class="font-semibold step step-primary">Jumlah</li>
+          <li class="step">Konfirmasi</li>
+        </ul>
+        <!-- main start modal -->
+        <div class="flex flex-col items-start w-full px-4 pt-5">
+          <div class="flex flex-col w-full">
+            <h1 class="text-lg font-semibold">Jumlah barang</h1>
+            <p class="text-sm">masukan jumlah untuk setiap barang</p>
+          </div>
+        </div>
+        
+        <form method="dialog" class="flex flex-wrap w-full">
+          <div class="flex flex-col w-1/2 mt-6">
+            <div class="flex items-center justify-center gap-2">
+              <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
+              <h1 class="text-sm font-semibold">Pulpen (0)</h1>
+              <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+            </div>
+          </div>
+          <div class="flex flex-col w-1/2 mt-6">
+            <div class="flex items-center justify-center gap-2">
+              <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
+              <h1 class="text-sm font-semibold">Sapu (0)</h1>
+              <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+            </div>
+          </div>
+          <div class="flex flex-col w-1/2 mt-6">
+            <div class="flex items-center justify-center gap-2">
+              <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
+              <h1 class="text-sm font-semibold">Cat Air (0)</h1>
+              <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+            </div>
+          </div>
+          <div class="flex flex-col w-1/2 mt-6">
+            <div class="flex items-center justify-center gap-2">
+              <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
+              <h1 class="text-sm font-semibold">Paluu (0)</h1>
+              <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+            </div>
+          </div>
+
+          <div class="flex w-full pt-10">
+            <button type="button" id="back-button-qty" class="px-6 mt-3 ml-4 mr-auto font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              Back
+            </button>
+            <button type="button" id="next-button-qty" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              Next
+            </button>
+          </div>
+        </form>
+        
+    </div>
+  </div>
+</dialog>
+
+<!-- modal confirmasi -->
+<dialog id="confirm_modal" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
+        ✕
+      </button>
+    </form>
+    <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
+      <div class="flex flex-col items-center justify-center w-full bg-base-100">
+        <h1 class="text-3xl font-bold">
+          Form <span class="font-bold text-primary">Konfirmasi</span>
+        </h1>
+        <ul class="pt-8 steps">
+          <li class="step step-primary">Mengisi form</li>
+          <li class="step step-primary">Jumlah</li>
+          <li class="font-semibold step step-primary">Konfirmasi</li>
+        </ul>
+        <form method="dialog" action="/app/user/permintaan.html" class="w-full pt-5">
+          <table class="table mt-2 rounded-box" id="myTable">
+            <thead>
+              <tr>
+                <th>
+                  <input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox" />
+                </th>
+                <th>
+                  <span class="text-sm font-medium text-base-content/80">#</span>
+                </th>
+                <th>
+                  <span class="text-sm font-medium text-base-content/80">Barang</span>
+                </th>
+                <th class="text-center">
+                  <span class="text-sm font-medium text-base-content/80">Quantity</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cursor-pointer hover:bg-base-200/40">
+                <th>
+                  <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
+                </th>
+                <td>
+                  <div class="font-medium">1</div>
+                </td>
+                <td>
+                  <div class="font-medium">Pulpen Kantor</div>
+                </td>
+                <td>
+                  <div class="text-sm font-medium text-center">5</div>
+                </td>
+              </tr>
+              <tr class="cursor-pointer hover:bg-base-200/40">
+                <th>
+                  <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
+                </th>
+                <td>
+                  <div class="font-medium">2</div>
+                </td>
+                <td>
+                  <div class="font-medium">Cat Air</div>
+                </td>
+                <td>
+                  <div class="text-sm font-medium text-center">20</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="flex w-full pt-10">
+            <button type="button" id="back-button-confirm" class="px-6 mt-3 ml-4 mr-auto font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              Back
+            </button>
+            <button type="submit" id="next-button-confirm" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="../../src/js/js.js"></script>
+
+<!-- select2 script -->
     <script>
-      $(document).ready(function() {
-        $('#select-js').select2({
-          placeholder: 'Pilih daftar barang',
-          theme: 'classic',
+      $(document).ready(function () {
+        $("#select-js").select2({
+          placeholder: "Pilih daftar barang",
+          theme: "classic",
+          dropdownParent: $("#tambah_permintaan")
         });
       });
-    </script>
+    </script>   
+  <script src="../../src/js/js.js"></script>
   </body>
 </html>

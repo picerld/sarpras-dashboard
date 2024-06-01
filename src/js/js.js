@@ -109,30 +109,29 @@ window.onscroll = function () {
   const header = document.querySelector("header")
   const fixedNav = header.offsetTop
 
-  if (window.pageYOffset > fixedNav) {
-    header.classList.add("nav-fixed")
-  } else {
-    header.classList.remove("nav-fixed")
-  }
+  window.pageYOffset > fixedNav ? header.classList.add("nav-fixed") : header.classList.remove("nav-fixed")
+
+  header.classList.add('nav-fixed')
+  
 };
 
 // modal
-document.querySelector('#next-button').addEventListener('click', function() {
+document.querySelector('#next-button')?.addEventListener('click', function() {
   document.querySelector('#tambah_permintaan').close();
   document.querySelector('#qty_modal').showModal();
 });
 
-document.querySelector('#next-button-qty').addEventListener('click', function() {
+document.querySelector('#next-button-qty')?.addEventListener('click', function() {
   document.querySelector('#qty_modal').close();
   document.querySelector('#confirm_modal').showModal();
 });
 
-document.querySelector('#back-button-qty').addEventListener('click', function() {
+document.querySelector('#back-button-qty')?.addEventListener('click', function() {
   document.querySelector('#qty_modal').close();
   document.querySelector('#tambah_permintaan').showModal();
 });
 
-document.querySelector('#back-button-confirm').addEventListener('click', function() {
+document.querySelector('#back-button-confirm')?.addEventListener('click', function() {
   document.querySelector('#confirm_modal').close();
   document.querySelector('#qty_modal').showModal();
 });
