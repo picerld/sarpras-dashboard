@@ -41,7 +41,7 @@ const sidebarToggle = document.querySelector("#sidebar-toggle");
 const drawerToggle = document.querySelector(".drawer-toggle");
 const sidebar = document.querySelector("#sidebar");
 
-drawerToggle.addEventListener("click", () => {
+drawerToggle?.addEventListener("click", () => {
   if (drawerToggle.checked) {
     sidebar.classList.remove("hidden");
 
@@ -60,7 +60,7 @@ window.addEventListener("click", function (e) {
     e.target != sidebarToggle &&
     e.target != drawerToggle
   ) {
-    sidebar.classList.remove("hidden");
+    sidebar?.classList.remove("hidden");
   }
 });
 
@@ -68,7 +68,7 @@ window.addEventListener("click", function (e) {
 const exportButton = document.querySelector("#menu-button");
 const menu = document.querySelector("#menu-drop");
 
-exportButton.addEventListener("click", () => {
+exportButton?.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
 
@@ -107,11 +107,31 @@ function searchTable() {
 // user navbar
 window.onscroll = function () {
   const header = document.querySelector("header")
-  const fixedNav = header.offsetTop
+  const fixedNav = header?.offsetTop
 
-  if (window.pageYOffset > fixedNav) {
-    header.classList.add("nav-fixed")
-  } else {
-    header.classList.remove("nav-fixed")
-  }
+  window.pageYOffset > fixedNav ? header?.classList.add("nav-fixed") : header?.classList.remove("nav-fixed")
+
+  header?.classList.add('nav-fixed')
+  
 };
+
+// modal
+document.querySelector('#next-button')?.addEventListener('click', function() {
+  document.querySelector('#tambah_permintaan').close();
+  document.querySelector('#qty_modal').showModal();
+});
+
+document.querySelector('#next-button-qty')?.addEventListener('click', function() {
+  document.querySelector('#qty_modal').close();
+  document.querySelector('#confirm_modal').showModal();
+});
+
+document.querySelector('#back-button-qty')?.addEventListener('click', function() {
+  document.querySelector('#qty_modal').close();
+  document.querySelector('#tambah_permintaan').showModal();
+});
+
+document.querySelector('#back-button-confirm')?.addEventListener('click', function() {
+  document.querySelector('#confirm_modal').close();
+  document.querySelector('#qty_modal').showModal();
+});
