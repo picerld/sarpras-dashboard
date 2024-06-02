@@ -34,28 +34,26 @@
             </svg>
           </div>
           <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a href="index.html" class="">Home</a></li>
+            <li><a href="/app/user/index.html" class="">Home</a></li>
             <li>
-              <a href="list-barang.html">Lihat Barang</a>
+              <a href="/app/user/list-barang.html">Lihat Barang</a>
             </li>
             <li>
-              <a href="pengajuan.html">Pengajuan</a>
+              <a href="/app/user/pengajuan.html">Pengajuan</a>
             </li>
-            <li><a href="permintaan.html">Permintaan</a></li>
-            <li><a href="history.html">Histori</a></li>
+            <li><a href="/app/user/permintaan.html">Permintaan</a></li>
           </ul>
         </div>
         <a class="text-xl btn btn-ghost">Sarpras</a>
       </div>
       <div class="hidden navbar-center lg:flex">
         <ul class="px-1 menu menu-horizontal">
-          <li><a href="index.html" class="transition hover:scale-95">Home</a></li>
+          <li><a href="/app/user/index.html" class="transition hover:scale-95">Home</a></li>
           <li>
-            <a href="list-barang.html" class="transition hover:scale-95">Lihat Barang</a>
+            <a href="/app/user/list-barang.html" class="transition hover:scale-95">Lihat Barang</a>
           </li>
-          <li><a href="pengajuan.html" class="transition hover:scale-95">Pengajuan</a></li>
-          <li><a href="permintaan.html" class="transition hover:scale-95">Permintaan</a></li>
-          <li><a href="history.html" class="transition hover:scale-95">Histori</a></li>
+          <li><a href="/app/user/pengajuan.html" class="transition hover:scale-95">Pengajuan</a></li>
+          <li><a href="/app/user/permintaan.html" class="transition hover:scale-95">Permintaan</a></li>
         </ul>
       </div>
       <div class="gap-3 navbar-end">
@@ -95,11 +93,43 @@
       </div>
     </header>
 
-    <section id="main" class="py-6 lg:px-10">
+    <section id="main" class="pt-20 lg:px-10">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="grid w-full place-items-center bg-base-200 dark:bg-base-300">
-            
+            <div class="w-full min-h-[75vh] p-6 mt-5 mb-10 shadow-xl card bg-base-100">
+              <div class="px-4">
+                  <h1 class="text-2xl font-bold">Profile Setting</h1>
+                  <p class="mt-2 text-sm">Update informasi akun dan alamat email</p>
+              </div>
+              <div class="mt-2">
+                  <form action="/app/admin/setting.html" class="w-full">
+                      <div class="flex flex-col flex-wrap">
+                        <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
+                          <label class="w-full max-w-lg form-control">
+                            <div class="label">
+                              <span class="font-semibold label-text">Nama</span>
+                            </div>
+                            <input type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg font-semibold input input-bordered input-primary" value="Unit" />
+                          </label>
+                        </div>
+        
+                        <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
+                          <label class="w-full max-w-lg form-control">
+                            <div class="label">
+                              <span class="font-semibold label-text">Email</span>
+                            </div>
+                            <input type="email" required placeholder="Ketik disini ..." class="w-full max-w-lg font-semibold input input-bordered input-primary" value="unit@localhost"/>
+                          </label>
+                        </div>
+        
+                      </div>
+                      
+                      <button type="submit" class="mt-3 ml-4 transition text-base-200 btn btn-primary hover:opacity-80">Simpan</button>
+                      
+                    </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -122,14 +152,13 @@
       <a class="link link-hover">Pendataan</a>
       <a class="link link-hover">Pengajuan</a>
       <a class="link link-hover">Permintaan</a>
-      <a class="link link-hover">Pengadaan</a>
     </nav>
     <nav>
       <h6 class="footer-title">Fitur</h6>
-      <a class="link link-hover" href="index.html">Home</a>
-      <a class="link link-hover" href="list-barang.html">Barang</a>
-      <a class="link link-hover" href="pengajuan.html">Pengajuan</a>
-      <a class="link link-hover" href="permintaan.html">Permintaan</a>
+      <a class="link link-hover" href="/app/user/index.html">Home</a>
+      <a class="link link-hover" href="/app/user/list-barang.html">Barang</a>
+      <a class="link link-hover" href="/app/user/pengajuan.html">Pengajuan</a>
+      <a class="link link-hover" href="/app/user/permintaan.html">Permintaan</a>
     </nav>
     <nav>
       <h6 class="footer-title">Legal</h6>

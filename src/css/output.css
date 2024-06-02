@@ -4018,6 +4018,10 @@ html:has(.drawer-toggle:checked) {
   margin-left: 1rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .mr-0 {
   margin-right: 0px;
 }
@@ -4100,10 +4104,6 @@ html:has(.drawer-toggle:checked) {
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.ml-auto {
-  margin-left: auto;
 }
 
 .block {
@@ -4709,11 +4709,6 @@ html:has(.drawer-toggle:checked) {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-7 {
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
 }
 
 .pb-10 {
@@ -5406,10 +5401,6 @@ html:has(.drawer-toggle:checked) {
 @media (min-width: 768px) {
   .md\:ml-7 {
     margin-left: 1.75rem;
-  }
-
-  .md\:ml-\[7\.6rem\] {
-    margin-left: 7.6rem;
   }
 
   .md\:block {

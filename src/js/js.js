@@ -107,11 +107,11 @@ function searchTable() {
 // user navbar
 window.onscroll = function () {
   const header = document.querySelector("header")
-  const fixedNav = header.offsetTop
+  const fixedNav = header?.offsetTop
 
-  window.pageYOffset > fixedNav ? header.classList.add("nav-fixed") : header.classList.remove("nav-fixed")
+  window.pageYOffset > fixedNav ? header?.classList.add("nav-fixed") : header?.classList.remove("nav-fixed")
 
-  header.classList.add('nav-fixed')
+  header?.classList.add('nav-fixed')
   
 };
 
