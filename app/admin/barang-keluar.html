@@ -170,7 +170,7 @@
                         <div class="hidden sm:block">
                           <select aria-label="Select category"
                             class="select select-sm select-bordered focus:outline-offset-0">
-                            <option value="default" selected disabled>Category</option>
+                            <option value="default" selected>All</option>
                             <option value="videos">ATK</option>
                             <option value="documents">Alat Kebersihan</option>
                             <option value="archives">Alat Bangunan</option>
@@ -178,8 +178,7 @@
                           </select></div>
                       </div>
                       <div class="inline-flex items-center gap-3">
-                        <button
-                          class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost">
+                        <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_modal.showModal()">
                           <span>Import</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -191,12 +190,12 @@
                           </svg>
                         </button>
                         <a href="tambah-barang-masuk.html" class="dropdown dropdown-left dropdown-bottom"><label tabindex="0"
-                          class="h-8 border btn btn-ghost btn-xs border-base-content/20"><svg
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M5 12h14m-7-7v14"></path>
-                          </svg></label>
+                            class="h-8 border btn btn-ghost btn-xs border-base-content/20"><svg
+                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                              aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+                              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M5 12h14m-7-7v14"></path>
+                            </svg></label>
                         </a>
                         <button type="button" class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost" 
                         id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -233,6 +232,7 @@
                             <th><span class="text-sm font-medium text-base-content/80">Dana</span></th>
                             <th><span class="text-sm font-medium text-base-content/80">Unit</span></th>
                             <th><span class="text-sm font-medium text-base-content/80">Tanggal</span></th>
+                            <th class="text-center"><span class="text-sm font-medium text-base-content/80">Berkas</span></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -265,6 +265,32 @@
                             <td>
                               <div class="text-sm">17 Apr 2024</div>
                             </td>
+                            <td>
+                              <div class="flex gap-2 text-sm">
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
@@ -290,10 +316,36 @@
                               <div class="text-sm uppercase">bos</div>
                             </td>
                             <td>
-                              <div class="text-sm">Unit A</div>
+                              <div class="text-sm">Unit B</div>
                             </td>
                             <td>
                               <div class="text-sm">17 Apr 2024</div>
+                            </td>
+                            <td>
+                              <div class="flex gap-2 text-sm">
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
@@ -325,6 +377,32 @@
                             <td>
                               <div class="text-sm">17 Apr 2024</div>
                             </td>
+                            <td>
+                              <div class="flex gap-2 text-sm">
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
@@ -355,6 +433,32 @@
                             <td>
                               <div class="text-sm">17 Apr 2024</div>
                             </td>
+                            <td>
+                              <div class="flex gap-2 text-sm">
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
+                            </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
@@ -380,10 +484,36 @@
                               <div class="text-sm uppercase">apb</div>
                             </td>
                             <td>
-                              <div class="text-sm">Unit B</div>
+                              <div class="text-sm">Unit C</div>
                             </td>
                             <td>
                               <div class="text-sm">19 Apr 2024</div>
+                            </td>
+                            <td>
+                              <div class="flex gap-2 text-sm">
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
@@ -565,6 +695,30 @@
           </li>
 
           <li class="sidebar">
+            <a href="stok-opname.html">
+              <div class="flex flex-col">
+                <div class="block w-full">
+                  <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="inline w-6 h-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+                        />
+                      </svg>
+                  Stok Opname
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="sidebar">
             <a href="pengajuan.html">
               <div class="flex flex-col">
                 <div class="block w-full">
@@ -641,22 +795,88 @@
     </div>
   </div>
 
-      <!-- modal delete -->
-  <dialog id="my_modal_1" class="modal">
-    <div class="modal-box">
-      <form method="dialog">
-        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
-      </form>
-      <h3 class="pb-6 text-2xl font-semibold text-center">Konfirmasi</h3>
-      <p class="mt-8 text-xl text-center ">Anda yakin ingin menghapus barang ini?</p>
-      <div class="mt-12 modal-action">
+    <!-- modal delete -->
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
         <form method="dialog">
-          <button class="btn btn-ghost btn-outline">Cancel</button>
-          <button class="btn btn-primary w-36">Yes</button>
+          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
         </form>
+        <h3 class="pb-6 text-2xl font-semibold text-center">Konfirmasi</h3>
+        <p class="mt-8 text-xl text-center ">Anda yakin ingin menghapus barang ini?</p>
+        <div class="mt-12 modal-action">
+          <form method="dialog">
+            <button class="btn btn-ghost btn-outline">Cancel</button>
+            <button class="btn btn-primary w-36">Yes</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </dialog>
+    </dialog>
+  
+    <!-- modal import -->
+    <dialog id="import_modal" class="modal">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+        </form>
+        <h3 class="text-lg font-bold">Hello!</h3>
+        <div class="flex flex-col gap-2">
+          <p class="py-4">Unduh template excel</p>
+          <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost dark:bg-primary dark:text-white dark:hover:opacity-80">Unduh!</button>
+        </div>
+        <label class="w-full pt-3 form-control">
+          <div class="label">
+            <span class="label-text">Pilih file csv/excel</span>
+          </div>
+          <input type="file" class="w-full file-input file-input-bordered" />
+        </label>
+      </div>
+    </dialog>
+  
+    <!-- import modal -->
+    <dialog id="import_image" class="modal">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+        </form>
+        <h3 class="text-lg font-bold">Berkas Bukti</h3>
+        <label class="w-full pt-3 form-control">
+          <div class="label">
+            <span class="label-text">Acara Pemeriksaan</span>
+          </div>
+          <input type="file" class="w-full file-input file-input-bordered" />
+        </label>
+        <label class="w-full pt-5 form-control">
+          <div class="label">
+            <span class="label-text">Acara Serah Terima</span>
+          </div>
+          <input type="file" class="w-full file-input file-input-bordered" />
+        </label>
+      </div>
+    </dialog>
+  
+    <!-- berkas modal -->
+    <dialog id="berkas_modal" class="modal">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+        </form>
+        <h3 class="text-lg font-bold">Berkas Bukti</h3>
+        <div class="flex flex-wrap pt-3 m-2">
+          <label class="w-full form-control">
+            <div class="label">
+              <span class="label-text">Acara Pemeriksaan</span>
+            </div>
+            <img src="https://placehold.co/600x630?text=Berkas" alt="" class="rounded-lg">
+          </label>
+          <label class="w-full pt-4 form-control">
+            <div class="label">
+              <span class="label-text">Acara Serah Terima</span>
+            </div>
+            <img src="https://placehold.co/600x630?text=Berkas" alt="" class="rounded-lg">
+          </label>
+        </div>
+      </div>
+    </dialog>
 
   <script src="../../src/js/js.js"></script>
   
