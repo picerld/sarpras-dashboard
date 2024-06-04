@@ -89,7 +89,7 @@
                 </div>
                 <main class="flex-1 px-6 pt-4 overflow-y-auto md:pt-4 bg-base-200">
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        <div class="mt-2">
+                        <div class="mt-5">
                             <div class="w-72">
                                 <div class="px-2">
                                     <div aria-label="Breadcrumbs" class="hidden p-0 text-sm breadcrumbs sm:inline">
@@ -130,7 +130,7 @@
 
                     <!-- content start -->
 
-                    <div class="flex items-center justify-center mt-10">
+                    <div class="flex items-center justify-center mt-10 mb-10">
                         <div class="p-6 mb-2 bg-white rounded-lg shadow-lg sm:w-full dark:bg-dark">
                             <div class="flex items-center justify-between">
                               <div class="flex items-center">
@@ -151,7 +151,7 @@
                               </div>
                               <div class="flex items-center gap-3">
                                 15 buah
-                                <button class="border-none btn btn-primary btn-sm hover:opacity-80">
+                                <button class="border-none btn btn-primary btn-sm hover:opacity-80" onclick="qty_modal.showModal()">
                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="12">
                                     <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
                                   </svg>
@@ -465,6 +465,28 @@
             </div>
         </div>
     </div>
+
+    <!-- qty modal -->
+    <dialog id="qty_modal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+        </form>
+        <h3 class="text-lg font-bold">Pensil</h3>
+        <h2 class="pt-5 mx-1 font-semibold">Stok Pensil: 30</h2>
+        <label class="w-full form-control">
+          <div class="label">
+            <span class="font-semibold label-text">Jumlah Disetujui</span>
+          </div>
+          <input type="number" min="1" max="30" value="30" class="w-full input input-primary" />
+        </label>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-7 btn btn-primary hover:opacity-80 text-base-200">Submit</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <script src="../../src/js/js.js"></script>
 </body>
