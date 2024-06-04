@@ -133,11 +133,11 @@
           <div class="w-full p-6 mt-10 mb-10 shadow-xl card bg-base-100">
             <div>
               <div class="flex items-center justify-between">
-                <h3 class="text-lg font-medium">Stok Opname Barang</h3>
+                <h3 class="text-lg font-medium">Laporan Stok Opname</h3>
                 <div aria-label="Breadcrumbs" class="hidden p-0 text-sm breadcrumbs sm:inline">
                   <ul>
                     <li class="text-base-content/60"><a href="index.html">Home</a></li>
-                    <li>SO</li>
+                    <li>Stock Opname</li>
                   </ul>
                 </div>
               </div>
@@ -160,14 +160,6 @@
                             class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0">
                         </div>
                         <div class="hidden sm:block"><select aria-label="Select category"
-                            class="select select-sm select-bordered focus:outline-offset-0">
-                            <option value="default" selected="">All</option>
-                            <option value="videos">ATK</option>
-                            <option value="documents">Alat Kebersihan</option>
-                            <option value="archives">Alat Bangunan</option>
-                          </select>
-                        </div>
-                        <div class="hidden sm:block"><select aria-label="Select category"
                           class="select select-sm select-bordered focus:outline-offset-0">
                           <option value="default" disabled selected="">Order by</option>
                           <option value="videos">Tahun</option>
@@ -179,14 +171,7 @@
                       </div>
                       <div class="inline-flex items-center gap-3">
                         <input type="date" class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost">
-                        <a href="tambah-barang.html" class="dropdown dropdown-left dropdown-bottom"><label tabindex="0"
-                            class="h-8 border btn btn-ghost btn-xs border-base-content/20"><svg
-                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                              aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
-                              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M5 12h14m-7-7v14"></path>
-                            </svg></label>
-                        </a>
+                        
                         <button type="button"
                           class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost"
                           id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -228,79 +213,73 @@
                         <thead>
                           <tr>
                             <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Kode</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Nama</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Kategori</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Merek</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Tercatat</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Fisik</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Sebab (?)</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Penyesuaian</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Keterangan</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Petugas</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Tanggal</span></th>
+                            <th><span class="text-sm font-medium text-base-content/80">Aksi</span></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">BRG01</div>
+                              <div class="text-sm font-medium">Pa Toni</div>
                             </td>
                             <td>
-                              <div class="font-medium">Pulpen Kantor</div>
-                            </td>
-                            <td>
-                              <div class="flex items-center gap-2">
-                                <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="flex items-center gap-2">
-                                <div class="flex items-center space-x-3 truncate">
-                                  <div class="font-medium">Faster C600</div>
-                                </div>
+                              <div class="font-medium">21 Mei 2024</div>
                             </td>
                             <td class="text-center">
-                              <div class="text-sm capitalize">100</div>
+                              <div class="flex text-sm">
+                                  <a href="detailStokOpname.html" class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                    width="1em" height="1em" viewBox="0 0 512 512">
+                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
+                                  </svg>
+                                  </a>
+                              </div>
                             </td>
-                            <td>
-                              <div class="text-sm">20</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">80</div>
-                            </td>
-                            <td>
-                                <div class="text-sm">Kehilangan</div>
-                              </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">BRG02</div>
+                              <div class="text-sm font-medium">Pa Hendro</div>
                             </td>
                             <td>
-                              <div class="font-medium">Kertas Film</div>
+                              <div class="font-medium">21 Mei 2024</div>
                             </td>
-                            <td>
-                              <div class="flex items-center gap-2">
-                                <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
+                            <td class="text-center">
+                              <div class="flex text-sm">
+                                  <a href="detailStokOpname.html" class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                    width="1em" height="1em" viewBox="0 0 512 512">
+                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
+                                  </svg>
+                                  </a>
                               </div>
                             </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="flex items-center gap-2">
-                                <div class="flex items-center space-x-3 truncate">
-                                  <div class="font-medium">Film21</div>
-                                </div>
+                              <div class="text-sm font-medium">Pa Toni</div>
                             </td>
                             <td>
-                              <div class="text-sm capitalize">200</div>
+                              <div class="font-medium">22 Mei 2024</div>
                             </td>
-                            <td>
-                              <div class="text-sm">170</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">30</div>
+                            <td class="text-center">
+                              <div class="flex text-sm">
+                                  <a href="detailStokOpname.html" class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                    width="1em" height="1em" viewBox="0 0 512 512">
+                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
+                                  </svg>
+                                  </a>
+                              </div>
                             </td>
                           </tr>
                         </tbody>
@@ -374,7 +353,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
                 </svg>
               </div>
-              <div class="w-full sidebarOpen">
+              <div class="hidden w-full sidebarOpen">
                 <ul class="menu menu-compact">
                   <li>
                     <a href="list-barang.html" class=""><svg xmlns="http://www.w3.org/2000/svg"
