@@ -5249,6 +5249,25 @@ html:has(.drawer-toggle:checked) {
   }
 }
 
+@media (min-width: 768px) {
+  .md\:modal-middle {
+    place-items: center;
+  }
+
+  .md\:modal-middle :where(.modal-box) {
+    width: 91.666667%;
+    max-width: 32rem;
+    --tw-translate-y: 0px;
+    --tw-scale-x: .9;
+    --tw-scale-y: .9;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    border-top-left-radius: var(--rounded-box, 1rem);
+    border-top-right-radius: var(--rounded-box, 1rem);
+    border-bottom-right-radius: var(--rounded-box, 1rem);
+    border-bottom-left-radius: var(--rounded-box, 1rem);
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:drawer-open > .drawer-toggle {
     display: none;
