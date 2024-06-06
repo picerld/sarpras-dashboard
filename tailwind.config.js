@@ -9,6 +9,9 @@ module.exports = {
         dark: "#1d232a",
       },
     },
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+    }
   },
   plugins: [
     require("daisyui"),

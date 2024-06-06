@@ -333,7 +333,7 @@
                   <div class="flex flex-wrap items-end">
                     <div class="flex-1">
                       <h3 class="text-lg font-semibold leading-tight">
-                        Barang
+                        Grafik
                       </h3>
                     </div>
                     <div
@@ -383,23 +383,11 @@
                   </div>
                   <div class="flex flex-wrap items-end mb-5">
                     <h4
-                      class="inline-block mr-2 text-2xl font-semibold leading-tight lg:text-3xl dark:text-white"
-                      x-text="'$'+(chartData.data?chartData.data[chartData.date].total.comma_formatter():0)"
+                      class="inline-block mr-2 text-2xl font-semibold leading-tight text-gray-500 lg:text-3xl"
+                      x-text="tes"
                     >
-                      0
+                      Data Barang
                     </h4>
-                    <span
-                      class="inline-block"
-                      :class="chartData.data&&chartData.data[chartData.date].upDown<0?'text-red-500':'text-green-500'"
-                      ><span
-                        x-text="chartData.data&&chartData.data[chartData.date].upDown<0?'▼':'▲'"
-                        >0</span
-                      >
-                      <span
-                        x-text="chartData.data?chartData.data[chartData.date].upDown:0"
-                        >0</span
-                      >%</span
-                    >
                   </div>
                   <div>
                     <canvas id="chart" class="w-full"></canvas>
