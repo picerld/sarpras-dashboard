@@ -135,3 +135,18 @@ document.querySelector('#back-button-confirm')?.addEventListener('click', functi
   document.querySelector('#confirm_modal').close();
   document.querySelector('#qty_modal').showModal();
 });
+
+// faq section
+document.querySelectorAll('.accordion-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const accordionContent = button.nextElementSibling;
+
+    button.classList.toggle('accordion-active');
+
+    if (button.classList.contains('accordion-active')) {
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+    } else {
+      accordionContent.style.maxHeight = 0;
+    }
+  });
+});

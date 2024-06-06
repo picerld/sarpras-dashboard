@@ -40,7 +40,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
                 </path>
               </svg></label>
-            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Barang</h1>
+            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Akun</h1>
           </div>
           <div class="flex-none">
             <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"><input type="checkbox" id="dark-toggle"
@@ -167,16 +167,38 @@
                           </svg><input placeholder="Cari data ..." id="searchInput" onkeyup="searchTable()"
                             class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0">
                         </div>
+                        <div class="hidden sm:block">
+                          <select aria-label="Select category"
+                          class="select select-sm select-bordered focus:outline-offset-0">
+                          <option value="default" selected="">All</option>
+                            <option value="videos">RPL</option>
+                            <option value="documents">DKV</option>
+                            <option value="documents">TJKT</option>
+                            <option value="documents">Kesiswaan</option>
+                            <option value="documents">BK</option>
+                            <option value="documents">PM</option>
+                            <option value="documents">MPLB</option>
+                            <option value="documents">AKL</option>
+                          </select>
+                        </div>
+                        <div class="hidden sm:block">
+                          <select aria-label="Select category"
+                          class="select select-sm select-bordered focus:outline-offset-0">
+                          <option value="default" disabled selected="">Role</option>
+                            <option value="videos">Admin</option>
+                            <option value="documents">Unit</option>
+                          </select>
+                        </div>
                       </div>
                       <div class="inline-flex items-center gap-3">
-                        <a href="tambah-akun.html" class="dropdown dropdown-left dropdown-bottom"><label tabindex="0"
+                        <button class="dropdown dropdown-left dropdown-bottom" onclick="akun_modal.showModal()"><label tabindex="0"
                           class="h-8 border btn btn-ghost btn-xs border-base-content/20">Tambah Akun<svg
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                               stroke-width="2" d="M5 12h14m-7-7v14"></path>
                           </svg></label>
-                      </a>
+                      </button>
                         <button type="button"
                           class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost"
                           id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -653,6 +675,51 @@
       </div>
     </div>
   </div>
+
+  <!-- add akun modal -->
+  <dialog id="akun_modal" class="modal">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+      </form>
+      <h3 class="text-lg font-bold">Tambah Akun!</h3>
+      
+      <form method="dialog" action="#" class="w-full">
+        <div class="flex flex-wrap">
+          <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
+            <label class="w-full max-w-lg form-control">
+              <div class="label">
+                <span class="font-semibold label-text">Unit/Nama</span>
+              </div>
+              <input type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered input-primary" />
+            </label>
+          </div>
+
+          <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
+            <label class="w-full max-w-lg form-control">
+              <div class="label">
+                <span class="font-semibold label-text">Role</span>
+              </div>
+              <input type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered input-primary" />
+            </label>
+          </div>
+
+          <div class="w-full px-4 py-2">
+            <label class="w-full max-w-full form-control">
+              <div class="label">
+                <span class="font-semibold label-text">Password</span>
+              </div>
+              <input type="password" required placeholder="Ketik disini ..." class="w-full input input-primary" />
+            </label>
+          </div>
+
+        </div>
+        
+        <input type="submit" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+        
+      </form>
+    </div>
+  </dialog>
 
   <script src="../../src/js/js.js"></script>
   
