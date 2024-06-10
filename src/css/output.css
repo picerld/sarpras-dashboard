@@ -1730,6 +1730,12 @@ html {
   margin-inline-end: -1rem;
 }
 
+.input-xs[type="number"]::-webkit-inner-spin-button {
+  margin-top: -0.25rem;
+  margin-bottom: -0.25rem;
+  margin-inline-end: -0px;
+}
+
 .input-sm[type="number"]::-webkit-inner-spin-button {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -2653,22 +2659,22 @@ html {
   outline-color: var(--fallback-bc,oklch(var(--bc)/0.2));
 }
 
-.file-input-ghost {
-  --tw-bg-opacity: 0.05;
+.file-input-primary {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity)));
 }
 
-.file-input-ghost:focus {
+.file-input-primary:focus {
+  outline-color: var(--fallback-p,oklch(var(--p)/1));
+}
+
+.file-input-primary::file-selector-button {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-p,oklch(var(--p)/var(--tw-border-opacity)));
   --tw-bg-opacity: 1;
+  background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
   --tw-text-opacity: 1;
-  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
-  box-shadow: none;
-}
-
-.file-input-ghost::file-selector-button {
-  border-width: 1px;
-  border-color: transparent;
-  background-color: transparent;
-  color: currentColor;
+  color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
 }
 
 .file-input-disabled,
@@ -3603,6 +3609,15 @@ html:has(.drawer-toggle:checked) {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.input-xs {
+  height: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  line-height: 1.625;
+}
+
 .input-sm {
   height: 2rem;
   padding-left: 0.75rem;
@@ -3658,6 +3673,10 @@ html:has(.drawer-toggle:checked) {
 
 .menu-horizontal > li:not(.menu-title) > details > ul {
   position: absolute;
+}
+
+.modal-middle {
+  place-items: center;
 }
 
 .modal-bottom {
@@ -4007,6 +4026,31 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: 2rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.mx-28 {
+  margin-left: 7rem;
+  margin-right: 7rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .-mr-1 {
   margin-right: -0.25rem;
 }
@@ -4159,12 +4203,8 @@ html:has(.drawer-toggle:checked) {
   margin-top: 2.25rem;
 }
 
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
-.ml-9 {
-  margin-left: 2.25rem;
+.ml-3 {
+  margin-left: 0.75rem;
 }
 
 .block {
@@ -4197,6 +4237,11 @@ html:has(.drawer-toggle:checked) {
 
 .hidden {
   display: none;
+}
+
+.size-6 {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .h-10 {
@@ -4352,8 +4397,8 @@ html:has(.drawer-toggle:checked) {
   width: 100vw;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
+.w-11\/12 {
+  width: 91.666667%;
 }
 
 .min-w-full {
@@ -4497,10 +4542,6 @@ html:has(.drawer-toggle:checked) {
   justify-content: space-between;
 }
 
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -4584,6 +4625,10 @@ html:has(.drawer-toggle:checked) {
   white-space: nowrap;
 }
 
+.text-pretty {
+  text-wrap: pretty;
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -4653,11 +4698,6 @@ html:has(.drawer-toggle:checked) {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-base-content {
-  --tw-border-opacity: 1;
-  border-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-border-opacity)));
 }
 
 .bg-amber-500 {
@@ -4895,6 +4935,21 @@ html:has(.drawer-toggle:checked) {
   padding-bottom: 2rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.px-28 {
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -4961,6 +5016,18 @@ html:has(.drawer-toggle:checked) {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .text-left {
@@ -5094,10 +5161,6 @@ html:has(.drawer-toggle:checked) {
 .text-error {
   --tw-text-opacity: 1;
   color: var(--fallback-er,oklch(var(--er)/var(--tw-text-opacity)));
-}
-
-.text-error\/70 {
-  color: var(--fallback-er,oklch(var(--er)/0.7));
 }
 
 .text-gray-300 {
@@ -5366,6 +5429,25 @@ html:has(.drawer-toggle:checked) {
   outline-color: var(--fallback-p,oklch(var(--p)/1));
 }
 
+@media (min-width: 640px) {
+  .sm\:modal-middle {
+    place-items: center;
+  }
+
+  .sm\:modal-middle :where(.modal-box) {
+    width: 91.666667%;
+    max-width: 32rem;
+    --tw-translate-y: 0px;
+    --tw-scale-x: .9;
+    --tw-scale-y: .9;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    border-top-left-radius: var(--rounded-box, 1rem);
+    border-top-right-radius: var(--rounded-box, 1rem);
+    border-bottom-right-radius: var(--rounded-box, 1rem);
+    border-bottom-left-radius: var(--rounded-box, 1rem);
+  }
+}
+
 @media (min-width: 768px) {
   .md\:modal-middle {
     place-items: center;
@@ -5476,9 +5558,8 @@ html:has(.drawer-toggle:checked) {
   background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-error:hover {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-er,oklch(var(--er)/var(--tw-bg-opacity)));
+.hover\:font-bold:hover {
+  font-weight: 700;
 }
 
 .hover\:text-gray-300:hover {
@@ -5535,6 +5616,18 @@ html:has(.drawer-toggle:checked) {
 
 .focus\:outline-offset-0:focus {
   outline-offset: 0px;
+}
+
+.disabled\:font-bold:disabled {
+  font-weight: 700;
+}
+
+.disabled\:opacity-100:disabled {
+  opacity: 1;
+}
+
+.disabled\:focus\:font-bold:focus:disabled {
+  font-weight: 700;
 }
 
 .group:hover .group-hover\:text-indigo-600 {
@@ -5685,10 +5778,6 @@ html:has(.drawer-toggle:checked) {
 @media (min-width: 768px) {
   .md\:ml-7 {
     margin-left: 1.75rem;
-  }
-
-  .md\:ml-9 {
-    margin-left: 2.25rem;
   }
 
   .md\:ml-8 {
