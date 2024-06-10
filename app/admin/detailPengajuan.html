@@ -132,6 +132,11 @@
 
                     <div class="flex items-center justify-center mt-10 mb-10">
                         <div class="p-6 mb-2 bg-white rounded-lg shadow-lg sm:w-full dark:bg-dark">
+                          <div class="flex gap-2 mb-4">
+                            <p class="text-sm font-medium text-indigo-500"><span class="mr-0.5"></span>Thu Mar 21 2024</p>
+                            <button class="flex ml-auto text-white btn btn-primary btn-sm hover:opacity-80" onclick="confirm_modal.showModal()">Setuju</button>
+                            <button class="text-white btn btn-error btn-sm hover:opacity-80">Tolak</button>
+                          </div>
                             <div class="flex items-center justify-between">
                               <div class="flex items-center">
                                 <img class="object-cover w-10 h-10 mr-2 rounded-full" src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1921&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profile" />
@@ -140,7 +145,6 @@
                                   <span class="block text-xs font-normal text-gray-500">Waka Sarpras</span>
                                 </div>
                               </div>
-                              <p class="text-sm font-medium text-indigo-500"><span class="mr-0.5"></span>Thu Mar 21 2024</p>
                             </div>
                             <div class="flex items-center justify-between mt-6 text-sm font-semibold text-gray-900 dark:text-gray-200">
                               <div class="flex">
@@ -484,6 +488,20 @@
           <form method="dialog">
             <button class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-7 btn btn-primary hover:opacity-80 text-base-200">Submit</button>
           </form>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- confirm modal -->
+    <dialog id="confirm_modal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <h3 class="text-lg font-bold">Konfirmasi!</h3>
+        <p class="py-4">Apakah anda yakin untuk menyetujui pengajuan ini?</p>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Close</button>
+          </form>
+          <button class="text-white btn btn-primary hover:opacity-80">Setuju</button>
         </div>
       </div>
     </dialog>

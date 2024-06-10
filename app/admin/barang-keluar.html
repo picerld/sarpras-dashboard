@@ -175,7 +175,8 @@
                             <option value="documents">Alat Kebersihan</option>
                             <option value="archives">Alat Bangunan</option>
                             <option value="other">Other</option>
-                          </select></div>
+                          </select>
+                        </div>
                       </div>
                       <div class="inline-flex items-center gap-3">
                         <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_modal.showModal()">
@@ -189,14 +190,14 @@
                             </path>
                           </svg>
                         </button>
-                        <a href="tambah-barang-masuk.html" class="dropdown dropdown-left dropdown-bottom"><label tabindex="0"
-                            class="h-8 border btn btn-ghost btn-xs border-base-content/20"><svg
-                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                              aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+                        <button aria-label="Show order" class="h-8 border btn btn-ghost btn-xs border-base-content/20"
+                            onclick="add_barang_baru.showModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                              role="img" class="text-base-content" font-size="14" width="1em" height="1em" viewBox="0 0 24 24">
                               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="M5 12h14m-7-7v14"></path>
-                            </svg></label>
-                        </a>
+                            </svg>
+                          </button>
                         <button type="button" class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost" 
                         id="menu-button" aria-expanded="true" aria-haspopup="true">
                         Export
@@ -224,48 +225,25 @@
                         <thead>
                           <tr>
                             <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Kode</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Nama</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Kategori</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Jumlah</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Satuan</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Dana</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Unit</span></th>
-                            <th><span class="text-sm font-medium text-base-content/80">Tanggal</span></th>
-                            <th class="text-center"><span class="text-sm font-medium text-base-content/80">Berkas</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Petugas</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Tanggal</span></th>
+                            <th class="text-center"><span class="text-sm font-bold text-base-content/80">Aksi</span></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">ATK011</div>
+                              <div class="text-sm font-medium">BRM001</div>
                             </td>
                             <td>
-                              <div class="font-medium">Pulpen Kantor</div>
-                            </td>
-                            <td>
-                              <div class="flex items-center gap-2">
-                                <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                              </div>
-                            </td>
-                            <td class="text-center">
-                              <div class="text-sm capitalize">60</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Pcs</div>
-                            </td>
-                            <td>
-                              <div class="text-sm uppercase">bos</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Unit A</div>
+                              <div class="font-medium">Pa Toni</div>
                             </td>
                             <td>
                               <div class="text-sm">17 Apr 2024</div>
                             </td>
-                            <td>
+                            <td class="flex justify-center text-center">
                               <div class="flex gap-2 text-sm">
                                 <div class="text-sm">
                                   <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
@@ -289,229 +267,15 @@
                                     </svg>
                                   </button>
                                 </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr class="cursor-pointer hover:bg-base-200/40">
-                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <td>
-                              <div class="text-sm font-medium">ATK022</div>
-                            </td>
-                            <td>
-                              <div class="font-medium">Pensil Kantor</div>
-                            </td>
-                            <td>
-                              <div class="flex items-center gap-2">
-                                <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                              </div>
-                            </td>
-                            <td class="text-center">
-                              <div class="text-sm capitalize">100</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Pcs</div>
-                            </td>
-                            <td>
-                              <div class="text-sm uppercase">bos</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Unit B</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">17 Apr 2024</div>
-                            </td>
-                            <td>
-                              <div class="flex gap-2 text-sm">
-                                <div class="text-sm">
-                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
-                                      width="1em" height="1em" viewBox="0 0 512 512">
-                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
-                                    </svg>
-                                  </button>
-                                </div>
-                                <div class="text-sm">
-                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
-                                      width="1em" height="1em" viewBox="0 0 512 512">
-                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr class="cursor-pointer hover:bg-base-200/40">
-                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <td>
-                              <div class="text-sm font-medium">ATK033</div>
-                            </td>
-                            <td>
-                              <div class="font-medium">Buku Tulis</div>
-                            </td>
-                            <td>
-                              <div class="flex items-center gap-2">
-                                <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                              </div>
-                            </td>
-                            <td class="text-center">
-                              <div class="text-sm capitalize">60</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Pcs</div>
-                            </td>
-                            <td>
-                              <div class="text-sm uppercase">apb</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Unit C</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">17 Apr 2024</div>
-                            </td>
-                            <td>
-                              <div class="flex gap-2 text-sm">
-                                <div class="text-sm">
-                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
-                                      width="1em" height="1em" viewBox="0 0 512 512">
-                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
-                                    </svg>
-                                  </button>
-                                </div>
-                                <div class="text-sm">
-                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
-                                      width="1em" height="1em" viewBox="0 0 512 512">
-                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr class="cursor-pointer hover:bg-base-200/40">
-                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <td>
-                              <div class="text-sm font-medium">ELK011</div>
-                            </td>
-                            <td>
-                              <div class="font-medium">Printer</div>
-                            </td>
-                            <td>
-                              <div class="flex items-center gap-2">
-                                <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Elektronik</div>
-                              </div>
-                            </td>
-                            <td class="text-center">
-                              <div class="text-sm capitalize">5</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Buah</div>
-                            </td>
-                            <td>
-                              <div class="text-sm uppercase">apb</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Unit B</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">17 Apr 2024</div>
-                            </td>
-                            <td>
-                              <div class="flex gap-2 text-sm">
-                                <div class="text-sm">
-                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
-                                      width="1em" height="1em" viewBox="0 0 512 512">
-                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
-                                    </svg>
-                                  </button>
-                                </div>
-                                <div class="text-sm">
-                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
-                                      width="1em" height="1em" viewBox="0 0 512 512">
-                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
-                                    </svg>
-                                  </button>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr class="cursor-pointer hover:bg-base-200/40">
-                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <td>
-                              <div class="text-sm font-medium">ELK022</div>
-                            </td>
-                            <td>
-                              <div class="font-medium">Mouse</div>
-                            </td>
-                            <td>
-                              <div class="flex items-center gap-2">
-                                <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Elektronik</div>
-                              </div>
-                            </td>
-                            <td class="text-center">
-                              <div class="text-sm capitalize">24</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Buah</div>
-                            </td>
-                            <td>
-                              <div class="text-sm uppercase">apb</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">Unit C</div>
-                            </td>
-                            <td>
-                              <div class="text-sm">19 Apr 2024</div>
-                            </td>
-                            <td>
-                              <div class="flex gap-2 text-sm">
-                                <div class="text-sm">
-                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
-                                      width="1em" height="1em" viewBox="0 0 512 512">
-                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
-                                    </svg>
-                                  </button>
-                                </div>
-                                <div class="text-sm">
-                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
-                                      width="1em" height="1em" viewBox="0 0 512 512">
-                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
-                                    </svg>
-                                  </button>
+                                <div class="flex text-sm">
+                                  <a href="detailBarangMasuk.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                    width="1em" height="1em" viewBox="0 0 512 512">
+                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
+                                  </svg>
+                                  </a>
                                 </div>
                               </div>
                             </td>
@@ -878,7 +642,50 @@
       </div>
     </dialog>
 
+    <!-- add barang modal -->
+  <dialog id="add_barang_baru" class="modal modal-middle">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
+          ✕
+        </button>
+      </form>
+      <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
+        <div class="flex flex-col items-center justify-center w-full bg-base-100">
+          <h1 class="mb-3 text-4xl font-bold text-center">
+            Buat <span class="font-bold text-primary"> Laporan
+          </h1>
+          <div class="w-full py-2">
+            <form method="dialog" class="w-full">
+              <div class="flex flex-wrap pb-2">
+                <div class="w-full px-4 py-2">
+                  <label class="w-full form-control">
+                    <div class="label">
+                      <span class="font-semibold label-text">Nama Petugas</span>
+                    </div>
+                    <input type="text" required placeholder="Ketik disini ..." class="w-full input input-bordered focus:input-primary" />
+                  </label>
+                </div>
+              </div>
+
+              <input type="submit" class="my-3 ml-4 text-white btn btn-primary hover:opacity-80">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <script src="../../src/js/js.js"></script>
+  <!-- select2 script -->
+  <script>
+    $(document).ready(function () {
+      $("#select-js").select2({
+        placeholder: "Pilih daftar barang",
+        dropdownParent: $("#add_barang_baru")
+      });
+    });
+  </script>
   
 </body>
 
