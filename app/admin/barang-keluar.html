@@ -145,7 +145,7 @@
                 <div aria-label="Breadcrumbs" class="hidden p-0 text-sm breadcrumbs sm:inline">
                   <ul>
                     <li class="text-base-content/60"><a href="/app/admin">Home</a></li>
-                    <li>Items</li>
+                    <li>Barang</li>
                   </ul>
                 </div>
               </div>
@@ -227,6 +227,7 @@
                             <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
                             <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
                             <th><span class="text-sm font-bold text-base-content/80">Petugas</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Unit</span></th>
                             <th><span class="text-sm font-bold text-base-content/80">Tanggal</span></th>
                             <th class="text-center"><span class="text-sm font-bold text-base-content/80">Aksi</span></th>
                           </tr>
@@ -239,6 +240,9 @@
                             </td>
                             <td>
                               <div class="font-medium">Pa Toni</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Unit A</div>
                             </td>
                             <td>
                               <div class="text-sm">17 Apr 2024</div>
@@ -268,7 +272,109 @@
                                   </button>
                                 </div>
                                 <div class="flex text-sm">
-                                  <a href="detailBarangMasuk.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                  <a href="detailBarangKeluar.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                    width="1em" height="1em" viewBox="0 0 512 512">
+                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
+                                  </svg>
+                                  </a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="text-sm font-medium">BRM002</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Pa Hendro</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Unit B</div>
+                            </td>
+                            <td>
+                              <div class="text-sm">21 Mei 2024</div>
+                            </td>
+                            <td class="flex justify-center text-center">
+                              <div class="flex gap-2 text-sm">
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="flex text-sm">
+                                  <a href="detailBarangKeluar.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                    width="1em" height="1em" viewBox="0 0 512 512">
+                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
+                                  </svg>
+                                  </a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="text-sm font-medium">BRM003</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Pa Toni</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Unit C</div>
+                            </td>
+                            <td>
+                              <div class="text-sm">02 Des 2024</div>
+                            </td>
+                            <td class="flex justify-center text-center">
+                              <div class="flex gap-2 text-sm">
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="text-sm">
+                                  <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="berkas_modal.showModal()">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                      aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="16"
+                                      width="1em" height="1em" viewBox="0 0 512 512">
+                                        <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/>
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div class="flex text-sm">
+                                  <a href="detailBarangKeluar.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
                                     width="1em" height="1em" viewBox="0 0 512 512">
