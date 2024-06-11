@@ -150,3 +150,19 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
     }
   });
 });
+
+// select filter
+const filter = document.getElementById('categorySelect').addEventListener('change', function() {
+  const selectedCategory = this.value;
+  const rows = document.querySelectorAll('#myTable tbody tr');
+  
+  rows.forEach(row => {
+    const rowCategory = row.getAttribute('data-category');
+    if (selectedCategory === 'default' || selectedCategory === rowCategory) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+  console.log(selectedCategory);
+});
