@@ -4016,16 +4016,6 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: 2rem;
 }
 
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
-
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
 .-mr-1 {
   margin-right: -0.25rem;
 }
@@ -4988,10 +4978,6 @@ html:has(.drawer-toggle:checked) {
 
 .text-right {
   text-align: right;
-}
-
-.font-poppins {
-  font-family: Poppins, sans-serif;
 }
 
 .text-2xl {

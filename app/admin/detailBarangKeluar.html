@@ -46,7 +46,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
                 </path>
               </svg></label>
-            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Barang Masuk</h1>
+            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Barang Keluar</h1>
           </div>
           <div class="flex-none">
             <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"><input type="checkbox" id="dark-toggle"
@@ -494,7 +494,7 @@
                       >
                     </li>
                     <li>
-                      <a href="barang-keluar.html"
+                      <a href="barang-keluar.html" class="font-semibold bg-base-200"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -509,7 +509,8 @@
                             d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                           />
                         </svg>
-                        Barang Keluar</a
+                        Barang Keluar<span class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
+                        aria-hidden="true"></a
                       >
                     </li>
                     <li>
@@ -704,7 +705,7 @@
       <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
         <div class="flex flex-col items-center justify-center w-full bg-base-100">
           <h1 class="text-4xl font-bold text-center">
-            Tambah <span class="font-bold text-primary"> Barang
+            Barang <span class="font-bold text-primary"> Keluar
           </h1>
           <div class="w-full py-2">
             <form method="dialog" class="w-full">
@@ -721,64 +722,16 @@
                 <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
                   <label class="w-full max-w-lg form-control">
                     <div class="label">
-                      <span class="font-semibold label-text">Stok Awal</span>
+                      <span class="font-semibold label-text">Jumlah</span>
                     </div>
                     <input type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
-                  </label>
-                </div>
-
-                <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Merek</span>
-                    </div>
-                    <input type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
-                  </label>
-                </div>
-
-                <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Satuan</span>
-                    </div>
-                    <select class="w-full max-w-full select select-ghost select-bordered focus:select-primary">
-                      <option disabled selected>Satuan barang</option>
-                      <optgroup label="Satuan">
-                        <option>Ons</option>
-                        <option>Kilo</option>
-                        <option>Pcs</option>
-                        <option>Rim</option>
-                      </optgroup>
-                      <optgroup label="Duaan">
-                        <option>Ons</option>
-                        <option>Kilo</option>
-                      </optgroup>
-                    </select>
-                  </label>
-                </div>
-
-                <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Harga</span>
-                    </div>
-                    <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
-                  </label>
-                </div>
-
-                <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Upload Gambar</span>
-                    </div>
-                    <input type="file" class="w-full max-w-full file-input file-input-bordered file-input-primary focus:file-input-primary" />
                   </label>
                 </div>
 
                 <div class="w-full px-4 py-2">
                   <label class="w-full max-w-full form-control">
                     <div class="label">
-                      <span class="font-semibold label-text">Deskripsi Barang</span>
+                      <span class="font-semibold label-text">Keterangan</span>
                     </div>
                     <textarea class="w-full px-4 py-2 textarea textarea-bordered focus:textarea-primary" placeholder="Type here ..."></textarea>
                   </label>

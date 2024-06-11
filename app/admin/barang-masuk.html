@@ -174,16 +174,16 @@
                           </svg><input placeholder="Cari data barang ..." id="searchInput" onkeyup="searchTable()"
                             class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0">
                         </div>
-                        <div class="sm:block">
+                        <div class="hidden sm:block">
                           <select aria-label="Select category"
                             class="select select-sm select-bordered focus:outline-offset-0">
                             <option value="default" selected>All</option>
-                            <option value="videos">Tahun</option>
-                            <option value="documents">Semester</option>
-                            <option value="archives">Bulan</option>
-                            <option value="other">Minggu ini</option>
-                            <option value="other">Hari ini</option>
-                          </select></div>
+                            <option value="videos">ATK</option>
+                            <option value="documents">Alat Kebersihan</option>
+                            <option value="archives">Alat Bangunan</option>
+                            <option value="other">Other</option>
+                          </select>
+                        </div>
                       </div>
                       <div class="inline-flex items-center gap-3">
                         <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_modal.showModal()">
