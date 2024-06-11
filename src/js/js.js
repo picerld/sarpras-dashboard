@@ -136,6 +136,11 @@ document.querySelector('#back-button-confirm')?.addEventListener('click', functi
   document.querySelector('#qty_modal').showModal();
 });
 
+document.querySelector('#next-button-confirm')?.addEventListener('click', function() {
+  document.querySelector('#confirm_modal').close();
+  document.querySelector('#transaction_modal').showModal();
+});
+
 // faq section
 document.querySelectorAll('.accordion-toggle').forEach(button => {
   button.addEventListener('click', () => {

@@ -501,215 +501,241 @@
     </div>
   </footer>
 
-  <!-- popup modal tambah permintaan  -->
-  <dialog id="tambah_permintaan" class="modal">
-    <div class="modal-box">
-      <form method="dialog">
-        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
-          ✕
-        </button>
-      </form>
-      <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
-        <div class="flex flex-col items-center justify-center w-full bg-base-100">
-          <h1 class="text-3xl font-bold">
-            Form <span class="font-bold text-primary">Permintaan</span>
-          </h1>
-          <ul class="pt-8 steps">
-            <li class="font-semibold step step-primary">Mengisi form</li>
-            <li class="step">Jumlah</li>
-            <li class="step">Konfirmasi</li>
-          </ul>
-          <div class="py-2">
-            <form id="form-permintaan" class="w-full">
-              <div class="flex flex-wrap">
-                <div class="flex items-center justify-center w-full px-4 py-2">
-                  <label class="w-full max-w-sm form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Unit/Nama</span>
-                    </div>
-                    <input type="text" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered input-sm" />
-                  </label>
-                </div>
-                <div class="flex items-center justify-center w-full px-4 py-2">
-                  <label class="w-full max-w-sm form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Pesan</span>
-                    </div>
-                    <textarea required class="w-full max-w-lg textarea textarea-bordered"></textarea>
-                  </label>
-                </div>
-                <div class="relative flex items-center justify-center w-full px-4 py-2">
-                  <label class="w-full max-w-sm form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Barang</span>
-                    </div>
-                    <select class="w-full select select-bordered dark:bg-gray-700 dark:text-gray-300" id="select-js" required name="states[]" multiple="multiple">
-                      <option>Pulpen Kantor</option>
-                      <option>Sapu</option>
-                      <option>Palu</option>
-                      <option>Cat Air</option>
-                    </select>
-                  </label>
-                </div>
-                <button type="button" id="next-button" class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-7 btn btn-primary hover:opacity-80 text-base-200">
-                  Next
-                </button>
+<!-- popup modal tambah permintaan  -->
+<dialog id="tambah_permintaan" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
+        ✕
+      </button>
+    </form>
+    <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
+      <div class="flex flex-col items-center justify-center w-full bg-base-100">
+        <h1 class="text-3xl font-bold text-center">
+          Form <span class="font-bold text-primary">Permintaan </span>
+        </h1>
+        <ul class="pt-8 steps">
+          <li class="font-semibold step step-primary">Mengisi form</li>
+          <li class="step">Jumlah</li>
+          <li class="step">Konfirmasi</li>
+        </ul>
+        <div class="py-2">
+          <form id="form-permintaan" class="w-full">
+            <div class="flex flex-wrap">
+              <div class="flex items-center justify-center w-full px-4 py-2">
+                <label class="w-full max-w-sm form-control">
+                  <div class="label">
+                    <span class="font-semibold label-text">Unit/Nama</span>
+                  </div>
+                  <input type="text" value="Sarpras" required placeholder="Type here ..." class="w-full max-w-lg input input-bordered input-sm" />
+                </label>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- modal qty -->
-  <dialog id="qty_modal" class="modal">
-    <div class="modal-box">
-      <form method="dialog">
-        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
-          ✕
-        </button>
-      </form>
-      <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
-        <div class="flex flex-col items-center justify-center w-full pt-5 bg-base-100">
-          <h1 class="text-3xl font-bold">
-            Form <span class="font-bold text-primary">Proses</span>
-          </h1>
-          <ul class="pt-8 steps">
-            <li class="step step-primary">Mengisi form</li>
-            <li class="font-semibold step step-primary">Jumlah</li>
-            <li class="step">Konfirmasi</li>
-          </ul>
-          <!-- main start modal -->
-          <div class="flex flex-col items-start w-full px-4 pt-5">
-            <div class="flex flex-col w-full">
-              <h1 class="text-lg font-semibold">Jumlah barang</h1>
-              <p class="text-sm">masukan jumlah untuk setiap barang</p>
-            </div>
-          </div>
-          
-          <form method="dialog" class="flex flex-wrap w-full">
-            <div class="flex flex-col w-1/2 mt-6">
-              <div class="flex items-center justify-center gap-2">
-                <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
-                <h1 class="text-sm font-semibold">Pulpen (0)</h1>
-                <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+              <div class="relative flex items-center justify-center w-full px-4 py-2">
+                <label class="w-full max-w-sm form-control">
+                  <div class="label">
+                    <span class="font-semibold label-text">Barang</span>
+                  </div>
+                  <select class="w-full select select-bordered dark:bg-gray-700 dark:text-gray-300" id="select-js" required name="states[]" multiple="multiple">
+                    <option>Pulpen Kantor</option>
+                    <option>Sapu</option>
+                    <option>Palu</option>
+                    <option>Cat Air</option>
+                  </select>
+                </label>
               </div>
-            </div>
-            <div class="flex flex-col w-1/2 mt-6">
-              <div class="flex items-center justify-center gap-2">
-                <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
-                <h1 class="text-sm font-semibold">Sapu (0)</h1>
-                <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+              <div class="flex items-center justify-center w-full px-4 py-2">
+                <label class="w-full max-w-sm form-control">
+                  <div class="label">
+                    <span class="font-semibold label-text">Keterangan</span>
+                  </div>
+                  <textarea required class="w-full max-w-lg textarea textarea-bordered"></textarea>
+                </label>
               </div>
-            </div>
-            <div class="flex flex-col w-1/2 mt-6">
-              <div class="flex items-center justify-center gap-2">
-                <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
-                <h1 class="text-sm font-semibold">Cat Air (0)</h1>
-                <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
-              </div>
-            </div>
-            <div class="flex flex-col w-1/2 mt-6">
-              <div class="flex items-center justify-center gap-2">
-                <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
-                <h1 class="text-sm font-semibold">Paluu (0)</h1>
-                <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
-              </div>
-            </div>
-
-            <div class="flex w-full pt-10">
-              <button type="button" id="next-button-qty" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              <button type="button" id="next-button" class="px-6 mt-3 ml-4 font-bold transition rounded-md md:ml-7 btn btn-primary hover:opacity-80 text-base-200">
                 Next
               </button>
             </div>
           </form>
-          
-      </div>
-    </div>
-  </dialog>
-
-  <!-- modal confirmasi -->
-  <dialog id="confirm_modal" class="modal">
-    <div class="modal-box">
-      <form method="dialog">
-        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
-          ✕
-        </button>
-      </form>
-      <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
-        <div class="flex flex-col items-center justify-center w-full bg-base-100">
-          <h1 class="text-3xl font-bold">
-            Form <span class="font-bold text-primary">Konfirmasi</span>
-          </h1>
-          <ul class="pt-8 steps">
-            <li class="step step-primary">Mengisi form</li>
-            <li class="step step-primary">Jumlah</li>
-            <li class="font-semibold step step-primary">Konfirmasi</li>
-          </ul>
-          <form method="dialog" action="permintaan.html" class="w-full pt-5">
-            <table class="table mt-2 rounded-box" id="myTable">
-              <thead>
-                <tr>
-                  <th>
-                    <input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox" />
-                  </th>
-                  <th>
-                    <span class="text-sm font-medium text-base-content/80">#</span>
-                  </th>
-                  <th>
-                    <span class="text-sm font-medium text-base-content/80">Barang</span>
-                  </th>
-                  <th class="text-center">
-                    <span class="text-sm font-medium text-base-content/80">Quantity</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="cursor-pointer hover:bg-base-200/40">
-                  <th>
-                    <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
-                  </th>
-                  <td>
-                    <div class="font-medium">1</div>
-                  </td>
-                  <td>
-                    <div class="font-medium">Pulpen Kantor</div>
-                  </td>
-                  <td>
-                    <div class="text-sm font-medium text-center">5</div>
-                  </td>
-                </tr>
-                <tr class="cursor-pointer hover:bg-base-200/40">
-                  <th>
-                    <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
-                  </th>
-                  <td>
-                    <div class="font-medium">2</div>
-                  </td>
-                  <td>
-                    <div class="font-medium">Cat Air</div>
-                  </td>
-                  <td>
-                    <div class="text-sm font-medium text-center">20</div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="flex w-full pt-10">
-              <button type="button" id="back-button-confirm" class="px-6 mt-3 ml-4 mr-auto font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
-                Back
-              </button>
-              <button type="submit" id="next-button-confirm" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
-                Submit
-              </button>
-            </div>
-          </form>
         </div>
       </div>
     </div>
-  </dialog>
+  </div>
+</dialog>
+
+<!-- modal qty -->
+<dialog id="qty_modal" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
+        ✕
+      </button>
+    </form>
+    <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
+      <div class="flex flex-col items-center justify-center w-full pt-5 bg-base-100">
+        <h1 class="text-3xl font-bold">
+          Form <span class="font-bold text-primary">Proses</span>
+        </h1>
+        <ul class="pt-8 steps">
+          <li class="step step-primary">Mengisi form</li>
+          <li class="font-semibold step step-primary">Jumlah</li>
+          <li class="step">Konfirmasi</li>
+        </ul>
+        <!-- main start modal -->
+        <div class="flex flex-col items-start w-full px-4 pt-5">
+          <div class="flex flex-col w-full">
+            <h1 class="text-lg font-semibold">Jumlah barang</h1>
+            <p class="text-sm">masukan jumlah untuk setiap barang</p>
+          </div>
+        </div>
+        
+        <form method="dialog" class="flex flex-wrap w-full">
+          <div class="flex flex-col w-1/2 mt-6">
+            <div class="flex items-center justify-center gap-2">
+              <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
+              <h1 class="text-sm font-semibold">Pulpen (0)</h1>
+              <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+            </div>
+          </div>
+          <div class="flex flex-col w-1/2 mt-6">
+            <div class="flex items-center justify-center gap-2">
+              <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
+              <h1 class="text-sm font-semibold">Sapu (0)</h1>
+              <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+            </div>
+          </div>
+          <div class="flex flex-col w-1/2 mt-6">
+            <div class="flex items-center justify-center gap-2">
+              <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
+              <h1 class="text-sm font-semibold">Cat Air (0)</h1>
+              <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+            </div>
+          </div>
+          <div class="flex flex-col w-1/2 mt-6">
+            <div class="flex items-center justify-center gap-2">
+              <button class="text-lg font-semibold btn btn-primary btn-sm">-</button>
+              <h1 class="text-sm font-semibold">Paluu (0)</h1>
+              <button class="text-lg font-semibold btn btn-primary btn-sm">+</button>
+            </div>
+          </div>
+
+          <div class="flex w-full pt-10">
+            <button type="button" id="back-button-qty" class="px-6 mt-3 ml-4 mr-auto font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              Back
+            </button>
+            <button type="button" id="next-button-qty" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              Next
+            </button>
+          </div>
+        </form>
+        
+    </div>
+  </div>
+</dialog>
+
+<!-- modal confirmasi -->
+<dialog id="confirm_modal" class="modal">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
+        ✕
+      </button>
+    </form>
+    <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
+      <div class="flex flex-col items-center justify-center w-full bg-base-100">
+        <h1 class="text-3xl font-bold">
+          Form <span class="font-bold text-primary">Konfirmasi</span>
+        </h1>
+        <ul class="pt-8 steps">
+          <li class="step step-primary">Mengisi form</li>
+          <li class="step step-primary">Jumlah</li>
+          <li class="font-semibold step step-primary">Konfirmasi</li>
+        </ul>
+        <form method="dialog" action="permintaan.html" class="w-full pt-5">
+          <table class="table mt-2 rounded-box" id="myTable">
+            <thead>
+              <tr>
+                <th>
+                  <input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox" />
+                </th>
+                <th>
+                  <span class="text-sm font-medium text-base-content/80">#</span>
+                </th>
+                <th>
+                  <span class="text-sm font-medium text-base-content/80">Barang</span>
+                </th>
+                <th class="text-center">
+                  <span class="text-sm font-medium text-base-content/80">Quantity</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="cursor-pointer hover:bg-base-200/40">
+                <th>
+                  <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
+                </th>
+                <td>
+                  <div class="font-medium">1</div>
+                </td>
+                <td>
+                  <div class="font-medium">Pulpen Kantor</div>
+                </td>
+                <td>
+                  <div class="text-sm font-medium text-center">5</div>
+                </td>
+              </tr>
+              <tr class="cursor-pointer hover:bg-base-200/40">
+                <th>
+                  <input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox" />
+                </th>
+                <td>
+                  <div class="font-medium">2</div>
+                </td>
+                <td>
+                  <div class="font-medium">Cat Air</div>
+                </td>
+                <td>
+                  <div class="text-sm font-medium text-center">20</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="flex w-full pt-10">
+            <button type="button" id="back-button-confirm" class="px-6 mt-3 ml-4 mr-auto font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              Back
+            </button>
+            <button type="submit" id="next-button-confirm" class="px-6 mt-3 ml-4 font-bold transition rounded-md btn btn-primary hover:opacity-80 text-base-200">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- modal traksaksi -->
+<dialog id="transaction_modal" class="modal">
+  <div class="w-full modal-box">
+    <div class="my-8 text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-16 shrink-0 fill-[#333] inline" viewBox="0 0 512 512">
+        <path
+          d="M383.841 171.838c-7.881-8.31-21.02-8.676-29.343-.775L221.987 296.732l-63.204-64.893c-8.005-8.213-21.13-8.393-29.35-.387-8.213 7.998-8.386 21.137-.388 29.35l77.492 79.561a20.687 20.687 0 0 0 14.869 6.275 20.744 20.744 0 0 0 14.288-5.694l147.373-139.762c8.316-7.888 8.668-21.027.774-29.344z"
+          data-original="#000000" />
+        <path
+          d="M256 0C114.84 0 0 114.84 0 256s114.84 256 256 256 256-114.84 256-256S397.16 0 256 0zm0 470.487c-118.265 0-214.487-96.214-214.487-214.487 0-118.265 96.221-214.487 214.487-214.487 118.272 0 214.487 96.221 214.487 214.487 0 118.272-96.215 214.487-214.487 214.487z"
+          data-original="#000000" />
+      </svg>
+      <h4 class="text-2xl text-[#333] font-semibold mt-6">Permintaan Dikirim!</h4>
+      <p class="mt-4 text-sm text-gray-500">Permintaan sedang diproses, harap ditunggu!!</p>
+    </div>
+    <div class="flex items-center justify-center w-full modal-action">
+      <form method="dialog">
+        <button class="btn btn-outline">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
   <script src="../../src/js/js.js"></script>
 
