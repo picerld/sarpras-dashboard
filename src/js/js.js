@@ -157,7 +157,7 @@ document.querySelectorAll('.accordion-toggle').forEach(button => {
 });
 
 // select filter
-const filter = document.getElementById('categorySelect').addEventListener('change', function() {
+const filter = document.getElementById('categorySelect')?.addEventListener('change', function() {
   const selectedCategory = this.value;
   const rows = document.querySelectorAll('#myTable tbody tr');
   
