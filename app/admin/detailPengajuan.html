@@ -477,12 +477,15 @@
           <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
         </form>
         <h3 class="text-lg font-bold">Pensil</h3>
-        <h2 class="pt-5 mx-1 font-semibold">Stok Pensil: 30</h2>
+        <h2 class="pt-5 mx-1 font-semibold">Stok Pensil: 30 pcs</h2>
         <label class="w-full form-control">
           <div class="label">
             <span class="font-semibold label-text">Jumlah Disetujui</span>
           </div>
-          <input type="number" min="1" max="30" value="30" class="w-full input input-primary" />
+          <label class="flex items-center gap-2 input input-bordered">
+            <input type="number" class="grow" placeholder="Type here ..." min="1" />
+            <span class="text-white badge badge-primary badge-lg">pcs</span>
+          </label>
         </label>
         <div class="modal-action">
           <form method="dialog">

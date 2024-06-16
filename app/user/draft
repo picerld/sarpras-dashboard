@@ -1,0 +1,330 @@
+      <div class="mt-5">
+        <div aria-label="Card" class="mt-5 card bg-base-100 card-bordered min-h-[80vh]">
+          <div class="p-0 card-body">
+            <div class="relative flex items-center justify-between px-5 pt-5">
+              <div class="inline-flex items-center gap-3">
+                <div
+                  class="flex flex-row items-center px-2 border form-control rounded-box border-base-content/20">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true" role="img" class="text-base-content/60" font-size="15" width="1em"
+                    height="1em" viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="m21 21l-4.3-4.3"></path>
+                    </g>
+                  </svg><input placeholder="Cari data barang ..." id="searchInput" onkeyup="searchTable()"
+                    class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0">
+                </div>
+                <div class="hidden sm:block"><select aria-label="Select category"
+                    class="select select-sm select-bordered focus:outline-offset-0">
+                    <option value="default" disabled selected="">Category</option>
+                    <option value="videos">ATK</option>
+                    <option value="documents">Alat Kebersihan</option>
+                    <option value="archives">Alat Bangunan</option>
+                    <option value="other">Other</option>
+                  </select></div>
+              </div>
+              <div class="inline-flex items-center gap-3">
+                <button type="button"
+                          class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost"
+                          id="menu-button" aria-expanded="true" aria-haspopup="true">
+                          Export
+                          <svg class="w-5 h-5 -mr-1 text-gray-600 dark:text-gray-400" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                              clip-rule="evenodd" />
+                          </svg>
+                  </button>
+
+              </div>
+
+            </div>
+
+            <div id="menu-drop"
+                      class="absolute right-0 hidden w-56 mt-2 origin-top-right rounded-md shadow-lg top-10 bg-slate-50 dark:bg-neutral-900 ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                      <div class="py-1" role="none">
+                        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                        <a href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                          role="menuitem" tabindex="-1" id="menu-item-0">Copy</a>
+                        <a href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                          role="menuitem" tabindex="-1" id="menu-item-0">PDF</a>
+                        <a href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                          role="menuitem" tabindex="-1" id="menu-item-1">Excel</a>
+                        <a href="#"
+                          class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                          role="menuitem" tabindex="-1" id="menu-item-2">CSV</a>
+                      </div>
+
+            </div>
+            <div class="overflow-auto">
+              <table class="table mt-2 rounded-box" id="myTable">
+                <thead>
+                  <tr>
+                    <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
+                    <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
+                    <th><span class="text-sm font-bold text-base-content/80">Nama</span></th>
+                    <th><span class="text-sm font-bold text-base-content/80">Kategori</span></th>
+                    <th><span class="text-sm font-bold text-base-content/80">Merek</span></th>
+                    <th><span class="text-sm font-bold text-base-content/80">Satuan</span></th>
+                    <th class="text-center"><span class="text-sm font-bold text-base-content/80">Stok</span></th>
+                    <th class="text-center"><span class="text-sm font-bold text-base-content/80">Aksi</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="cursor-pointer hover:bg-base-200/40">
+                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                    <td>
+                      <div class="font-medium text-md">ATK011</div>
+                    </td>
+                    <td>
+                      <div class="font-medium">Pulpen Kantor</div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div aria-label="Badge"
+                          class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div class="flex items-center space-x-3 truncate">
+                          <div class="font-medium">Faster C600</div>
+                        </div>
+                    </td>
+                    <td>
+                      <div class="text-sm capitalize">Pcs</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="text-md">50</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="inline-flex w-fit">
+                        <button aria-label="Show order link" onclick="detail_item.showModal()">
+                          <button aria-label="Show order"
+                            class="btn btn-sm btn-square btn-ghost" onclick="detail_item.showModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                              class="text-base-content/70" font-size="24" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2">
+                                <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                              </g>
+                            </svg>
+                          </button>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="cursor-pointer hover:bg-base-200/40">
+                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                    <td>
+                      <div class="text-sm font-medium">ALK011</div>
+                    </td>
+                    <td>
+                      <div class="font-medium">Sapu</div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div aria-label="Badge"
+                          class="font-medium capitalize border-0 badge bg-success/10 text-success">Kebersihan
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center space-x-3 truncate">
+                        <div class="font-medium">Sapu T</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-sm capitalize">Pcs</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="text-sm">13</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="inline-flex w-fit">
+                        <button aria-label="Show order link" onclick="detail_item.showModal()">
+                          <button aria-label="Show order"
+                            class="btn btn-sm btn-square btn-ghost" onclick="detail_item.showModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                              class="text-base-content/70" font-size="24" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2">
+                                <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                              </g>
+                            </svg>
+                          </button>
+                        </button>
+                          </div>
+                    </td>
+                  </tr>
+                  <tr class="cursor-pointer hover:bg-base-200/40">
+                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                    <td>
+                      <div class="text-sm font-medium">ALB011</div>
+                    </td>
+                    <td>
+                      <div class="font-medium">Palu</div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div aria-label="Badge"
+                          class="font-medium capitalize border-0 badge bg-success/10 text-success">Bangunan
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center space-x-3 truncate">
+                        <div class="font-medium">Palu Trex</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-sm capitalize">Pcs</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="text-sm">16</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="inline-flex w-fit">
+                        <button aria-label="Show order link" onclick="detail_item.showModal()">
+                        <button aria-label="Show order"
+                          class="btn btn-sm btn-square btn-ghost" onclick="detail_item.showModal()">
+                          <svg xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                            class="text-base-content/70" font-size="24" width="1em" height="1em"
+                            viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="2">
+                              <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                              <circle cx="12" cy="12" r="3"></circle>
+                            </g>
+                          </svg>
+                        </button>
+                      </button>
+                          </div>
+                    </td>
+                  </tr>
+                  <tr class="cursor-pointer hover:bg-base-200/40">
+                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                    <td>
+                      <div class="text-sm font-medium">ATK022</div>
+                    </td>
+                    <td>
+                      <div class="font-medium">Palu</div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div aria-label="Badge"
+                          class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center space-x-3 truncate">
+                        <div class="font-medium">Faber Casteel</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-sm capitalize">Pcs</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="text-sm">60</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="inline-flex w-fit">
+                        <button aria-label="Show order link" onclick="detail_item.showModal()">
+                          <button aria-label="Show order"
+                            class="btn btn-sm btn-square btn-ghost" onclick="detail_item.showModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                              class="text-base-content/70" font-size="24" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2">
+                                <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                              </g>
+                            </svg>
+                          </button>
+                        </button>
+                          </div>
+                    </td>
+                  </tr>
+                  <tr class="cursor-pointer hover:bg-base-200/40">
+                    <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                    <td>
+                      <div class="text-sm font-medium">ALB022</div>
+                    </td>
+                    <td>
+                      <div class="font-medium">Cat Air</div>
+                    </td>
+                    <td>
+                      <div class="flex items-center gap-2">
+                        <div aria-label="Badge"
+                          class="font-medium capitalize border-0 badge bg-success/10 text-success">Bangunan
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="flex items-center space-x-3 truncate">
+                        <div class="font-medium">Air Water</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="text-sm capitalize">Pcs</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="text-sm">5</div>
+                    </td>
+                    <td class="text-center">
+                      <div class="inline-flex w-fit">
+                        <button aria-label="Show order link" onclick="detail_item.showModal()">
+                          <button aria-label="Show order"
+                            class="btn btn-sm btn-square btn-ghost" onclick="detail_item.showModal()">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                              class="text-base-content/70" font-size="24" width="1em" height="1em"
+                              viewBox="0 0 24 24">
+                              <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2">
+                                <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                              </g>
+                            </svg>
+                          </button>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="absolute bottom-0 right-0 flex items-center justify-end px-5 pt-3 pb-5">
+              <div class="join"><button aria-label="pagination-prev" class="gap-2 btn join-item btn-sm"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="m15 18l-6-6l6-6"></path>
+                  </svg></button><button aria-label="pagination-1"
+                  class="btn join-item btn-sm btn-primary btn-active">1</button><button
+                  aria-label="pagination-2" class="btn join-item btn-sm">2</button><button
+                  aria-label="pagination-next" class="gap-2 btn join-item btn-sm"><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2" d="m9 18l6-6l-6-6"></path>
+                  </svg></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
