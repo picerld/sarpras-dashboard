@@ -328,3 +328,69 @@
           </div>
         </div>
       </div>
+
+
+
+      <!-- index -->
+       <!-- stats -->
+       <div class="grid grid-cols-1 gap-6 mt-2 lg:grid-cols-4 md:grid-cols-2">
+        <div class="shadow stats">
+          <div class="stat">
+            <div class="stat-figure dark:text-slate-300 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                class="inline-block w-8 h-8 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+              </svg>
+            </div>
+            <div class="stat-title dark:text-slate-300">Total Barang</div>
+            <div class="stat-value text-primary dark:text-slate-300">200</div>
+            <!-- <div class="stat-desc">barang habis pakai</div> -->
+          </div>
+        </div>
+        <div class="shadow stats">
+          <div class="stat">
+            <div class="stat-figure text-secondary dark:text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                class="inline-block w-8 h-8 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+                </path>
+              </svg>
+            </div>
+            <div class="stat-title dark:text-slate-300">Diajukan</div>
+            <div class="stat-value text-secondary dark:text-primary">100</div>
+            <!-- <div class="stat-desc">21% lebih banyak</div> -->
+          </div>
+        </div>
+        <div class="shadow stats">
+          <div class="stat">
+            <div class="stat-figure dark:text-slate-300 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" aria-hidden="true" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125">
+                </path>
+              </svg>
+            </div>
+            <div class="stat-title dark:text-slate-300">Permintaan</div>
+            <div class="stat-value dark:text-slate-300 text-primary">
+              45
+            </div>
+            <!-- <div class="stat-desc">30 selesai</div> -->
+          </div>
+        </div>
+        <div class="shadow stats">
+          <div class="stat">
+            <div class="stat-figure text-secondary">
+              <div class="avatar online">
+                <div class="w-16 rounded-full">
+                  <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+              </div>
+            </div>
+            <div class="stat-title dark:text-slate-300">Pengajuan</div>
+            <div class="stat-value text-secondary dark:text-primary">86</div>
+            <!-- <div class="stat-desc">50 sedang diproses</div> -->
+          </div>
+        </div>
+      </div>
