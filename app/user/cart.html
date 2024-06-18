@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarpas - Dashboard</title>
+
+     <!-- font poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+
+    <link
+      rel="shortcut icon"
+      href="../../src/dist/images/logo.png"
+      type="image/x-icon"
+    />
+    <!-- select2 start -->
+
+    <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
+    <!-- select2 end -->
+    <link href="../../src/css/output.css" rel="stylesheet" />
+
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root" class="px-10 bg-slate-50 dark:bg-base-300">
+      <header
+        class="absolute top-0 left-0 z-10 flex items-center w-full bg-white dark:bg-dark nav-fixed navbar"
+      >
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a href="index.html">Home</a></li>
+              <li>
+                <a href="list-barang.html">Lihat Barang</a>
+              </li>
+              <li>
+                <a href="pengajuan.html"
+                  >Pengajuan</a
+                >
+              </li>
+              <li><a href="permintaan.html">Permintaan</a></li>
+            </ul>
+          </div>
+          <a class="text-xl btn btn-ghost">Sarpras</a>
+        </div>
+        <div class="hidden navbar-center lg:flex">
+          <ul class="px-1 menu menu-horizontal">
+            <li><a href="index.html" class="hover:scale-95">Home</a></li>
+            <li>
+              <a href="list-barang.html" class="hover:scale-95">Lihat Barang</a>
+            </li>
+            <li>
+              <a
+                href="pengajuan.html"
+                class="hover:scale-95"
+                >Pengajuan</a
+              >
+            </li>
+            <li>
+              <a href="permintaan.html" class="hover:scale-95">Permintaan</a>
+            </li>
+          </ul>
+        </div>
+        <div class="gap-3 navbar-end">
+          <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"
+            ><input
+              type="checkbox"
+              id="dark-toggle"
+              class="theme-controller"
+              value="dark" /><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              data-set-theme="light"
+              data-act-class="ACTIVECLASS"
+              class="w-6 h-6 fill-current swap-on"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+              ></path>
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              data-set-theme="dark"
+              data-act-class="ACTIVECLASS"
+              class="w-6 h-6 fill-current swap-off ACTIVECLASS"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+              ></path></svg
+          ></label>
+          
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+              <div class="indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                <span class="badge badge-sm badge-secondary indicator-item">8</span>
+              </div>
+            </div>
+            <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+              <div class="card-body">
+                <span class="text-lg font-bold">8 Items</span>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <div class="card-actions">
+                  <a href="cart.html" class="text-white btn btn-primary btn-block hover:opacity-80">View Pengajuan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mr-4 dropdown dropdown-end">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost btn-circle avatar online"
+            >
+              <div class="w-10 rounded-full">
+                <img
+                  alt="Profile"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                />
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a class="justify-between" href="setting.html">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    </div>
+
+<!-- content start -->
+<section id="title" class="w-full px-10 pt-20 bg-slate-50 dark:bg-base-300">
+  <div class="mt-5">
+    <h1 class="text-2xl font-semibold">My Keranjang</h1>
+    <p class="mt-3 text-pretty">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim?</p>
+  </div>
+</section>
+
+<section id="content" class="w-full min-h-screen px-10 bg-slate-50 dark:bg-base-300">
+    <div class="flex gap-3 bg-slate-50 dark:bg-base-300">
+        <div class="flex flex-col w-2/3 gap-5 mt-5">
+            <div class="flex justify-between p-5 border rounded-lg bg-base-100 dark:border-none">
+              <div class="flex gap-3">
+                <input id="pilih-semua" aria-label="Check all" class="checkbox checkbox-sm" type="checkbox" />
+                <label for="pilih-semua" class="text-sm font-bold">Pilih Semua (2)</label>
+              </div>
+              <button class="text-sm font-bold text-primary">Hapus</button>
+            </div>
+            
+            <div aria-label="Card" class="border border-t-0 dark:border-none card bg-base-100">
+                <div class="p-0 card-body">
+                    <div class="flex w-full gap-4">
+                        <div class="flex w-full gap-3 m-5">
+                          <input id="pilih-semua" aria-label="Check all" class="checkbox checkbox-sm" type="checkbox" />
+                            <div class="flex w-4/5">
+                                <img src="https://i.pinimg.com/564x/8a/d7/69/8ad769e621baad71a929a8d88f15607e.jpg" class="rounded-xl image-full image" alt="">
+                                <div class="mt-4 ml-4">
+                                    <h1 class="text-sm font-semibold">Pulpen Kantor</h1>
+                                    <p class="mt-2 text-sm text-pretty">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, at. </p>
+                                </div>
+                            </div>
+                            <div class="flex items-end w-1/5 mr-8">
+                                <div class="flex gap-2 mt-4">
+                                        <button class="normal-case btn-sm btn border-base-content/20 md:flex btn-ghost join-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                                            role="img" class="text-dark dark:text-slate-200" font-size="20" width="1em" height="1em" viewBox="0 0 448 512">
+                                                <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                                            </svg>
+                                        </button>
+                                    
+                                    <div class="border join join-vertical lg:join-horizontal border-base-content/20">
+                                        <button class="normal-case border-none btn-sm btn border-base-content/20 md:flex btn-ghost join-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                                            role="img" class="text-dark dark:text-slate-200" font-size="14" width="1em" height="1em" viewBox="0 0 448 512">
+                                                <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>
+                                            </svg>
+                                        </button>
+                                        
+                                        <button class="px-3 font-semibold normal-case border-none btn border-base-content/20 md:flex btn-sm btn-ghost join-item">1</button>
+                                        
+                                        <button class="normal-case border-none btn border-base-content/20 md:flex btn-sm btn-ghost join-item text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                                            role="img" class="text-dark dark:text-slate-200" font-size="14" width="1em" height="1em" viewBox="0 0 448 512">
+                                                <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div aria-label="Card" class="border border-t-0 dark:border-none card bg-base-100">
+                <div class="p-0 card-body">
+                    <div class="flex w-full gap-4">
+                      <div class="flex w-full gap-3 m-5">
+                          <input id="pilih-semua" aria-label="Check all" class="checkbox checkbox-sm" type="checkbox" />
+                            <div class="flex w-4/5">
+                                <img src="https://i.pinimg.com/564x/5d/63/c6/5d63c69acf249a7f3bf0d073fad35842.jpg" class="rounded-xl image-full image" alt="">
+                                <div class="mt-4 ml-4">
+                                    <h1 class="text-sm font-semibold">Pensil 2B</h1>
+                                    <p class="mt-2 text-sm text-pretty">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, at. </p>
+                                </div>
+                            </div>
+                            <div class="flex items-end w-1/5 mr-8">
+                                <div class="flex gap-2 mt-4">
+                                        <button class="normal-case btn-sm btn border-base-content/20 md:flex btn-ghost join-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                                            role="img" class="text-dark dark:text-slate-200" font-size="20" width="1em" height="1em" viewBox="0 0 448 512">
+                                                <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                                            </svg>
+                                        </button>
+                                    
+                                    <div class="border join join-vertical lg:join-horizontal border-base-content/20">
+                                        <button class="normal-case border-none btn-sm btn border-base-content/20 md:flex btn-ghost join-item">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                                            role="img" class="text-dark dark:text-slate-200" font-size="14" width="1em" height="1em" viewBox="0 0 448 512">
+                                                <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"/>
+                                            </svg>
+                                        </button>
+                                        
+                                        <button class="px-3 font-semibold normal-case border-none btn border-base-content/20 md:flex btn-sm btn-ghost join-item">1</button>
+                                        
+                                        <button class="normal-case border-none btn border-base-content/20 md:flex btn-sm btn-ghost join-item text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                                            role="img" class="text-dark dark:text-slate-200" font-size="14" width="1em" height="1em" viewBox="0 0 448 512">
+                                                <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div aria-label="Card" class="w-1/3 mt-5 border md:max-h-[52vh] dark:border-none card bg-base-100">
+            <div class="p-5 card-body">
+                <div class="flex flex-col w-full gap-4">
+                    <h1 class="text-xl font-semibold">Konfirmasi Barang</h1>
+                    <form method="dialog">
+                        <div class="flex flex-col">
+                            <label class="w-full py-2 form-control">
+                                <div class="label">
+                                    <span class="font-medium label-text">Catatan</span>
+                                </div>
+                                <textarea class="w-full h-32 textarea textarea-primary focus:textarea-primary" placeholder="Type here ..."></textarea>
+                            </label>
+                        </div>
+                        <button onclick="transaction_modal.showModal()" type="submit" class="w-full mt-5 text-white bottom-4 btn btn-primary hover:opacity-80">Kirim (2)</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+      
+      </div>
+</section>
+
+<footer class="w-full bg-slate-50 dark:bg-base-300">
+  <div class="mx-auto max-w-7xl">
+    
+    <div class="grid grid-cols-2 gap-8 py-10 lg:grid-cols-4 2xl:grid-cols-6 ">
+      <div class="flex flex-col items-center mb-10 col-span-full 2xl:col-span-2 lg:mb-0 2xl:items-start">
+        <a href="#root" class="flex justify-center lg:justify-start">
+          <h1 class="text-3xl font-bold text-center">
+            <img
+              src="../../src/dist/images/logo.png"
+              class="inline-block w-12 mr-2 mask mask-circle"
+              alt="dashwind-logo"
+            />Sarpras
+          </h1>
+        </a>
+        
+        <div class="flex flex-col items-center justify-between w-full max-w-xl mx-auto 2xl:flex-col 2xl:items-start">
+          <p class="py-8 text-sm text-center text-gray-500 lg:max-w-xs lg:text-left">Trusted in more than 100 countries
+            & 5 million customers. Have any query ?</p>
+          <a href="#root"
+            class="py-2.5 px-5 h-9 block w-fit bg-indigo-600 rounded-full shadow-sm text-xs text-white mx-auto transition-all  duration-500 hover:bg-indigo-700 lg:mx-0">
+            Contact Us</a>
+        </div>
+        
+      </div>
+ 
+      <div class="ml-4 text-left lg:mx-auto">
+        <h4 class="text-lg font-medium text-gray-900 mb-7">Services</h4>
+        <ul class="text-sm transition-all duration-500">
+          <li class="mb-6">
+            <a href="list-barang.html" class="text-gray-600 hover:text-gray-900">Pendataan Barang</a>
+          </li>
+          <li class="mb-6">
+            <a href="pengajuan.html" class="text-gray-600 hover:text-gray-900">Pengajuan</a>
+          </li>
+          <li class="mb-6">
+            <a href="permintaan.html" class="text-gray-600 hover:text-gray-900">Permintaan</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ml-4 text-left lg:mx-auto">
+        <h4 class="text-lg font-medium text-gray-900 mb-7">Fitur</h4>
+        <ul class="text-sm transition-all duration-500 ">
+          <li class="mb-6">
+            <a href="index.html" class="text-gray-600 hover:text-gray-900">Home</a>
+          </li>
+          <li class="mb-6">
+            <a href="list-barang.html" class="text-gray-600 hover:text-gray-900">Lihat Barang</a>
+          </li>
+          <li class="mb-6">
+            <a href="pengajuan.html" class="text-gray-600 hover:text-gray-900">Pengajuan</a>
+          </li>
+          <li>
+            <a href="permintaan.html" class="text-gray-600 hover:text-gray-900">Permintaan</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ml-4 text-left lg:mx-auto">
+        <h4 class="text-lg font-medium text-gray-900 mb-7">Resources</h4>
+        <ul class="text-sm transition-all duration-500">
+          <li class="mb-6">
+            <a href="#root" class="text-gray-600 hover:text-gray-900">Data</a>
+          </li>
+          <li class="mb-6">
+            <a href="#main" class="text-gray-600 hover:text-gray-900">User Guide</a>
+          </li>
+          <li class="mb-6">
+            <a href="#faq" class="text-gray-600 hover:text-gray-900">FAQs</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="ml-4 text-left lg:mx-auto">
+        <h4 class="text-lg font-medium text-gray-900 mb-7">Blogs</h4>
+        <ul class="text-sm transition-all duration-500">
+          <li class="mb-6">
+            <a href="javascript:;" class="text-gray-600 hover:text-gray-900">News</a>
+          </li>
+          <li class="mb-6">
+            <a href="javascript:;" class="text-gray-600 hover:text-gray-900">Tips & Tricks</a>
+          </li>
+          <li class="mb-6">
+            <a href="javascript:;" class="text-gray-600 hover:text-gray-900">New Updates</a>
+          </li>
+          <li>
+            <a href="javascript:;" class="text-gray-600 hover:text-gray-900">Events</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="px-14 py-7">
+      <div class="flex flex-col items-center justify-center lg:justify-between lg:flex-row">
+        <span class="text-sm text-gray-500 ">©<a href="https://pagedone.io/">Sarpras Pice</a> 2024, All rights
+          reserved.</span>
+        <div class="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
+          <a href="javascript:;"
+            class="flex items-center justify-center bg-gray-700 rounded-full w-9 h-9 hover:bg-indigo-600">
+            <svg class="text-white " width="32" height="32" viewBox="0 0 32 32" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path id="Vector"
+                d="M17.5667 14.7386L24.072 7.33936H22.5305L16.8819 13.764L12.3704 7.33936H7.16699L13.9892 17.0546L7.16699 24.8139H8.70862L14.6736 18.0292L19.4381 24.8139H24.6415L17.5663 14.7386H17.5667ZM15.4552 17.1402L14.764 16.1728L9.2641 8.47491H11.632L16.0704 14.6873L16.7617 15.6548L22.5312 23.73H20.1633L15.4552 17.1406V17.1402Z"
+                fill="currentColor" />
+            </svg>
+          </a>
+          <a href="javascript:;"
+            class="flex items-center justify-center bg-gray-700 rounded-full w-9 h-9 hover:bg-indigo-600">
+            <svg class="w-[1.25rem] h-[1.125rem] text-white" viewBox="0 0 15 15" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4.70975 7.93663C4.70975 6.65824 5.76102 5.62163 7.0582 5.62163C8.35537 5.62163 9.40721 6.65824 9.40721 7.93663C9.40721 9.21502 8.35537 10.2516 7.0582 10.2516C5.76102 10.2516 4.70975 9.21502 4.70975 7.93663ZM3.43991 7.93663C3.43991 9.90608 5.05982 11.5025 7.0582 11.5025C9.05658 11.5025 10.6765 9.90608 10.6765 7.93663C10.6765 5.96719 9.05658 4.37074 7.0582 4.37074C5.05982 4.37074 3.43991 5.96719 3.43991 7.93663ZM9.97414 4.22935C9.97408 4.39417 10.0236 4.55531 10.1165 4.69239C10.2093 4.82946 10.3413 4.93633 10.4958 4.99946C10.6503 5.06259 10.8203 5.07916 10.9844 5.04707C11.1484 5.01498 11.2991 4.93568 11.4174 4.81918C11.5357 4.70268 11.6163 4.55423 11.649 4.39259C11.6817 4.23095 11.665 4.06339 11.6011 3.91109C11.5371 3.7588 11.4288 3.6286 11.2898 3.53698C11.1508 3.44536 10.9873 3.39642 10.8201 3.39635H10.8197C10.5955 3.39646 10.3806 3.48424 10.222 3.64043C10.0635 3.79661 9.97434 4.00843 9.97414 4.22935ZM4.21142 13.5892C3.52442 13.5584 3.15101 13.4456 2.90286 13.3504C2.57387 13.2241 2.33914 13.0738 2.09235 12.8309C1.84555 12.588 1.69278 12.3569 1.56527 12.0327C1.46854 11.7882 1.3541 11.4201 1.32287 10.7431C1.28871 10.0111 1.28189 9.79119 1.28189 7.93669C1.28189 6.08219 1.28927 5.86291 1.32287 5.1303C1.35416 4.45324 1.46944 4.08585 1.56527 3.84069C1.69335 3.51647 1.84589 3.28513 2.09235 3.04191C2.3388 2.79869 2.57331 2.64813 2.90286 2.52247C3.1509 2.42713 3.52442 2.31435 4.21142 2.28358C4.95417 2.24991 5.17729 2.24319 7.0582 2.24319C8.9391 2.24319 9.16244 2.25047 9.90582 2.28358C10.5928 2.31441 10.9656 2.42802 11.2144 2.52247C11.5434 2.64813 11.7781 2.79902 12.0249 3.04191C12.2717 3.2848 12.4239 3.51647 12.552 3.84069C12.6487 4.08513 12.7631 4.45324 12.7944 5.1303C12.8285 5.86291 12.8354 6.08219 12.8354 7.93669C12.8354 9.79119 12.8285 10.0105 12.7944 10.7431C12.7631 11.4201 12.6481 11.7881 12.552 12.0327C12.4239 12.3569 12.2714 12.5882 12.0249 12.8309C11.7784 13.0736 11.5434 13.2241 11.2144 13.3504C10.9663 13.4457 10.5928 13.5585 9.90582 13.5892C9.16306 13.6229 8.93994 13.6296 7.0582 13.6296C5.17645 13.6296 4.95395 13.6229 4.21142 13.5892ZM4.15307 1.03424C3.40294 1.06791 2.89035 1.18513 2.4427 1.3568C1.9791 1.53408 1.58663 1.77191 1.19446 2.1578C0.802277 2.54369 0.56157 2.93108 0.381687 3.38797C0.207498 3.82941 0.0885535 4.3343 0.0543922 5.07358C0.0196672 5.81402 0.0117188 6.05074 0.0117188 7.93663C0.0117188 9.82252 0.0196672 10.0592 0.0543922 10.7997C0.0885535 11.539 0.207498 12.0439 0.381687 12.4853C0.56157 12.9419 0.802334 13.3297 1.19446 13.7155C1.58658 14.1012 1.9791 14.3387 2.4427 14.5165C2.89119 14.6881 3.40294 14.8054 4.15307 14.839C4.90479 14.8727 5.1446 14.8811 7.0582 14.8811C8.9718 14.8811 9.212 14.8732 9.96332 14.839C10.7135 14.8054 11.2258 14.6881 11.6737 14.5165C12.137 14.3387 12.5298 14.1014 12.9219 13.7155C13.3141 13.3296 13.5543 12.9419 13.7347 12.4853C13.9089 12.0439 14.0284 11.539 14.062 10.7997C14.0962 10.0587 14.1041 9.82252 14.1041 7.93663C14.1041 6.05074 14.0962 5.81402 14.062 5.07358C14.0278 4.33424 13.9089 3.82913 13.7347 3.38797C13.5543 2.93135 13.3135 2.5443 12.9219 2.1578C12.5304 1.7713 12.137 1.53408 11.6743 1.3568C11.2258 1.18513 10.7135 1.06735 9.96388 1.03424C9.21256 1.00058 8.97236 0.992188 7.05876 0.992188C5.14516 0.992188 4.90479 1.00002 4.15307 1.03424Z"
+                fill="currentColor" />
+            </svg>
+          </a>
+          <a href="javascript:;"
+            class="flex items-center justify-center bg-gray-700 rounded-full w-9 h-9 hover:bg-indigo-600">
+            <svg class="w-[1rem] h-[1rem] text-white" viewBox="0 0 13 12" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.8794 11.5527V3.86835H0.318893V11.5527H2.87967H2.8794ZM1.59968 2.81936C2.4924 2.81936 3.04817 2.2293 3.04817 1.49188C3.03146 0.737661 2.4924 0.164062 1.61666 0.164062C0.74032 0.164062 0.167969 0.737661 0.167969 1.49181C0.167969 2.22923 0.723543 2.8193 1.5829 2.8193H1.59948L1.59968 2.81936ZM4.29668 11.5527H6.85698V7.26187C6.85698 7.03251 6.87369 6.80255 6.94134 6.63873C7.12635 6.17968 7.54764 5.70449 8.25514 5.70449C9.18141 5.70449 9.55217 6.4091 9.55217 7.44222V11.5527H12.1124V7.14672C12.1124 4.78652 10.8494 3.68819 9.16483 3.68819C7.78372 3.68819 7.17715 4.45822 6.84014 4.98267H6.85718V3.86862H4.29681C4.33023 4.5895 4.29661 11.553 4.29661 11.553L4.29668 11.5527Z"
+                fill="currentColor" />
+            </svg>
+          </a>
+          <a href="javascript:;"
+            class="flex items-center justify-center bg-gray-700 rounded-full w-9 h-9 hover:bg-indigo-600">
+            <svg class="w-[1.25rem] h-[0.875rem] text-white" viewBox="0 0 16 12" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M13.9346 1.13529C14.5684 1.30645 15.0665 1.80588 15.2349 2.43896C15.5413 3.58788 15.5413 5.98654 15.5413 5.98654C15.5413 5.98654 15.5413 8.3852 15.2349 9.53412C15.0642 10.1695 14.5661 10.669 13.9346 10.8378C12.7886 11.1449 8.19058 11.1449 8.19058 11.1449C8.19058 11.1449 3.59491 11.1449 2.44657 10.8378C1.81277 10.6666 1.31461 10.1672 1.14622 9.53412C0.839844 8.3852 0.839844 5.98654 0.839844 5.98654C0.839844 5.98654 0.839844 3.58788 1.14622 2.43896C1.31695 1.80353 1.81511 1.30411 2.44657 1.13529C3.59491 0.828125 8.19058 0.828125 8.19058 0.828125C8.19058 0.828125 12.7886 0.828125 13.9346 1.13529ZM10.541 5.98654L6.72178 8.19762V3.77545L10.541 5.98654Z"
+                fill="currentColor" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- modal traksaksi -->
+<dialog id="transaction_modal" class="modal">
+  <div class="w-full modal-box">
+    <div class="my-8 text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-16 shrink-0 fill-[#333] inline" viewBox="0 0 512 512">
+        <path
+          d="M383.841 171.838c-7.881-8.31-21.02-8.676-29.343-.775L221.987 296.732l-63.204-64.893c-8.005-8.213-21.13-8.393-29.35-.387-8.213 7.998-8.386 21.137-.388 29.35l77.492 79.561a20.687 20.687 0 0 0 14.869 6.275 20.744 20.744 0 0 0 14.288-5.694l147.373-139.762c8.316-7.888 8.668-21.027.774-29.344z"
+          data-original="#000000" />
+        <path
+          d="M256 0C114.84 0 0 114.84 0 256s114.84 256 256 256 256-114.84 256-256S397.16 0 256 0zm0 470.487c-118.265 0-214.487-96.214-214.487-214.487 0-118.265 96.221-214.487 214.487-214.487 118.272 0 214.487 96.221 214.487 214.487 0 118.272-96.215 214.487-214.487 214.487z"
+          data-original="#000000" />
+      </svg>
+      <h4 class="text-2xl text-[#333] font-semibold mt-6">Pengajuan Dikirim!</h4>
+      <p class="mt-4 text-sm text-gray-500">Pengajuan sedang diproses, harap ditunggu!!</p>
+    </div>
+    <div class="flex items-center justify-center w-full modal-action">
+      <form method="dialog">
+        <a href="pengajuan.html" class="btn btn-outline">Close</a>
+      </form>
+    </div>
+  </div>
+</dialog>
+ 
+  <script src="../../src/js/js.js"></script>
+  </body>
+</html>
