@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarpras - Dashboard</title>
-  <link rel="shortcut icon" href="../../src/dist/images/logo.png" type="image/x-icon" />
-  <link href="../../src/css/output.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="../../dist/images/logo.png" type="image/x-icon" />
+  <link href="../../css/output.css" rel="stylesheet" />
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -36,7 +36,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
                 </path>
               </svg></label>
-            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Stok Opname</h1>
+            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Detail Opname</h1>
           </div>
           <div class="flex-none">
             <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"><input type="checkbox" id="dark-toggle"
@@ -88,15 +88,14 @@
         </div>
         <main class="flex-1 px-6 pt-4 overflow-y-auto md:pt-4 bg-base-200">
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div class="">
-              <div class="w-72">
-                <select class="w-full max-w-xs select select-primary">
-                  <option disabled selected hidden>2023-2024 (Aktif)</option>
-                  <option>2023-2024 (Aktif)</option>
-                  <option>2022-2023</option>
-                  <option>2021-2022</option>
-                  <option>2012-2021</option>
-                </select>
+            <div class="pl-2">
+              <div class="mt-5 w-72">
+                <div class="text-sm breadcrumbs">
+                    <ul>
+                      <li><a href="index.html">Home</a></li> 
+                      <li>Detail</li>
+                    </ul>
+                  </div>
               </div>
             </div>
             <div class="text-right">
@@ -133,11 +132,12 @@
           <div class="w-full p-6 mt-10 mb-10 shadow-xl card bg-base-100">
             <div>
               <div class="flex items-center justify-between">
-                <h3 class="text-lg font-medium">Laporan Stok Opname</h3>
+                <h3 class="text-lg font-medium">Barang <span class="font-bold">ATK</span></h3>
                 <div aria-label="Breadcrumbs" class="hidden p-0 text-sm breadcrumbs sm:inline">
                   <ul>
                     <li class="text-base-content/60"><a href="index.html">Home</a></li>
-                    <li>Laporan SO</li>
+                    <li class="text-base-content/60"><a href="detailLaporanSO.html">Sub</a></li>
+                    <li>Detail</li>
                   </ul>
                 </div>
               </div>
@@ -159,8 +159,15 @@
                           </svg><input placeholder="Cari data barang ..." id="searchInput" onkeyup="searchTable()"
                             class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0">
                         </div>
-                        <div class="hidden sm:block">
-                          <select aria-label="Select category"
+                        <div class="hidden sm:block"><select aria-label="Select category"
+                            class="select select-sm select-bordered focus:outline-offset-0">
+                            <option value="default" selected="">All</option>
+                            <option value="videos">ATK</option>
+                            <option value="documents">Alat Kebersihan</option>
+                            <option value="archives">Alat Bangunan</option>
+                          </select>
+                        </div>
+                        <div class="hidden sm:block"><select aria-label="Select category"
                           class="select select-sm select-bordered focus:outline-offset-0">
                           <option value="default" disabled selected="">Order by</option>
                           <option value="videos">Tahun</option>
@@ -171,18 +178,6 @@
                       </div>
                       </div>
                       <div class="inline-flex items-center gap-3">
-                        <input type="date" class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost">
-                        <button onclick="laporan_so.showModal()" class="dropdown dropdown-left dropdown-bottom">
-                          <label tabindex="0"
-                              class="h-8 border btn btn-ghost btn-xs border-base-content/20"><svg
-                                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
-                                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                  stroke-width="2" d="M5 12h14m-7-7v14"></path>
-                              </svg>
-                              Buat Laporan
-                          </label>
-                        </button>
                         <button type="button"
                           class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost"
                           id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -224,10 +219,14 @@
                         <thead>
                           <tr>
                             <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
-                            <th><span class="text-sm font-bold text-base-content/80">Petugas</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Barang</span></th>
                             <th><span class="text-sm font-bold text-base-content/80">Kategori</span></th>
-                            <th><span class="text-sm font-bold text-base-content/80">Tanggal</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Stok</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Fisik</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Penyesuaian</span></th>
+                            <th class="text-center px-14"><span class="text-sm font-bold text-base-content/80">Sebab</span></th>
+                            <th class="px-20 text-center"><span class="text-sm font-bold text-base-content/80">Keterangan</span></th>
+                            <th class="px-10"><span class="text-sm font-bold text-base-content/80">Tanggal</span></th>
                             <th><span class="text-sm font-bold text-base-content/80">Aksi</span></th>
                           </tr>
                         </thead>
@@ -235,90 +234,134 @@
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">SO001</div>
+                              <div class="text-sm font-medium">Pulpen Kantor</div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">Pa Toni</div>
+                                <div class="flex items-center gap-2">
+                                  <div aria-label="Badge"
+                                    class="font-medium capitalize border-0 badge bg-primary/10 text-primary">ATK
+                                  </div>
+                                </div>
                             </td>
                             <td>
-                              <div class="flex items-center gap-2">
-                                <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                              </div>
+                                 <div class="text-sm font-medium">100</div>
                             </td>
                             <td>
-                              <div class="font-medium">21 Mei 2024</div>
+                                <div class="text-sm font-medium">0</div>
                             </td>
                             <td class="text-center">
+                                <div class="text-sm font-medium">0</div>
+                            </td>
+                            <td class="mx-20">
+                                <div class="text-sm font-medium">
+                                    <select class="w-full max-w-xs select select-bordered select-xs focus:select-primary">
+                                        <option selected disabled>Sebab</option>
+                                        <option>Pengurangan</option>
+                                        <option>Penambahan</option>
+                                      </select>
+                                </div>
+                            </td>
+                            <td class="">
+                              <div class="text-sm font-medium">Belum dicantumkan!</div>
+                            </td>
+                            <td class="text-center">22 Mei 2024</td>
+                            <td class="text-center">
                               <div class="flex text-sm">
-                                  <a href="detailStokOpname.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
-                                    width="1em" height="1em" viewBox="0 0 512 512">
-                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
-                                  </svg>
-                                  </a>
+                                  <button onclick="edit_so.showModal()" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                  width="1em" height="1em">
+                                  <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/>
+                                  </svg>                                
+                                  </button>
                               </div>
                             </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">SO002</div>
+                              <div class="text-sm font-medium">Spidol</div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">Pa Toni</div>
+                                <div class="flex items-center gap-2">
+                                  <div aria-label="Badge"
+                                    class="font-medium capitalize border-0 badge bg-primary/10 text-primary">ATK
+                                  </div>
+                                </div>
                             </td>
                             <td>
-                              <div class="flex items-center gap-2">
+                                 <div class="text-sm font-medium">70</div>
+                            </td>
+                            <td>
+                                <div class="text-sm font-medium">80</div>
+                            </td>
+                            <td class="text-center">
+                                <div class="text-sm font-medium">5</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center justify-center w-full gap-2 mx-auto">
                                 <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Kebersihan</div>
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Penambahan
+                                </div>
                               </div>
                             </td>
                             <td>
-                              <div class="font-medium">21 Juni 2024</div>
+                              <div class="text-sm font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, culpa cupiditate. Ea ducimus, deserunt delectus necessitatibus in voluptas quaerat earum.</div>
                             </td>
+                            <td class="text-center">22 Mei 2024</td>
                             <td class="text-center">
                               <div class="flex text-sm">
-                                  <a href="detailLaporanSO.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
-                                    width="1em" height="1em" viewBox="0 0 512 512">
-                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
-                                  </svg>
-                                  </a>
+                                  <button onclick="barang_so_modal.showModal()" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                  width="1em" height="1em">
+                                  <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/>
+                                  </svg>                                
+                                  </button>
                               </div>
                             </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">SO003</div>
+                              <div class="text-sm font-medium">Pensil</div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">Pa Hendro</div>
+                                <div class="flex items-center gap-2">
+                                  <div aria-label="Badge"
+                                    class="font-medium capitalize border-0 badge bg-primary/10 text-primary">ATK
+                                  </div>
+                                </div>
                             </td>
                             <td>
-                              <div class="flex items-center gap-2">
+                                 <div class="text-sm font-medium">80</div>
+                            </td>
+                            <td>
+                                <div class="text-sm font-medium">65</div>
+                            </td>
+                            <td class="text-center">
+                                <div class="text-sm font-medium">15</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center justify-center w-full gap-2 mx-auto">
                                 <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
+                                  class="font-medium capitalize border-0 badge bg-error/10 text-error">Pengurangan
+                                </div>
                               </div>
                             </td>
                             <td>
-                              <div class="font-medium">21 Juli 2024</div>
+                              <div class="text-sm font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, culpa cupiditate. Ea ducimus, deserunt delectus necessitatibus in voluptas quaerat earum.</div>
                             </td>
+                            <td class="text-center">22 Mei 2024</td>
                             <td class="text-center">
                               <div class="flex text-sm">
-                                  <a href="detailLaporanSO.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
-                                    width="1em" height="1em" viewBox="0 0 512 512">
-                                    <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/>
-                                  </svg>
-                                  </a>
+                                  <button onclick="barang_so_modal.showModal()" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
+                                  width="1em" height="1em">
+                                  <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                  stroke-linejoin="round" stroke-width="2" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/>
+                                  </svg>                                
+                                  </button>
                               </div>
                             </td>
                           </tr>
@@ -361,7 +404,7 @@
             </svg>
           </button>
           <li class="flex flex-row items-center justify-start mb-2 text-xl font-semibold dark:text-white">
-            <a href="#"><img class="w-10 font-semibold mask mask-squircle" src="../../src/dist/images/logo.png"
+            <a href="#"><img class="w-10 font-semibold mask mask-squircle" src="../../dist/images/logo.png"
                 alt="logo" />Sarpas</a>
           </li>
 
@@ -486,7 +529,7 @@
                   ></path>
                 </svg>
               </div>
-              <div class="w-full sidebarOpen">
+              <div class="hidden w-full sidebarOpen">
                 <ul class="menu menu-compact">
                   <li>
                     <a href="laporan.html"
@@ -508,7 +551,7 @@
                     >
                   </li>
                   <li>
-                    <a href="stok-opname.html" class="font-semibold bg-base-200">
+                    <a href="stok-opname.html">
                       <div class="flex flex-col">
                         <div class="block w-full">
                           <svg
@@ -525,8 +568,7 @@
                                   d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                                 />
                               </svg>
-                          Opname<span class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
-                          aria-hidden="true"></span>
+                          Opname
                         </div>
                       </div>
                     </a>
@@ -589,9 +631,9 @@
     </div>
   </div>
 
-  <!-- add laporan modal -->
-  <dialog id="laporan_so" class="modal modal-middle">
-    <div class="modal-box modal-middle">
+  <!-- add barang so -->
+  <dialog id="edit_so" class="modal">
+    <div class="modal-box">
       <form method="dialog">
         <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
           ✕
@@ -600,39 +642,44 @@
       <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
         <div class="flex flex-col items-center justify-center w-full bg-base-100">
           <h1 class="text-4xl font-bold text-center">
-            Buat <span class="font-bold text-primary"> Laporan
+            Stok <span class="font-bold text-primary"> Opname
           </h1>
           <div class="w-full py-2">
             <form method="dialog" class="w-full">
-              <div class="flex flex-wrap pb-2">
+              <div class="flex flex-wrap">
                 <div class="w-1/2 px-4 py-2">
-                  <label class="w-full form-control">
+                  <label class="w-full max-w-lg form-control">
                     <div class="label">
-                      <span class="font-semibold label-text">Nama Petugas</span>
+                      <span class="font-semibold label-text">Stok Barang</span>
                     </div>
-                    <input type="text" required placeholder="Ketik disini ..." class="w-full input input-bordered focus:input-primary" />
+                    <input value="100" disabled type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary disabled:font-bold input-disabled" />
                   </label>
                 </div>
                 <div class="w-1/2 px-4 py-2">
-                  <label class="w-full form-control">
+                  <label class="w-full max-w-lg form-control">
                     <div class="label">
-                      <span class="font-semibold label-text">Kategori Barang</span>
+                      <span class="font-semibold label-text">Stok Fisik</span>
                     </div>
-                    <select class="w-full max-w-full select select-ghost select-bordered focus:select-primary">
-                      <option selected>ATK</option>
-                      <option>Alat Kebersihan</option>
-                      <option>Alat Bangunan</option>
-                    </select>
+                    <input type="number" min="1" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
                   </label>
                 </div>
                 <div class="w-full px-4 py-2">
-                  <label class="w-full form-control">
+                  <label class="w-full max-w-lg form-control">
                     <div class="label">
-                      <span class="font-semibold label-text">Masukan Periode</span>
+                      <span class="font-semibold label-text">Penyesuaian</span>
                     </div>
-                    <input type="date" required placeholder="Ketik disini ..." class="w-full input input-bordered focus:input-primary" />
+                    <input type="number" min="1" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
                   </label>
                 </div>
+                <div class="w-full px-4 py-2">
+                  <label class="w-full max-w-lg form-control">
+                    <div class="label">
+                      <span class="font-semibold label-text">Keterangan</span>
+                    </div>
+                    <textarea class="w-full px-4 py-2 textarea textarea-bordered focus:textarea-primary" placeholder="Type here ..."></textarea>
+                  </label>
+                </div>
+
               </div>
 
               <input type="submit" class="my-3 ml-4 text-white btn btn-primary hover:opacity-80">
@@ -643,7 +690,7 @@
     </div>
   </dialog>
 
-  <script src="../../src/js/js.js"></script>
+  <script src="../../js/js.js"></script>
 
 </body>
 

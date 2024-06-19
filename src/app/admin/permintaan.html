@@ -5,20 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarpras - Dashboard</title>
-  <link rel="shortcut icon" href="../../src/dist/images/logo.png" type="image/x-icon" />
-  <link href="../../src/css/output.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="../../dist/images/logo.png" type="image/x-icon" />
+  <link href="../../css/output.css" rel="stylesheet" />
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- select2 start -->
-    <!-- jquery -->
-    <script
-    src="https://code.jquery.com/jquery-3.7.1.js"
-    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-    
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    
-    <!-- select2 end -->
+  <!-- DataTables CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
   <script>
     if (
@@ -46,7 +40,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
                 </path>
               </svg></label>
-            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Barang Keluar</h1>
+            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Permintaan</h1>
           </div>
           <div class="flex-none">
             <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"><input type="checkbox" id="dark-toggle"
@@ -121,7 +115,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99">
                   </path>
-                </svg>Refresh Data</button> 
+                </svg>Refresh Data</button>
                 <button class="ml-2 normal-case btn btn-ghost btn-sm">
                   <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -147,12 +141,11 @@
           <div class="w-full p-6 mt-10 mb-10 shadow-xl card bg-base-100">
             <div>
               <div class="flex items-center justify-between">
-                <h3 class="text-lg font-medium">Detail Barang "BRM00"'</h3>
+                <h3 class="text-lg font-medium">Permintaan</h3>
                 <div aria-label="Breadcrumbs" class="hidden p-0 text-sm breadcrumbs sm:inline">
                   <ul>
                     <li class="text-base-content/60"><a href="/app/admin">Home</a></li>
-                    <li><a href="barang-keluar.html">Barang Keluar</a></li>
-                    <li>Detail</li>
+                    <li>Items</li>
                   </ul>
                 </div>
               </div>
@@ -171,21 +164,22 @@
                               <circle cx="11" cy="11" r="8"></circle>
                               <path d="m21 21l-4.3-4.3"></path>
                             </g>
-                          </svg><input placeholder="Cari data barang ..." id="searchInput" onkeyup="searchTable()"
+                          </svg><input placeholder="Cari data ..." id="searchInput" onkeyup="searchTable()"
                             class="w-full input focus:border-transparent focus:outline-0 input-sm focus:outline-offset-0">
                         </div>
-                        <div class="hidden sm:block">
-                          <select aria-label="Select category"
+                        <div class="hidden sm:block"><select aria-label="Select category"
                             class="select select-sm select-bordered focus:outline-offset-0">
-                            <option value="default" selected>All</option>
-                            <option value="videos">ATK</option>
-                            <option value="documents">Alat Kebersihan</option>
-                            <option value="archives">Alat Bangunan</option>
-                            <option value="other">Other</option>
-                          </select></div>
+                            <option value="default" disabled selected="">Status</option>
+                              <option value="videos">Disetujui</option>
+                              <option value="documents">Diprogress</option>
+                              <option value="documents">Ditolak</option>
+                            </select>
+                          </select>
+                        </div>
                       </div>
                       <div class="inline-flex items-center gap-3">
-                        <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_modal.showModal()">
+                        <button
+                          class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost">
                           <span>Import</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -196,16 +190,7 @@
                             </path>
                           </svg>
                         </button>
-                        <button aria-label="Show order" class="h-8 border btn btn-ghost btn-xs border-base-content/20"
-                            onclick="add_barang_baru.showModal()">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                              role="img" class="text-base-content" font-size="14" width="1em" height="1em" viewBox="0 0 24 24">
-                              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M5 12h14m-7-7v14"></path>
-                            </svg>
-                            Input Barang
-                          </button>
-                        <button type="button" class="px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost" 
+                        <button type="button" class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost" 
                         id="menu-button" aria-expanded="true" aria-haspopup="true">
                         Export
                           <svg class="w-5 h-5 -mr-1 text-gray-600 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -230,154 +215,177 @@
                     <div class="overflow-auto">
                       <table class="table mt-2 rounded-box" id="myTable">
                         <thead>
-                            <tr>
-                              <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
-                              <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
-                              <th><span class="text-sm font-bold text-base-content/80">Nama</span></th>
-                              <th><span class="text-sm font-bold text-base-content/80">Kategori</span></th>
-                              <th><span class="text-sm font-bold text-base-content/80">Jumlah</span></th>
-                              <th><span class="text-sm font-bold text-base-content/80">Satuan</span></th>
-                              <th><span class="text-sm font-bold text-base-content/80">Dana</span></th>
-                              <th><span class="text-sm font-bold text-base-content/80">Tanggal</span></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="cursor-pointer hover:bg-base-200/40">
-                              <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                              <td>
-                                <div class="text-sm font-medium">ATK011</div>
-                              </td>
-                              <td>
-                                <div class="font-medium">Pulpen Kantor</div>
-                              </td>
-                              <td>
-                                <div class="flex items-center gap-2">
-                                  <div aria-label="Badge"
-                                    class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                                </div>
-                              </td>
-                              <td class="text-center">
-                                <div class="text-sm capitalize">60</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">Pcs</div>
-                              </td>
-                              <td>
-                                <div class="text-sm uppercase">bos</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">17 Apr 2024</div>
-                              </td>
-                            </tr>
-                            <tr class="cursor-pointer hover:bg-base-200/40">
-                              <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                              <td>
-                                <div class="text-sm font-medium">ATK022</div>
-                              </td>
-                              <td>
-                                <div class="font-medium">Pensil Kantor</div>
-                              </td>
-                              <td>
-                                <div class="flex items-center gap-2">
-                                  <div aria-label="Badge"
-                                    class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                                </div>
-                              </td>
-                              <td class="text-center">
-                                <div class="text-sm capitalize">100</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">Pcs</div>
-                              </td>
-                              <td>
-                                <div class="text-sm uppercase">bos</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">17 Apr 2024</div>
-                              </td>
-                            </tr>
-                            <tr class="cursor-pointer hover:bg-base-200/40">
-                              <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                              <td>
-                                <div class="text-sm font-medium">ATK033</div>
-                              </td>
-                              <td>
-                                <div class="font-medium">Buku Tulis</div>
-                              </td>
-                              <td>
-                                <div class="flex items-center gap-2">
-                                  <div aria-label="Badge"
-                                    class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
-                                </div>
-                              </td>
-                              <td class="text-center">
-                                <div class="text-sm capitalize">60</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">Pcs</div>
-                              </td>
-                              <td>
-                                <div class="text-sm uppercase">apb</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">17 Apr 2024</div>
-                              </td>
-                            </tr>
-                            <tr class="cursor-pointer hover:bg-base-200/40">
-                              <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                              <td>
-                                <div class="text-sm font-medium">ELK011</div>
-                              </td>
-                              <td>
-                                <div class="font-medium">Printer</div>
-                              </td>
-                              <td>
-                                <div class="flex items-center gap-2">
-                                  <div aria-label="Badge"
-                                    class="font-medium capitalize border-0 badge bg-success/10 text-success">Elektronik</div>
-                                </div>
-                              </td>
-                              <td class="text-center">
-                                <div class="text-sm capitalize">5</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">Buah</div>
-                              </td>
-                              <td>
-                                <div class="text-sm uppercase">apb</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">17 Apr 2024</div>
-                              </td>
-                            </tr>
-                            <tr class="cursor-pointer hover:bg-base-200/40">
-                              <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
-                              <td>
-                                <div class="text-sm font-medium">ELK022</div>
-                              </td>
-                              <td>
-                                <div class="font-medium">Mouse</div>
-                              </td>
-                              <td>
-                                <div class="flex items-center gap-2">
-                                  <div aria-label="Badge"
-                                    class="font-medium capitalize border-0 badge bg-success/10 text-success">Elektronik</div>
-                                </div>
-                              </td>
-                              <td class="text-center">
-                                <div class="text-sm capitalize">24</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">Buah</div>
-                              </td>
-                              <td>
-                                <div class="text-sm uppercase">apb</div>
-                              </td>
-                              <td>
-                                <div class="text-sm">19 Apr 2024</div>
-                              </td>
-                            </tr>
-                          </tbody>
+                          <tr>
+                            <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Unit</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Status</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Periode</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Action</span></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">PN001</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Unit A</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Disetujui</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm font-medium">22 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit"><a aria-label="Show order link"
+                                  href="detailPengajuan.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content" font-size="24" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button></a>
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">PN001</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Unit A</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Disetujui</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="text-sm font-medium">22 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit"><a aria-label="Show order link"
+                                  href="detailItem.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content" font-size="24" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button></a>
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">PN003</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Unit C</div>
+                              </div>
+                            </td>
+                            <td><div class="flex items-center gap-2"><div aria-label="Badge" class="font-medium text-gray-500 capitalize border-0 badge bg-neutral-content/20 dark:bg-neutral-content/20 dark:text-neutral-content">Diprogres</div></div></td>
+                            <td>
+                              <div class="text-sm font-medium">22 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit"><a aria-label="Show order link"
+                                  href="detailItem.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content" font-size="24" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button></a>
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">PN004</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Unit B</div>
+                              </div>
+                            </td>
+                            <td><div class="flex items-center gap-2"><div aria-label="Badge" class="font-medium capitalize border-0 badge bg-error/10 text-error">Ditolak</div></div></td>
+                            <td>
+                              <div class="text-sm font-medium">22 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit"><a aria-label="Show order link"
+                                  href="detailItem.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content" font-size="24" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button></a>
+                                  </div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="font-medium">PN005</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center space-x-3 truncate">
+                                <div class="font-medium">Unit C</div>
+                              </div>
+                            </td>
+                            <td><div class="flex items-center gap-2"><div aria-label="Badge" class="font-medium capitalize border-0 badge bg-error/10 text-error">Ditolak</div></div></td>
+                            <td>
+                              <div class="text-sm font-medium">22 Mei 2024</div>
+                            </td>
+                            <td>
+                              <div class="inline-flex w-fit"><a aria-label="Show order link"
+                                  href="detailItem.html"><button aria-label="Show order"
+                                    class="btn btn-sm btn-square btn-ghost"><svg xmlns="http://www.w3.org/2000/svg"
+                                      xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+                                      class="text-base-content" font-size="24" width="1em" height="1em"
+                                      viewBox="0 0 24 24">
+                                      <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2">
+                                        <path d="M2 12s3-7 10-7s10 7 10 7s-3 7-10 7s-10-7-10-7Z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                      </g>
+                                    </svg></button></a>
+                                  </div>
+                            </td>
+                          </tr>
+                        </tbody>
                       </table>
                     </div>
                     <div class="flex items-center justify-end px-5 pt-3 pb-5">
@@ -394,8 +402,7 @@
                             aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                               stroke-width="2" d="m9 18l6-6l-6-6"></path>
-                          </svg></button>
-                        </div>
+                          </svg></button></div>
                     </div>
                   </div>
                 </div>
@@ -422,7 +429,7 @@
               <a href="#"
                 ><img
                   class="w-10 font-semibold mask mask-squircle"
-                  src="../../src/dist/images/logo.png"
+                  src="../../dist/images/logo.png"
                   alt="logo"
                 />Sarpas</a
               >
@@ -443,98 +450,118 @@
           <li class="sidebar">
             <div class="flex flex-col">
               <div class="block w-full">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="inline w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                  />
                 </svg>
 
-                Barang<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" aria-hidden="true"
-                  class="float-right w-5 h-5 mt-1 transition-all duration-500 delay-400">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                Barang
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                  class="float-right w-5 h-5 mt-1 transition-all duration-500 delay-400"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                  ></path>
                 </svg>
               </div>
-              <div class="w-full sidebarOpen">
+              <div class="hidden w-full sidebarOpen">
                 <ul class="menu menu-compact">
-                    <li>
-                      <a href="list-barang.html"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="w-5 h-5"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
-                          />
-                        </svg>
-                        Data Barang</a
+                  <li>
+                    <a href="list-barang.html"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
                       >
-                    </li>
-                    <li>
-                      <a href="barang-masuk.html"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="w-5 h-5"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
-                          />
-                        </svg>
-                        Barang Masuk
-                        </a
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+                        />
+                      </svg>
+                      Data Barang</a
+                    >
+                  </li>
+                  <li>
+                    <a href="barang-masuk.html"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
                       >
-                    </li>
-                    <li>
-                      <a href="barang-keluar.html" class="font-semibold bg-base-200"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="w-5 h-5"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
-                          />
-                        </svg>
-                        Barang Keluar<span class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
-                        aria-hidden="true"></a
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+                        />
+                      </svg>
+                      Barang Masuk</a
+                    >
+                  </li>
+                  <li>
+                    <a href="barang-keluar.html"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5"
                       >
-                    </li>
-                    <li>
-                      <a href="kategori.html"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          aria-hidden="true"
-                          class="w-5 h-5"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
-                          ></path>
-                        </svg>
-                        Kategori Barang</a
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
+                        />
+                      </svg>
+                      Barang Keluar</a
+                    >
+                  </li>
+                  <li>
+                    <a href="kategori.html"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                        class="w-5 h-5"
                       >
-                    </li>
-                  </ul>
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
+                        ></path>
+                      </svg>
+                      Kategori Barang</a
+                    >
+                  </li>
+                </ul>
               </div>
             </div>
           </li>
@@ -553,13 +580,16 @@
           </li>
 
           <li class="sidebar">
-            <a href="permintaan.html">
+            <a href="permintaan.html" class="font-semibold bg-base-200">
               <div class="flex flex-col">
                 <div class="block w-full">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                  </svg>
-                  Permintaan
+                  </svg>                  
+                  Permintaan<span
+                  class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
+                  aria-hidden="true"
+                ></span>
                 </div>
               </div>
             </a>
@@ -688,106 +718,8 @@
     </div>
   </div>
 
-      <!-- modal delete -->
-  <dialog id="my_modal_1" class="modal">
-    <div class="modal-box">
-      <form method="dialog">
-        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
-      </form>
-      <h3 class="pb-6 text-2xl font-semibold text-center">Konfirmasi</h3>
-      <p class="mt-8 text-xl text-center ">Anda yakin ingin menghapus barang ini?</p>
-      <div class="mt-12 modal-action">
-        <form method="dialog">
-          <button class="btn btn-ghost btn-outline">Cancel</button>
-          <button class="btn btn-primary w-36">Yes</button>
-        </form>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- modal import -->
-  <dialog id="import_modal" class="modal">
-    <div class="modal-box">
-      <form method="dialog">
-        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
-      </form>
-      <h3 class="text-lg font-bold">Hello!</h3>
-      <div class="flex flex-col gap-2">
-        <p class="py-4">Unduh template excel</p>
-        <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost dark:bg-primary dark:text-white dark:hover:opacity-80">Unduh!</button>
-      </div>
-      <label class="w-full pt-3 form-control">
-        <div class="label">
-          <span class="label-text">Pilih file csv/excel</span>
-        </div>
-        <input type="file" class="w-full file-input file-input-bordered" />
-      </label>
-    </div>
-  </dialog>
-
-  <!-- add barang modal -->
-  <dialog id="add_barang_baru" class="modal modal-middle">
-    <div class="modal-box">
-      <form method="dialog">
-        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
-          ✕
-        </button>
-      </form>
-      <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
-        <div class="flex flex-col items-center justify-center w-full bg-base-100">
-          <h1 class="text-4xl font-bold text-center">
-            Barang <span class="font-bold text-primary"> Keluar
-          </h1>
-          <div class="w-full py-2">
-            <form method="dialog" class="w-full">
-              <div class="flex flex-wrap">
-                <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Nama Barang</span>
-                    </div>
-                    <input type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
-                  </label>
-                </div>
-
-                <div class="w-full px-4 py-2 md:w-1/2 lg:w-1/2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Jumlah</span>
-                    </div>
-                    <input type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
-                  </label>
-                </div>
-
-                <div class="w-full px-4 py-2">
-                  <label class="w-full max-w-full form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Keterangan</span>
-                    </div>
-                    <textarea class="w-full px-4 py-2 textarea textarea-bordered focus:textarea-primary" placeholder="Type here ..."></textarea>
-                  </label>
-                </div>
-
-              </div>
-
-              <input type="submit" class="my-3 ml-4 text-white btn btn-primary hover:opacity-80">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <script src="../../src/js/js.js"></script>
-  <!-- select2 script -->
-  <script>
-    $(document).ready(function () {
-      $("#select-js").select2({
-        placeholder: "Pilih daftar barang",
-        dropdownParent: $("#add_barang_baru")
-      });
-    });
-  </script>
+  <script src="../../js/js.js"></script>
+  
 </body>
 
 </html>
