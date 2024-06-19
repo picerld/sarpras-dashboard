@@ -1,4 +1,9 @@
 {
+  "name": "sarpras",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
+  },
   "devDependencies": {
     "daisyui": "^4.7.0",
     "prettier": "^3.2.5",
