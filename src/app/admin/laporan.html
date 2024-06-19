@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarpras - Dashboard</title>
-  <link rel="shortcut icon" href="../../src/dist/images/logo.png" type="image/x-icon" />
-  <link href="../../src/css/output.css" rel="stylesheet" />
-
+  <link rel="shortcut icon" href="../../dist/images/logo.png" type="image/x-icon" />
+  <link href="../../css/output.css" rel="stylesheet" />
+  
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
@@ -36,7 +36,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
                 </path>
               </svg></label>
-            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Detail Opname</h1>
+            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Laporan</h1>
           </div>
           <div class="flex-none">
             <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"><input type="checkbox" id="dark-toggle"
@@ -88,14 +88,15 @@
         </div>
         <main class="flex-1 px-6 pt-4 overflow-y-auto md:pt-4 bg-base-200">
           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div class="pl-2">
-              <div class="mt-5 w-72">
-                <div class="text-sm breadcrumbs">
-                    <ul>
-                      <li><a href="index.html">Home</a></li> 
-                      <li>Detail</li>
-                    </ul>
-                  </div>
+            <div class="">
+              <div class="w-72">
+                <select class="w-full max-w-xs select select-primary">
+                  <option disabled selected hidden>2023-2024 (Aktif)</option>
+                  <option>2023-2024 (Aktif)</option>
+                  <option>2022-2023</option>
+                  <option>2021-2022</option>
+                  <option>2012-2021</option>
+                </select>
               </div>
             </div>
             <div class="text-right">
@@ -132,12 +133,11 @@
           <div class="w-full p-6 mt-10 mb-10 shadow-xl card bg-base-100">
             <div>
               <div class="flex items-center justify-between">
-                <h3 class="text-lg font-medium">Barang <span class="font-bold">ATK</span></h3>
+                <h3 class="text-lg font-medium">Laporan</h3>
                 <div aria-label="Breadcrumbs" class="hidden p-0 text-sm breadcrumbs sm:inline">
                   <ul>
-                    <li class="text-base-content/60"><a href="index.html">Home</a></li>
-                    <li class="text-base-content/60"><a href="detailLaporanSO.html">Sub</a></li>
-                    <li>Detail</li>
+                    <li class="text-base-content/60"><a href="/app/admin">Home</a></li>
+                    <li>Laporan</li>
                   </ul>
                 </div>
               </div>
@@ -178,6 +178,7 @@
                       </div>
                       </div>
                       <div class="inline-flex items-center gap-3">
+                        <input type="date" class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost">
                         <button type="button"
                           class="hidden px-6 normal-case btn border-base-content/20 md:flex btn-sm btn-ghost"
                           id="menu-button" aria-expanded="true" aria-haspopup="true">
@@ -219,150 +220,147 @@
                         <thead>
                           <tr>
                             <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
-                            <th><span class="text-sm font-bold text-base-content/80">Barang</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Nama</span></th>
                             <th><span class="text-sm font-bold text-base-content/80">Kategori</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Merek</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Stok Awal</span></th>
+                            <th><span class="text-sm font-bold text-base-content/80">Stok Keluar</span></th>
                             <th><span class="text-sm font-bold text-base-content/80">Stok</span></th>
-                            <th><span class="text-sm font-bold text-base-content/80">Fisik</span></th>
-                            <th><span class="text-sm font-bold text-base-content/80">Penyesuaian</span></th>
-                            <th class="text-center px-14"><span class="text-sm font-bold text-base-content/80">Sebab</span></th>
-                            <th class="px-20 text-center"><span class="text-sm font-bold text-base-content/80">Keterangan</span></th>
-                            <th class="px-10"><span class="text-sm font-bold text-base-content/80">Tanggal</span></th>
-                            <th><span class="text-sm font-bold text-base-content/80">Aksi</span></th>
+                            <th class="text-center"><span class="text-sm font-bold text-base-content/80">Tanggal</span></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">Pulpen Kantor</div>
+                              <div class="text-sm font-medium">BRG01</div>
                             </td>
                             <td>
-                                <div class="flex items-center gap-2">
-                                  <div aria-label="Badge"
-                                    class="font-medium capitalize border-0 badge bg-primary/10 text-primary">ATK
-                                  </div>
-                                </div>
+                              <div class="font-medium">Pulpen Kantor</div>
                             </td>
                             <td>
-                                 <div class="text-sm font-medium">100</div>
-                            </td>
-                            <td>
-                                <div class="text-sm font-medium">0</div>
-                            </td>
-                            <td class="text-center">
-                                <div class="text-sm font-medium">0</div>
-                            </td>
-                            <td class="mx-20">
-                                <div class="text-sm font-medium">
-                                    <select class="w-full max-w-xs select select-bordered select-xs focus:select-primary">
-                                        <option selected disabled>Sebab</option>
-                                        <option>Pengurangan</option>
-                                        <option>Penambahan</option>
-                                      </select>
-                                </div>
-                            </td>
-                            <td class="">
-                              <div class="text-sm font-medium">Belum dicantumkan!</div>
-                            </td>
-                            <td class="text-center">22 Mei 2024</td>
-                            <td class="text-center">
-                              <div class="flex text-sm">
-                                  <button onclick="edit_so.showModal()" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
-                                  width="1em" height="1em">
-                                  <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="2" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/>
-                                  </svg>                                
-                                  </button>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
                               </div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div class="flex items-center space-x-3 truncate">
+                                  <div class="font-medium">Faster C600</div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">100</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">20</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">80</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">21 Mei 2024</div>
                             </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">Spidol</div>
+                              <div class="text-sm font-medium">BRG02</div>
                             </td>
                             <td>
-                                <div class="flex items-center gap-2">
-                                  <div aria-label="Badge"
-                                    class="font-medium capitalize border-0 badge bg-primary/10 text-primary">ATK
-                                  </div>
-                                </div>
+                              <div class="font-medium">Kertas Film</div>
                             </td>
                             <td>
-                                 <div class="text-sm font-medium">70</div>
-                            </td>
-                            <td>
-                                <div class="text-sm font-medium">80</div>
-                            </td>
-                            <td class="text-center">
-                                <div class="text-sm font-medium">5</div>
-                            </td>
-                            <td>
-                              <div class="flex items-center justify-center w-full gap-2 mx-auto">
+                              <div class="flex items-center gap-2">
                                 <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Penambahan
-                                </div>
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
                               </div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, culpa cupiditate. Ea ducimus, deserunt delectus necessitatibus in voluptas quaerat earum.</div>
+                              <div class="flex items-center gap-2">
+                                <div class="flex items-center space-x-3 truncate">
+                                  <div class="font-medium">Film21</div>
+                                </div>
                             </td>
-                            <td class="text-center">22 Mei 2024</td>
                             <td class="text-center">
-                              <div class="flex text-sm">
-                                  <button onclick="barang_so_modal.showModal()" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
-                                  width="1em" height="1em">
-                                  <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="2" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/>
-                                  </svg>                                
-                                  </button>
-                              </div>
+                              <div class="text-sm">120</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">20</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">100</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">22 Mei 2024</div>
                             </td>
                           </tr>
                           <tr class="cursor-pointer hover:bg-base-200/40">
                             <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
                             <td>
-                              <div class="text-sm font-medium">Pensil</div>
+                              <div class="text-sm font-medium">BRG03</div>
                             </td>
                             <td>
-                                <div class="flex items-center gap-2">
-                                  <div aria-label="Badge"
-                                    class="font-medium capitalize border-0 badge bg-primary/10 text-primary">ATK
-                                  </div>
-                                </div>
+                              <div class="font-medium">Sapu</div>
                             </td>
                             <td>
-                                 <div class="text-sm font-medium">80</div>
-                            </td>
-                            <td>
-                                <div class="text-sm font-medium">65</div>
-                            </td>
-                            <td class="text-center">
-                                <div class="text-sm font-medium">15</div>
-                            </td>
-                            <td>
-                              <div class="flex items-center justify-center w-full gap-2 mx-auto">
+                              <div class="flex items-center gap-2">
                                 <div aria-label="Badge"
-                                  class="font-medium capitalize border-0 badge bg-error/10 text-error">Pengurangan
-                                </div>
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">Kebersihan</div>
                               </div>
                             </td>
                             <td>
-                              <div class="text-sm font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, culpa cupiditate. Ea ducimus, deserunt delectus necessitatibus in voluptas quaerat earum.</div>
+                              <div class="flex items-center gap-2">
+                                <div class="flex items-center space-x-3 truncate">
+                                  <div class="font-medium">Sapu Gud</div>
+                                </div>
                             </td>
-                            <td class="text-center">22 Mei 2024</td>
                             <td class="text-center">
-                              <div class="flex text-sm">
-                                  <button onclick="barang_so_modal.showModal()" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
-                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
-                                  width="1em" height="1em">
-                                  <path fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                                  stroke-linejoin="round" stroke-width="2" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/>
-                                  </svg>                                
-                                  </button>
+                              <div class="text-sm">30</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">20</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">10</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">22 Mei 2024</div>
+                            </td>
+                          </tr>
+                          <tr class="cursor-pointer hover:bg-base-200/40">
+                            <th><input aria-label="Single check" class="checkbox checkbox-xs" type="checkbox"></th>
+                            <td>
+                              <div class="text-sm font-medium">BRG04</div>
+                            </td>
+                            <td>
+                              <div class="font-medium">Spidol</div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div aria-label="Badge"
+                                  class="font-medium capitalize border-0 badge bg-success/10 text-success">ATK</div>
                               </div>
+                            </td>
+                            <td>
+                              <div class="flex items-center gap-2">
+                                <div class="flex items-center space-x-3 truncate">
+                                  <div class="font-medium">Sapu Gud</div>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">30</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">20</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">10</div>
+                            </td>
+                            <td class="text-center">
+                              <div class="text-sm">22 Mei 2024</div>
                             </td>
                           </tr>
                         </tbody>
@@ -404,7 +402,7 @@
             </svg>
           </button>
           <li class="flex flex-row items-center justify-start mb-2 text-xl font-semibold dark:text-white">
-            <a href="#"><img class="w-10 font-semibold mask mask-squircle" src="../../src/dist/images/logo.png"
+            <a href="#"><img class="w-10 font-semibold mask mask-squircle" src="../../dist/images/logo.png"
                 alt="logo" />Sarpas</a>
           </li>
 
@@ -529,10 +527,10 @@
                   ></path>
                 </svg>
               </div>
-              <div class="hidden w-full sidebarOpen">
+              <div class="w-full sidebarOpen">
                 <ul class="menu menu-compact">
                   <li>
-                    <a href="laporan.html"
+                    <a href="laporan.html" class="font-semibold bg-base-200"
                       ><svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -547,7 +545,8 @@
                           d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                         />
                       </svg>
-                      Laporan</a
+                      Laporan<span class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
+                      aria-hidden="true"></span></a
                     >
                   </li>
                   <li>
@@ -631,66 +630,24 @@
     </div>
   </div>
 
-  <!-- add barang so -->
-  <dialog id="edit_so" class="modal">
+  <!-- modal delete -->
+  <dialog id="my_modal_1" class="modal">
     <div class="modal-box">
       <form method="dialog">
-        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
-          ✕
-        </button>
+        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
       </form>
-      <div class="flex flex-col min-w-full p-3 mx-auto space-y-3 md:flex-row md:space-x-5 md:space-y-0 rounded-xl md:max-w-3xl dark:border-dark dark:bg-dark">
-        <div class="flex flex-col items-center justify-center w-full bg-base-100">
-          <h1 class="text-4xl font-bold text-center">
-            Stok <span class="font-bold text-primary"> Opname
-          </h1>
-          <div class="w-full py-2">
-            <form method="dialog" class="w-full">
-              <div class="flex flex-wrap">
-                <div class="w-1/2 px-4 py-2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Stok Barang</span>
-                    </div>
-                    <input value="100" disabled type="text" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary disabled:font-bold input-disabled" />
-                  </label>
-                </div>
-                <div class="w-1/2 px-4 py-2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Stok Fisik</span>
-                    </div>
-                    <input type="number" min="1" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
-                  </label>
-                </div>
-                <div class="w-full px-4 py-2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Penyesuaian</span>
-                    </div>
-                    <input type="number" min="1" required placeholder="Ketik disini ..." class="w-full max-w-lg input input-bordered focus:input-primary" />
-                  </label>
-                </div>
-                <div class="w-full px-4 py-2">
-                  <label class="w-full max-w-lg form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Keterangan</span>
-                    </div>
-                    <textarea class="w-full px-4 py-2 textarea textarea-bordered focus:textarea-primary" placeholder="Type here ..."></textarea>
-                  </label>
-                </div>
-
-              </div>
-
-              <input type="submit" class="my-3 ml-4 text-white btn btn-primary hover:opacity-80">
-            </form>
-          </div>
-        </div>
+      <h3 class="pb-6 text-2xl font-semibold text-center">Konfirmasi</h3>
+      <p class="mt-8 text-xl text-center ">Anda yakin ingin menghapus barang ini?</p>
+      <div class="mt-12 modal-action">
+        <form method="dialog">
+          <button class="btn btn-ghost btn-outline">Cancel</button>
+          <button class="btn btn-primary w-36">Yes</button>
+        </form>
       </div>
     </div>
   </dialog>
 
-  <script src="../../src/js/js.js"></script>
+  <script src="../../js/js.js"></script>
 
 </body>
 

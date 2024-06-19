@@ -5,14 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sarpras - Dashboard</title>
-  <link rel="shortcut icon" href="../../src/dist/images/logo.png" type="image/x-icon" />
-  <link href="../../src/css/output.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="../../dist/images/logo.png" type="image/x-icon" />
+  <link href="../../css/output.css" rel="stylesheet" />
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <!-- DataTables CDN -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <!-- select2 start -->
+     
+    <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
+    <!-- select2 end -->
 
   <script>
     if (
@@ -40,7 +47,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5">
                 </path>
               </svg></label>
-            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Barang Keluar</h1>
+            <h1 class="ml-2 text-2xl font-semibold text-dark dark:text-gray-300">Barang Masuk</h1>
           </div>
           <div class="flex-none">
             <label class="swap swap-rotate sm:ml-2 btn btn-ghost btn-circle"><input type="checkbox" id="dark-toggle"
@@ -141,7 +148,7 @@
           <div class="w-full p-6 mt-10 mb-10 shadow-xl card bg-base-100">
             <div>
               <div class="flex items-center justify-between">
-                <h3 class="text-lg font-medium">Barang Keluar</h3>
+                <h3 class="text-lg font-medium">Barang Masuk</h3>
                 <div aria-label="Breadcrumbs" class="hidden p-0 text-sm breadcrumbs sm:inline">
                   <ul>
                     <li class="text-base-content/60"><a href="/app/admin">Home</a></li>
@@ -190,7 +197,7 @@
                             </path>
                           </svg>
                         </button>
-                        <button aria-label="Show order" class="h-8 border btn btn-ghost btn-xs border-base-content/20"
+                          <button aria-label="Show order" class="h-8 border btn btn-ghost btn-xs border-base-content/20"
                             onclick="add_barang_baru.showModal()">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
                               role="img" class="text-base-content" font-size="14" width="1em" height="1em" viewBox="0 0 24 24">
@@ -228,7 +235,6 @@
                             <th><input aria-label="Check all" class="checkbox checkbox-xs" type="checkbox"></th>
                             <th><span class="text-sm font-bold text-base-content/80">Kode</span></th>
                             <th><span class="text-sm font-bold text-base-content/80">Petugas</span></th>
-                            <th><span class="text-sm font-bold text-base-content/80">Unit</span></th>
                             <th><span class="text-sm font-bold text-base-content/80">Periode</span></th>
                             <th class="text-center"><span class="text-sm font-bold text-base-content/80">Aksi</span></th>
                           </tr>
@@ -241,9 +247,6 @@
                             </td>
                             <td>
                               <div class="font-medium">Pa Toni</div>
-                            </td>
-                            <td>
-                              <div class="font-medium">Unit A</div>
                             </td>
                             <td>
                               <div class="text-sm">17 Apr 2024</div>
@@ -273,7 +276,7 @@
                                   </button>
                                 </div>
                                 <div class="flex text-sm">
-                                  <a href="detailBarangKeluar.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                  <a href="detailBarangMasuk.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
                                     width="1em" height="1em" viewBox="0 0 512 512">
@@ -292,9 +295,6 @@
                             </td>
                             <td>
                               <div class="font-medium">Pa Hendro</div>
-                            </td>
-                            <td>
-                              <div class="font-medium">Unit B</div>
                             </td>
                             <td>
                               <div class="text-sm">21 Mei 2024</div>
@@ -324,7 +324,7 @@
                                   </button>
                                 </div>
                                 <div class="flex text-sm">
-                                  <a href="detailBarangKeluar.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                  <a href="detailBarangMasuk.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
                                     width="1em" height="1em" viewBox="0 0 512 512">
@@ -343,9 +343,6 @@
                             </td>
                             <td>
                               <div class="font-medium">Pa Toni</div>
-                            </td>
-                            <td>
-                              <div class="font-medium">Unit C</div>
                             </td>
                             <td>
                               <div class="text-sm">02 Des 2024</div>
@@ -375,7 +372,7 @@
                                   </button>
                                 </div>
                                 <div class="flex text-sm">
-                                  <a href="detailBarangKeluar.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
+                                  <a href="detailBarangMasuk.html" class="btn border-base-content/20 md:flex btn-sm btn-ghost" onclick="import_image.showModal()">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     aria-hidden="true" role="img" class="text-dark dark:text-base-content" font-size="22"
                                     width="1em" height="1em" viewBox="0 0 512 512">
@@ -404,7 +401,8 @@
                             aria-hidden="true" role="img" font-size="16" width="1em" height="1em" viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                               stroke-width="2" d="m9 18l6-6l-6-6"></path>
-                          </svg></button></div>
+                          </svg></button>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -431,7 +429,7 @@
               <a href="#"
                 ><img
                   class="w-10 font-semibold mask mask-squircle"
-                  src="../../src/dist/images/logo.png"
+                  src="../../dist/images/logo.png"
                   alt="logo"
                 />Sarpas</a
               >
@@ -484,7 +482,7 @@
                       >
                     </li>
                     <li>
-                      <a href="barang-masuk.html"
+                      <a href="barang-masuk.html" class="font-semibold bg-base-200"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -499,11 +497,12 @@
                             d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                           />
                         </svg>
-                        Barang Masuk</a
+                        Barang Masuk<span class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
+                        aria-hidden="true"></a
                       >
                     </li>
                     <li>
-                      <a href="barang-keluar.html" class="font-semibold bg-base-200"
+                      <a href="barang-keluar.html"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -518,8 +517,7 @@
                             d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
                           />
                         </svg>
-                        Barang Keluar<span class="absolute inset-y-0 left-0 w-1 rounded-tr-md rounded-br-md bg-primary"
-                        aria-hidden="true"></a
+                        Barang Keluar</a
                       >
                     </li>
                     <li>
@@ -542,7 +540,7 @@
                         Kategori Barang</a
                       >
                     </li>
-                </ul>
+                  </ul>
               </div>
             </div>
           </li>
@@ -696,91 +694,91 @@
     </div>
   </div>
 
-    <!-- modal delete -->
-    <dialog id="my_modal_1" class="modal">
-      <div class="modal-box">
+      <!-- modal delete -->
+  <dialog id="my_modal_1" class="modal">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+      </form>
+      <h3 class="pb-6 text-2xl font-semibold text-center">Konfirmasi</h3>
+      <p class="mt-8 text-xl text-center ">Anda yakin ingin menghapus barang ini?</p>
+      <div class="mt-12 modal-action">
         <form method="dialog">
-          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+          <button class="btn btn-ghost btn-outline">Cancel</button>
+          <button class="btn btn-primary w-36">Yes</button>
         </form>
-        <h3 class="pb-6 text-2xl font-semibold text-center">Konfirmasi</h3>
-        <p class="mt-8 text-xl text-center ">Anda yakin ingin menghapus barang ini?</p>
-        <div class="mt-12 modal-action">
-          <form method="dialog">
-            <button class="btn btn-ghost btn-outline">Cancel</button>
-            <button class="btn btn-primary w-36">Yes</button>
-          </form>
-        </div>
       </div>
-    </dialog>
-  
-    <!-- modal import -->
-    <dialog id="import_modal" class="modal">
-      <div class="modal-box">
-        <form method="dialog">
-          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
-        </form>
-        <h3 class="text-lg font-bold">Hello!</h3>
-        <div class="flex flex-col gap-2">
-          <p class="py-4">Unduh template excel</p>
-          <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost dark:bg-primary dark:text-white dark:hover:opacity-80">Unduh!</button>
-        </div>
-        <label class="w-full pt-3 form-control">
-          <div class="label">
-            <span class="label-text">Pilih file csv/excel</span>
-          </div>
-          <input type="file" class="w-full file-input file-input-bordered" />
-        </label>
+    </div>
+  </dialog>
+
+  <!-- modal import -->
+  <dialog id="import_modal" class="modal">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+      </form>
+      <h3 class="text-lg font-bold">Hello!</h3>
+      <div class="flex flex-col gap-2">
+        <p class="py-4">Unduh template excel</p>
+        <button class="hidden btn border-base-content/20 md:flex btn-sm btn-ghost dark:bg-primary dark:text-white dark:hover:opacity-80">Unduh!</button>
       </div>
-    </dialog>
-  
-    <!-- import modal -->
-    <dialog id="import_image" class="modal">
-      <div class="modal-box">
-        <form method="dialog">
-          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
-        </form>
-        <h3 class="text-lg font-bold">Berkas Bukti</h3>
-        <label class="w-full pt-3 form-control">
+      <label class="w-full pt-3 form-control">
+        <div class="label">
+          <span class="label-text">Pilih file csv/excel</span>
+        </div>
+        <input type="file" class="w-full file-input file-input-bordered" />
+      </label>
+    </div>
+  </dialog>
+
+  <!-- import modal -->
+  <dialog id="import_image" class="modal">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+      </form>
+      <h3 class="text-lg font-bold">Berkas Bukti</h3>
+      <label class="w-full pt-3 form-control">
+        <div class="label">
+          <span class="label-text">Acara Pemeriksaan</span>
+        </div>
+        <input type="file" class="w-full file-input file-input-bordered" />
+      </label>
+      <label class="w-full pt-5 form-control">
+        <div class="label">
+          <span class="label-text">Acara Serah Terima</span>
+        </div>
+        <input type="file" class="w-full file-input file-input-bordered" />
+      </label>
+    </div>
+  </dialog>
+
+  <!-- berkas modal -->
+  <dialog id="berkas_modal" class="modal">
+    <div class="modal-box">
+      <form method="dialog">
+        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
+      </form>
+      <h3 class="text-lg font-bold">Berkas Bukti</h3>
+      <div class="flex flex-wrap pt-3 m-2">
+        <label class="w-full form-control">
           <div class="label">
             <span class="label-text">Acara Pemeriksaan</span>
           </div>
-          <input type="file" class="w-full file-input file-input-bordered" />
+          <img src="https://placehold.co/600x630?text=Berkas" alt="" class="rounded-lg">
         </label>
-        <label class="w-full pt-5 form-control">
+        <label class="w-full pt-4 form-control">
           <div class="label">
             <span class="label-text">Acara Serah Terima</span>
           </div>
-          <input type="file" class="w-full file-input file-input-bordered" />
+          <img src="https://placehold.co/600x630?text=Berkas" alt="" class="rounded-lg">
         </label>
       </div>
-    </dialog>
-  
-    <!-- berkas modal -->
-    <dialog id="berkas_modal" class="modal">
-      <div class="modal-box">
-        <form method="dialog">
-          <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
-        </form>
-        <h3 class="text-lg font-bold">Berkas Bukti</h3>
-        <div class="flex flex-wrap pt-3 m-2">
-          <label class="w-full form-control">
-            <div class="label">
-              <span class="label-text">Acara Pemeriksaan</span>
-            </div>
-            <img src="https://placehold.co/600x630?text=Berkas" alt="" class="rounded-lg">
-          </label>
-          <label class="w-full pt-4 form-control">
-            <div class="label">
-              <span class="label-text">Acara Serah Terima</span>
-            </div>
-            <img src="https://placehold.co/600x630?text=Berkas" alt="" class="rounded-lg">
-          </label>
-        </div>
-      </div>
-    </dialog>
+    </div>
+  </dialog>
 
-    <!-- add barang modal -->
-  <dialog id="add_barang_baru" class="modal modal-middle">
+  <!-- add barang modal -->
+  <dialog id="add_barang_baru" class="modal modal-middle">  
     <div class="modal-box">
       <form method="dialog">
         <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">
@@ -803,20 +801,12 @@
                     <input type="text" required placeholder="Ketik disini ..." class="w-full input input-bordered focus:input-primary" />
                   </label>
                 </div>
-                <div class="w-full px-4 py-2 md:w-1/2">
+                <div class="w-full px-4 py-2">
                   <label class="w-full form-control">
                     <div class="label">
-                      <span class="font-semibold label-text">Unit</span>
+                      <span class="font-semibold label-text">Masukan Periode</span>
                     </div>
-                    <input type="text" required placeholder="Diserahkan ke unit ..." class="w-full input input-bordered focus:input-primary" />
-                  </label>
-                </div>
-                <div class="w-full px-4 py-2 md:w-1/2">
-                  <label class="w-full form-control">
-                    <div class="label">
-                      <span class="font-semibold label-text">Tanggal</span>
-                    </div>
-                    <input type="date" required placeholder="Diserahkan ke unit ..." class="w-full input input-bordered focus:input-primary" />
+                    <input type="date" required placeholder="Ketik disini ..." class="w-full input input-bordered focus:input-primary" />
                   </label>
                 </div>
               </div>
@@ -829,7 +819,7 @@
     </div>
   </dialog>
 
-  <script src="../../src/js/js.js"></script>
+  <script src="../../js/js.js"></script>
   <!-- select2 script -->
   <script>
     $(document).ready(function () {
