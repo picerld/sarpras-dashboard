@@ -6129,6 +6129,10 @@ html:has(.drawer-toggle:checked) {
   background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
 }
 
+.dark\:fill-white:is(.dark *) {
+  fill: #fff;
+}
+
 .dark\:text-base-content:is(.dark *) {
   --tw-text-opacity: 1;
   color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
